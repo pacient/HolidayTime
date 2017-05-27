@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3861E0571ED96A7F0037F8C8 /* EventTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861E0561ED96A7F0037F8C8 /* EventTransitionAnimator.swift */; };
+		3861E05A1ED9741E0037F8C8 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861E0591ED9741E0037F8C8 /* EventModel.swift */; };
 		38DAE6431ED95F7D00D56225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAE6421ED95F7D00D56225 /* AppDelegate.swift */; };
 		38DAE6481ED95F7D00D56225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DAE6461ED95F7D00D56225 /* Main.storyboard */; };
 		38DAE64A1ED95F7D00D56225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38DAE6491ED95F7D00D56225 /* Assets.xcassets */; };
@@ -15,6 +17,7 @@
 		38DAE6631ED95F7D00D56225 /* HolidayTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAE6621ED95F7D00D56225 /* HolidayTimeUITests.swift */; };
 		38DAE6721ED9640200D56225 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAE6711ED9640200D56225 /* EventCell.swift */; };
 		38DAE6751ED9645200D56225 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAE6741ED9645200D56225 /* EventTableViewController.swift */; };
+		38DAE6771ED9698500D56225 /* EventDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DAE6761ED9698500D56225 /* EventDetails.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3861E0561ED96A7F0037F8C8 /* EventTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTransitionAnimator.swift; sourceTree = "<group>"; };
+		3861E0591ED9741E0037F8C8 /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		38DAE63F1ED95F7D00D56225 /* HolidayTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HolidayTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38DAE6421ED95F7D00D56225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38DAE6471ED95F7D00D56225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -49,6 +54,7 @@
 		38DAE6641ED95F7D00D56225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38DAE6711ED9640200D56225 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		38DAE6741ED9645200D56225 /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
+		38DAE6761ED9698500D56225 /* EventDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventDetails.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3861E0551ED96A560037F8C8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3861E0561ED96A7F0037F8C8 /* EventTransitionAnimator.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		3861E0581ED973FD0037F8C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3861E0591ED9741E0037F8C8 /* EventModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		38DAE6361ED95F7D00D56225 = {
 			isa = PBXGroup;
 			children = (
@@ -99,10 +121,12 @@
 		38DAE6411ED95F7D00D56225 /* HolidayTime */ = {
 			isa = PBXGroup;
 			children = (
+				3861E0581ED973FD0037F8C8 /* Models */,
+				3861E0551ED96A560037F8C8 /* Helpers */,
+				38DAE6781ED9698900D56225 /* Storyboards */,
 				38DAE6731ED9643600D56225 /* View Controllers */,
 				38DAE6701ED963D900D56225 /* Custom Cells */,
 				38DAE6421ED95F7D00D56225 /* AppDelegate.swift */,
-				38DAE6461ED95F7D00D56225 /* Main.storyboard */,
 				38DAE6491ED95F7D00D56225 /* Assets.xcassets */,
 				38DAE64B1ED95F7D00D56225 /* LaunchScreen.storyboard */,
 				38DAE64E1ED95F7D00D56225 /* Info.plist */,
@@ -142,6 +166,15 @@
 				38DAE6741ED9645200D56225 /* EventTableViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		38DAE6781ED9698900D56225 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				38DAE6461ED95F7D00D56225 /* Main.storyboard */,
+				38DAE6761ED9698500D56225 /* EventDetails.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +286,7 @@
 			files = (
 				38DAE64D1ED95F7D00D56225 /* LaunchScreen.storyboard in Resources */,
 				38DAE64A1ED95F7D00D56225 /* Assets.xcassets in Resources */,
+				38DAE6771ED9698500D56225 /* EventDetails.storyboard in Resources */,
 				38DAE6481ED95F7D00D56225 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,8 +312,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3861E0571ED96A7F0037F8C8 /* EventTransitionAnimator.swift in Sources */,
 				38DAE6721ED9640200D56225 /* EventCell.swift in Sources */,
 				38DAE6751ED9645200D56225 /* EventTableViewController.swift in Sources */,
+				3861E05A1ED9741E0037F8C8 /* EventModel.swift in Sources */,
 				38DAE6431ED95F7D00D56225 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,6 +561,7 @@
 				38DAE6691ED95F7D00D56225 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		38DAE66A1ED95F7D00D56225 /* Build configuration list for PBXNativeTarget "HolidayTimeTests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +570,7 @@
 				38DAE66C1ED95F7D00D56225 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		38DAE66D1ED95F7D00D56225 /* Build configuration list for PBXNativeTarget "HolidayTimeUITests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +579,7 @@
 				38DAE66F1ED95F7D00D56225 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
