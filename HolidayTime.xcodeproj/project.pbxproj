@@ -15,6 +15,7 @@
 		3861E0631ED97E880037F8C8 /* EventCreator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3861E0621ED97E880037F8C8 /* EventCreator.storyboard */; };
 		3861E0651ED981960037F8C8 /* EventCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861E0641ED981960037F8C8 /* EventCreatorViewController.swift */; };
 		3861E0671ED982290037F8C8 /* RadialGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861E0661ED982290037F8C8 /* RadialGradientLayer.swift */; };
+		38CCCCC81ED9CB9D00277BB9 /* PickerDataResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CCCCC71ED9CB9D00277BB9 /* PickerDataResources.swift */; };
 		38DAE6431ED95F7D00D56225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAE6421ED95F7D00D56225 /* AppDelegate.swift */; };
 		38DAE6481ED95F7D00D56225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DAE6461ED95F7D00D56225 /* Main.storyboard */; };
 		38DAE64A1ED95F7D00D56225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38DAE6491ED95F7D00D56225 /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		3861E0621ED97E880037F8C8 /* EventCreator.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventCreator.storyboard; sourceTree = "<group>"; };
 		3861E0641ED981960037F8C8 /* EventCreatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreatorViewController.swift; sourceTree = "<group>"; };
 		3861E0661ED982290037F8C8 /* RadialGradientLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadialGradientLayer.swift; sourceTree = "<group>"; };
+		38CCCCC71ED9CB9D00277BB9 /* PickerDataResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerDataResources.swift; sourceTree = "<group>"; };
 		38DAE63F1ED95F7D00D56225 /* HolidayTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HolidayTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38DAE6421ED95F7D00D56225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38DAE6471ED95F7D00D56225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				3861E05B1ED976EF0037F8C8 /* EventResourceManager.swift */,
 				3861E05D1ED977FC0037F8C8 /* Const.swift */,
 				3861E0661ED982290037F8C8 /* RadialGradientLayer.swift */,
+				38CCCCC71ED9CB9D00277BB9 /* PickerDataResources.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3861E05C1ED976EF0037F8C8 /* EventResourceManager.swift in Sources */,
+				38CCCCC81ED9CB9D00277BB9 /* PickerDataResources.swift in Sources */,
 				3861E0571ED96A7F0037F8C8 /* EventTransitionAnimator.swift in Sources */,
 				38DAE6721ED9640200D56225 /* EventCell.swift in Sources */,
 				38DAE6751ED9645200D56225 /* EventTableViewController.swift in Sources */,
