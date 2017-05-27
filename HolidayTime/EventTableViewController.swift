@@ -19,11 +19,19 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         navigationController?.delegate = self
     }
 
+    //Button Actions
+    @IBAction func addEventPressed(_ sender: Any) {
+        let vc = UIStoryboard(name: "EventCreator", bundle: nil).instantiateInitialViewController()!
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    //MARK: Nav Controller Delegate
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transitionAnimator.operation = operation
         return transitionAnimator
     }
     
+    //MARK: TableView Delegate
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

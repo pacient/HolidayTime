@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ix4-Lb-48J">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Event Creator View Controller-->
+        <scene sceneID="ajy-Mp-Mat">
+            <objects>
+                <viewController id="ix4-Lb-48J" customClass="EventCreatorViewController" customModule="HolidayTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MMu-5G-6cu"/>
+                        <viewControllerLayoutGuide type="bottom" id="KrQ-fs-63n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ej3-hR-N7u">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pJ-6O-ug8">
+                                <rect key="frame" x="118.5" y="28" width="138.5" height="28"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give your event a name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEw-Lu-QVa">
+                                <rect key="frame" x="16" y="64" width="169" height="19"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="SuP-Sq-3RC">
+                                <rect key="frame" x="16" y="91" width="343" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLn-9H-DqE">
+                                <rect key="frame" x="16" y="129" width="66" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="rhe-WG-9uS">
+                                <rect key="frame" x="16" y="157" width="343" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="l1H-Il-fWb">
+                                <rect key="frame" x="16" y="195" width="343" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a date for the event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvT-1c-UZp">
+                                <rect key="frame" x="16" y="233" width="188.5" height="19"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Aug 17, 2020" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="7WI-AX-xcQ">
+                                <rect key="frame" x="16" y="260" width="343" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES"/>
+                                </accessibility>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vR3-Tx-p4g">
+                                <rect key="frame" x="169" y="298" width="37" height="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Done"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.9529411793" green="0.68627452850000004" blue="0.13333334029999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="l1H-Il-fWb" firstAttribute="trailing" secondItem="Ej3-hR-N7u" secondAttribute="trailingMargin" id="00u-xw-Dq5"/>
+                            <constraint firstItem="DLn-9H-DqE" firstAttribute="top" secondItem="SuP-Sq-3RC" secondAttribute="bottom" constant="8" id="1Hk-nb-tXD"/>
+                            <constraint firstItem="7WI-AX-xcQ" firstAttribute="trailing" secondItem="Ej3-hR-N7u" secondAttribute="trailingMargin" id="6no-tY-rjD"/>
+                            <constraint firstItem="6pJ-6O-ug8" firstAttribute="centerX" secondItem="Ej3-hR-N7u" secondAttribute="centerX" id="CQm-ey-bCD"/>
+                            <constraint firstItem="l1H-Il-fWb" firstAttribute="leading" secondItem="Ej3-hR-N7u" secondAttribute="leadingMargin" id="Gmg-8j-gf3"/>
+                            <constraint firstItem="rhe-WG-9uS" firstAttribute="trailing" secondItem="Ej3-hR-N7u" secondAttribute="trailingMargin" id="IxB-nS-cxn"/>
+                            <constraint firstItem="rhe-WG-9uS" firstAttribute="top" secondItem="DLn-9H-DqE" secondAttribute="bottom" constant="8" id="Khe-TO-ERc"/>
+                            <constraint firstItem="VvT-1c-UZp" firstAttribute="leading" secondItem="Ej3-hR-N7u" secondAttribute="leadingMargin" id="P6k-Wh-GGm"/>
+                            <constraint firstItem="vR3-Tx-p4g" firstAttribute="centerX" secondItem="Ej3-hR-N7u" secondAttribute="centerX" id="QiK-Dw-OfC"/>
+                            <constraint firstItem="SuP-Sq-3RC" firstAttribute="top" secondItem="wEw-Lu-QVa" secondAttribute="bottom" constant="8" id="Qnb-aX-NyO"/>
+                            <constraint firstItem="SuP-Sq-3RC" firstAttribute="trailing" secondItem="Ej3-hR-N7u" secondAttribute="trailingMargin" id="RVv-ch-8rN"/>
+                            <constraint firstItem="rhe-WG-9uS" firstAttribute="leading" secondItem="Ej3-hR-N7u" secondAttribute="leadingMargin" id="XvT-BD-Gfb"/>
+                            <constraint firstItem="DLn-9H-DqE" firstAttribute="leading" secondItem="Ej3-hR-N7u" secondAttribute="leadingMargin" id="bkr-QS-MBM"/>
+                            <constraint firstItem="wEw-Lu-QVa" firstAttribute="top" secondItem="6pJ-6O-ug8" secondAttribute="bottom" constant="8" id="ctC-tn-YmU"/>
+                            <constraint firstItem="wEw-Lu-QVa" firstAttribute="leading" secondItem="Ej3-hR-N7u" secondAttribute="leadingMargin" id="fZI-ir-f0m"/>
+                            <constraint firstItem="vR3-Tx-p4g" firstAttribute="top" secondItem="7WI-AX-xcQ" secondAttribute="bottom" constant="8" id="jY9-h9-AAT"/>
+                            <constraint firstItem="SuP-Sq-3RC" firstAttribute="leading" secondItem="Ej3-hR-N7u" secondAttribute="leadingMargin" id="lG8-st-9Ko"/>
+                            <constraint firstItem="VvT-1c-UZp" firstAttribute="top" secondItem="l1H-Il-fWb" secondAttribute="bottom" constant="8" id="mzi-LH-Hl2"/>
+                            <constraint firstItem="7WI-AX-xcQ" firstAttribute="leading" secondItem="Ej3-hR-N7u" secondAttribute="leadingMargin" id="oPj-Xi-SH1"/>
+                            <constraint firstItem="6pJ-6O-ug8" firstAttribute="top" secondItem="MMu-5G-6cu" secondAttribute="bottom" constant="8" id="p7n-Sz-LOq"/>
+                            <constraint firstItem="l1H-Il-fWb" firstAttribute="top" secondItem="rhe-WG-9uS" secondAttribute="bottom" constant="8" id="tmy-Z7-Mke"/>
+                            <constraint firstItem="7WI-AX-xcQ" firstAttribute="top" secondItem="VvT-1c-UZp" secondAttribute="bottom" constant="8" id="uA0-gb-J7w"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cityTextField" destination="rhe-WG-9uS" id="JZu-Hy-1Pf"/>
+                        <outlet property="countryTextField" destination="l1H-Il-fWb" id="5zI-Bu-NvT"/>
+                        <outlet property="dateTextField" destination="7WI-AX-xcQ" id="EPG-bR-ht4"/>
+                        <outlet property="nameTextField" destination="SuP-Sq-3RC" id="xYI-h0-NHr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xcg-zG-ohm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69.599999999999994" y="178.56071964017991"/>
+        </scene>
+    </scenes>
+</document>
