@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		38DAE6431ED95F7D00D56225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAE6421ED95F7D00D56225 /* AppDelegate.swift */; };
+		38DAE6451ED95F7D00D56225 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAE6441ED95F7D00D56225 /* ViewController.swift */; };
+		38DAE6481ED95F7D00D56225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DAE6461ED95F7D00D56225 /* Main.storyboard */; };
+		38DAE64A1ED95F7D00D56225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38DAE6491ED95F7D00D56225 /* Assets.xcassets */; };
+		38DAE64D1ED95F7D00D56225 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DAE64B1ED95F7D00D56225 /* LaunchScreen.storyboard */; };
+		38DAE6581ED95F7D00D56225 /* HolidayTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAE6571ED95F7D00D56225 /* HolidayTimeTests.swift */; };
+		38DAE6631ED95F7D00D56225 /* HolidayTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAE6621ED95F7D00D56225 /* HolidayTimeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		38DAE6541ED95F7D00D56225 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38DAE6371ED95F7D00D56225 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 38DAE63E1ED95F7D00D56225;
+			remoteInfo = HolidayTime;
+		};
+		38DAE65F1ED95F7D00D56225 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38DAE6371ED95F7D00D56225 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 38DAE63E1ED95F7D00D56225;
+			remoteInfo = HolidayTime;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		38DAE63F1ED95F7D00D56225 /* HolidayTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HolidayTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		38DAE6421ED95F7D00D56225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		38DAE6441ED95F7D00D56225 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		38DAE6471ED95F7D00D56225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		38DAE6491ED95F7D00D56225 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		38DAE64C1ED95F7D00D56225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		38DAE64E1ED95F7D00D56225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38DAE6531ED95F7D00D56225 /* HolidayTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HolidayTimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		38DAE6571ED95F7D00D56225 /* HolidayTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayTimeTests.swift; sourceTree = "<group>"; };
+		38DAE6591ED95F7D00D56225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38DAE65E1ED95F7D00D56225 /* HolidayTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HolidayTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		38DAE6621ED95F7D00D56225 /* HolidayTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayTimeUITests.swift; sourceTree = "<group>"; };
+		38DAE6641ED95F7D00D56225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		38DAE63C1ED95F7D00D56225 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38DAE6501ED95F7D00D56225 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38DAE65B1ED95F7D00D56225 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		38DAE6361ED95F7D00D56225 = {
+			isa = PBXGroup;
+			children = (
+				38DAE6411ED95F7D00D56225 /* HolidayTime */,
+				38DAE6561ED95F7D00D56225 /* HolidayTimeTests */,
+				38DAE6611ED95F7D00D56225 /* HolidayTimeUITests */,
+				38DAE6401ED95F7D00D56225 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		38DAE6401ED95F7D00D56225 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				38DAE63F1ED95F7D00D56225 /* HolidayTime.app */,
+				38DAE6531ED95F7D00D56225 /* HolidayTimeTests.xctest */,
+				38DAE65E1ED95F7D00D56225 /* HolidayTimeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		38DAE6411ED95F7D00D56225 /* HolidayTime */ = {
+			isa = PBXGroup;
+			children = (
+				38DAE6421ED95F7D00D56225 /* AppDelegate.swift */,
+				38DAE6441ED95F7D00D56225 /* ViewController.swift */,
+				38DAE6461ED95F7D00D56225 /* Main.storyboard */,
+				38DAE6491ED95F7D00D56225 /* Assets.xcassets */,
+				38DAE64B1ED95F7D00D56225 /* LaunchScreen.storyboard */,
+				38DAE64E1ED95F7D00D56225 /* Info.plist */,
+			);
+			path = HolidayTime;
+			sourceTree = "<group>";
+		};
+		38DAE6561ED95F7D00D56225 /* HolidayTimeTests */ = {
+			isa = PBXGroup;
+			children = (
+				38DAE6571ED95F7D00D56225 /* HolidayTimeTests.swift */,
+				38DAE6591ED95F7D00D56225 /* Info.plist */,
+			);
+			path = HolidayTimeTests;
+			sourceTree = "<group>";
+		};
+		38DAE6611ED95F7D00D56225 /* HolidayTimeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				38DAE6621ED95F7D00D56225 /* HolidayTimeUITests.swift */,
+				38DAE6641ED95F7D00D56225 /* Info.plist */,
+			);
+			path = HolidayTimeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		38DAE63E1ED95F7D00D56225 /* HolidayTime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38DAE6671ED95F7D00D56225 /* Build configuration list for PBXNativeTarget "HolidayTime" */;
+			buildPhases = (
+				38DAE63B1ED95F7D00D56225 /* Sources */,
+				38DAE63C1ED95F7D00D56225 /* Frameworks */,
+				38DAE63D1ED95F7D00D56225 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HolidayTime;
+			productName = HolidayTime;
+			productReference = 38DAE63F1ED95F7D00D56225 /* HolidayTime.app */;
+			productType = "com.apple.product-type.application";
+		};
+		38DAE6521ED95F7D00D56225 /* HolidayTimeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38DAE66A1ED95F7D00D56225 /* Build configuration list for PBXNativeTarget "HolidayTimeTests" */;
+			buildPhases = (
+				38DAE64F1ED95F7D00D56225 /* Sources */,
+				38DAE6501ED95F7D00D56225 /* Frameworks */,
+				38DAE6511ED95F7D00D56225 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				38DAE6551ED95F7D00D56225 /* PBXTargetDependency */,
+			);
+			name = HolidayTimeTests;
+			productName = HolidayTimeTests;
+			productReference = 38DAE6531ED95F7D00D56225 /* HolidayTimeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		38DAE65D1ED95F7D00D56225 /* HolidayTimeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38DAE66D1ED95F7D00D56225 /* Build configuration list for PBXNativeTarget "HolidayTimeUITests" */;
+			buildPhases = (
+				38DAE65A1ED95F7D00D56225 /* Sources */,
+				38DAE65B1ED95F7D00D56225 /* Frameworks */,
+				38DAE65C1ED95F7D00D56225 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				38DAE6601ED95F7D00D56225 /* PBXTargetDependency */,
+			);
+			name = HolidayTimeUITests;
+			productName = HolidayTimeUITests;
+			productReference = 38DAE65E1ED95F7D00D56225 /* HolidayTimeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		38DAE6371ED95F7D00D56225 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = nunev;
+				TargetAttributes = {
+					38DAE63E1ED95F7D00D56225 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					38DAE6521ED95F7D00D56225 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 38DAE63E1ED95F7D00D56225;
+					};
+					38DAE65D1ED95F7D00D56225 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 38DAE63E1ED95F7D00D56225;
+					};
+				};
+			};
+			buildConfigurationList = 38DAE63A1ED95F7D00D56225 /* Build configuration list for PBXProject "HolidayTime" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 38DAE6361ED95F7D00D56225;
+			productRefGroup = 38DAE6401ED95F7D00D56225 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				38DAE63E1ED95F7D00D56225 /* HolidayTime */,
+				38DAE6521ED95F7D00D56225 /* HolidayTimeTests */,
+				38DAE65D1ED95F7D00D56225 /* HolidayTimeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		38DAE63D1ED95F7D00D56225 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38DAE64D1ED95F7D00D56225 /* LaunchScreen.storyboard in Resources */,
+				38DAE64A1ED95F7D00D56225 /* Assets.xcassets in Resources */,
+				38DAE6481ED95F7D00D56225 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38DAE6511ED95F7D00D56225 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38DAE65C1ED95F7D00D56225 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		38DAE63B1ED95F7D00D56225 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38DAE6451ED95F7D00D56225 /* ViewController.swift in Sources */,
+				38DAE6431ED95F7D00D56225 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38DAE64F1ED95F7D00D56225 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38DAE6581ED95F7D00D56225 /* HolidayTimeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38DAE65A1ED95F7D00D56225 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38DAE6631ED95F7D00D56225 /* HolidayTimeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		38DAE6551ED95F7D00D56225 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 38DAE63E1ED95F7D00D56225 /* HolidayTime */;
+			targetProxy = 38DAE6541ED95F7D00D56225 /* PBXContainerItemProxy */;
+		};
+		38DAE6601ED95F7D00D56225 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 38DAE63E1ED95F7D00D56225 /* HolidayTime */;
+			targetProxy = 38DAE65F1ED95F7D00D56225 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		38DAE6461ED95F7D00D56225 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				38DAE6471ED95F7D00D56225 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		38DAE64B1ED95F7D00D56225 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				38DAE64C1ED95F7D00D56225 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		38DAE6651ED95F7D00D56225 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		38DAE6661ED95F7D00D56225 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		38DAE6681ED95F7D00D56225 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HolidayTime/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nunev.HolidayTime;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		38DAE6691ED95F7D00D56225 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HolidayTime/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nunev.HolidayTime;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		38DAE66B1ED95F7D00D56225 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HolidayTimeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nunev.HolidayTimeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HolidayTime.app/HolidayTime";
+			};
+			name = Debug;
+		};
+		38DAE66C1ED95F7D00D56225 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HolidayTimeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nunev.HolidayTimeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HolidayTime.app/HolidayTime";
+			};
+			name = Release;
+		};
+		38DAE66E1ED95F7D00D56225 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = HolidayTimeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nunev.HolidayTimeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = HolidayTime;
+			};
+			name = Debug;
+		};
+		38DAE66F1ED95F7D00D56225 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = HolidayTimeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nunev.HolidayTimeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = HolidayTime;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		38DAE63A1ED95F7D00D56225 /* Build configuration list for PBXProject "HolidayTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38DAE6651ED95F7D00D56225 /* Debug */,
+				38DAE6661ED95F7D00D56225 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38DAE6671ED95F7D00D56225 /* Build configuration list for PBXNativeTarget "HolidayTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38DAE6681ED95F7D00D56225 /* Debug */,
+				38DAE6691ED95F7D00D56225 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		38DAE66A1ED95F7D00D56225 /* Build configuration list for PBXNativeTarget "HolidayTimeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38DAE66B1ED95F7D00D56225 /* Debug */,
+				38DAE66C1ED95F7D00D56225 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		38DAE66D1ED95F7D00D56225 /* Build configuration list for PBXNativeTarget "HolidayTimeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38DAE66E1ED95F7D00D56225 /* Debug */,
+				38DAE66F1ED95F7D00D56225 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 38DAE6371ED95F7D00D56225 /* Project object */;
+}
