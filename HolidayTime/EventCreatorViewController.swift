@@ -14,12 +14,15 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var countryTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
+    
+    @IBOutlet weak var nameErrorLabel: UILabel!
+    @IBOutlet weak var countryErrorLabel: UILabel!
+    @IBOutlet weak var dateErrorLabel: UILabel!
+    
 
     let countries = PickerDataResources.instance().allCountries()
-    var dates = [["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                  [String](),
-                  [String](),
-                 ]
+    var dates = PickerDataResources.instance().allDates()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,18 +33,6 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
             each.delegate = self
             each.backgroundColor = .white
             each.tag = index
-        }
-        
-        //setup our pickerviews dates
-        for i in 1...30 {
-            let extra = i < 10 ? "0" : ""
-            dates[1].append("\(extra)\(i)")
-        }
-        
-        let date = Date()
-        let year = Calendar.current.component(.year, from: date)
-        for i in 0...10 {
-            dates[2].append("\(year+i)")
         }
         
         countryTextField.inputView = countryPicker
@@ -64,17 +55,30 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     //MARK: Button Actions
     @IBAction func donePressed(_ sender: Any) {
+        nameErrorLabel.isHidden = true
+        countryErrorLabel.isHidden = true
+        dateErrorLabel.isHidden = true
         //TODO: Guard every textfield is filled up
-        guard nameTextField.text != "" else {return}
-        guard cityTextField.text != "" else {return}
-        guard countryTextField.text != "" else {return}
-        guard dateTextField.text != "" else {return}
+        guard nameTextField.text != "" else {
+            nameErrorLabel.isHidden = false
+            return
+        }
+        guard countryTextField.text != "" else {
+            countryErrorLabel.isHidden = false
+            return
+        }
+        guard dateTextField.text != "" else {
+            dateErrorLabel.isHidden = false
+            return
+        }
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM dd, yyyy"
         let date = dateFormatter.date(from: dateTextField.text!)
         if date == nil {
             //handle wrong date entered here
+            dateErrorLabel.text = "This is not a valid date"
+            dateErrorLabel.isHidden = false
             return
         }
         
@@ -114,11 +118,13 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == 0 {
             countryTextField.text = countries[row]
+            countryErrorLabel.isHidden = true
         }else {
             let month = dates[0][pickerView.selectedRow(inComponent: 0)]
             let day = dates[1][pickerView.selectedRow(inComponent: 1)]
             let year = dates[2][pickerView.selectedRow(inComponent: 2)]
             dateTextField.text = "\(month) \(day), \(year)"
+            dateErrorLabel.isHidden = true
         }
     }
     
