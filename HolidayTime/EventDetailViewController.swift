@@ -10,26 +10,33 @@ import UIKit
 
 class EventDetailViewController: UIViewController {
 
+    @IBOutlet weak var eventNameLabel: UILabel!
+    @IBOutlet weak var eventTempertureLabel: UILabel!
+    @IBOutlet weak var eventDaysLabel: UILabel!
+    @IBOutlet weak var eventImageView: UIImageView!
+    @IBOutlet weak var eventProgressView: UIProgressView!
+    @IBOutlet weak var eventCardView: UIView!
+    
+    var event: Event!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        setupViews()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //TODO: Move this to a model view to clear things up
+    func setupViews() {
+        eventNameLabel.text = event.name
+        eventDaysLabel.text = getRemainingDays(forDate: event.date)
+        eventImageView.image = event.backgroundImage
     }
-    */
 
+    func getRemainingDays(forDate: Date) -> String {
+        let calendar = Calendar.current
+        
+        let today = calendar.date(bySettingHour: 12, minute: 00, second: 00, of: Date())!
+        
+        let components = calendar.dateComponents([.day], from: today, to: forDate)
+        return "\(components.day ?? 0)"
+    }
 }

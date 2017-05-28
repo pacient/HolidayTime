@@ -15,6 +15,7 @@
 		3861E0631ED97E880037F8C8 /* EventCreator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3861E0621ED97E880037F8C8 /* EventCreator.storyboard */; };
 		3861E0651ED981960037F8C8 /* EventCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861E0641ED981960037F8C8 /* EventCreatorViewController.swift */; };
 		3861E0671ED982290037F8C8 /* RadialGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861E0661ED982290037F8C8 /* RadialGradientLayer.swift */; };
+		387A91F11EDB245C00CE55BA /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387A91F01EDB245C00CE55BA /* EventDetailViewController.swift */; };
 		38C9DC611EDAB82B006E4A9E /* BackgroundSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C9DC601EDAB82B006E4A9E /* BackgroundSelectorViewController.swift */; };
 		38CCCCC81ED9CB9D00277BB9 /* PickerDataResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CCCCC71ED9CB9D00277BB9 /* PickerDataResources.swift */; };
 		38DAE6431ED95F7D00D56225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAE6421ED95F7D00D56225 /* AppDelegate.swift */; };
@@ -54,6 +55,7 @@
 		3861E0621ED97E880037F8C8 /* EventCreator.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventCreator.storyboard; sourceTree = "<group>"; };
 		3861E0641ED981960037F8C8 /* EventCreatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreatorViewController.swift; sourceTree = "<group>"; };
 		3861E0661ED982290037F8C8 /* RadialGradientLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadialGradientLayer.swift; sourceTree = "<group>"; };
+		387A91F01EDB245C00CE55BA /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		38C9DC601EDAB82B006E4A9E /* BackgroundSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundSelectorViewController.swift; sourceTree = "<group>"; };
 		38CCCCC71ED9CB9D00277BB9 /* PickerDataResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerDataResources.swift; sourceTree = "<group>"; };
 		38DAE63F1ED95F7D00D56225 /* HolidayTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HolidayTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,6 +205,7 @@
 			children = (
 				38C9DC5F1EDAB813006E4A9E /* Event Creator */,
 				38DAE6741ED9645200D56225 /* EventTableViewController.swift */,
+				387A91F01EDB245C00CE55BA /* EventDetailViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				3861E05C1ED976EF0037F8C8 /* EventResourceManager.swift in Sources */,
 				38CCCCC81ED9CB9D00277BB9 /* PickerDataResources.swift in Sources */,
 				3861E0571ED96A7F0037F8C8 /* EventTransitionAnimator.swift in Sources */,
+				387A91F11EDB245C00CE55BA /* EventDetailViewController.swift in Sources */,
 				38DAE6721ED9640200D56225 /* EventCell.swift in Sources */,
 				38DAE6751ED9645200D56225 /* EventTableViewController.swift in Sources */,
 				38C9DC611EDAB82B006E4A9E /* BackgroundSelectorViewController.swift in Sources */,

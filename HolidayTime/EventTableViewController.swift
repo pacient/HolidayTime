@@ -10,6 +10,7 @@ import UIKit
 
 class EventTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate {
 
+    @IBOutlet weak var tableview: UITableView!
     var events = EventResourceManager.instance().allEvents()
     let transitionAnimator = EventTransitionAnimator()
     var isAnimating = false
@@ -19,6 +20,21 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         navigationController?.delegate = self
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        events = EventResourceManager.instance().allEvents()
+        tableview.reloadData()
+    }
+    
+    //TODO: This are to go to a view model for the event
+    func getRemainingDays(forDate: Date) -> String {
+        let calendar = Calendar.current
+        
+        let today = calendar.date(bySettingHour: 12, minute: 00, second: 00, of: Date())!
+        
+        let components = calendar.dateComponents([.day], from: today, to: forDate)
+        return "\(components.day ?? 0)"
+    }
+    
     //Button Actions
     @IBAction func addEventPressed(_ sender: Any) {
         let vc = UIStoryboard(name: "EventCreator", bundle: nil).instantiateInitialViewController()!
@@ -44,11 +60,13 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell") as! EventCell
         cell.isHidden = isAnimating
         cell.eventName.text = events[indexPath.row].name
+        cell.eventDays.text = getRemainingDays(forDate: events[indexPath.row].date)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         isAnimating = true
+        let eventTapped = self.events[indexPath.row]
         // Hide all the cells and move the selected cell to the top and then present the details controller
         tableView.visibleCells.forEach { (cell) in
             if !cell.isSelected {
@@ -64,11 +82,10 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
             tableView.endUpdates()
             tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
         }) { (finished) in
-            if finished {
-                self.isAnimating = false
-                let vc = UIStoryboard(name: "EventDetails", bundle: nil).instantiateInitialViewController()!
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
+            self.isAnimating = false
+            let vc = UIStoryboard(name: "EventDetails", bundle: nil).instantiateInitialViewController() as! EventDetailViewController
+            vc.event = eventTapped
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

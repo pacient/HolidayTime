@@ -25,7 +25,7 @@ class EventResourceManager: NSObject {
     
     func allEvents() -> [Event] {
         if let eventsData: Data = UserDefaults.standard.object(forKey: Const.allEvents) as? Data {
-            return NSKeyedUnarchiver.unarchiveObject(with: eventsData) as! [Event]
+            return (NSKeyedUnarchiver.unarchiveObject(with: eventsData) as! [Event]).reversed()
         }
         return [Event]()
     }
