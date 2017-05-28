@@ -14,13 +14,14 @@ class Event: NSObject, NSCoding {
     var date: Date
     var city: String
     var country: String
-//    var backgroundColor: UIColor
+    var backgroundImage: UIImage
     
-    init(data: [String : AnyObject]) {
+    init(data: [String : Any]) {
         self.name = data["name"] as! String
         self.date = data["date"] as! Date
         self.city = data["city"] as! String
         self.country = data["country"] as! String
+        self.backgroundImage = data["bgimage"] as! UIImage
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -28,10 +29,12 @@ class Event: NSObject, NSCoding {
         let date = aDecoder.decodeObject(forKey: "date") as! Date
         let city = aDecoder.decodeObject(forKey: "city") as! String
         let country = aDecoder.decodeObject(forKey: "country") as! String
-        let data: [String : AnyObject] = ["name" : name,
+        let bgimage = aDecoder.decodeObject(forKey: "bgimage") as! UIImage
+        let data: [String : Any] = ["name" : name,
                                           "date" : date,
                                           "city" : city,
-                                          "country" : country] as [String : AnyObject]
+                                          "country" : country,
+                                          "bgimage" : bgimage]
         self.init(data: data)
     }
     
@@ -40,6 +43,7 @@ class Event: NSObject, NSCoding {
         aCoder.encode(self.date, forKey: "date")
         aCoder.encode(self.city, forKey: "city")
         aCoder.encode(self.country, forKey: "country")
+        aCoder.encode(self.backgroundImage, forKey: "bgimage")
     }
     
 }

@@ -87,9 +87,10 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
                          "country" : countryTextField.text!,
                          "date" : date!]
         
-        let event = Event(data: eventDict as [String : AnyObject])
-        EventResourceManager.instance().add(event: event)
-        navigationController?.popViewController(animated: true)
+        EventResourceManager.instance().setupValues(data: eventDict)
+        
+        let vc = UIStoryboard(name: "EventCreator", bundle: nil).instantiateViewController(withIdentifier: "bgVC")
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     

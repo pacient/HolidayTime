@@ -10,7 +10,7 @@ import UIKit
 
 class EventTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate {
 
-    var dataSource: [Int] = [1,2,3,4,5,7,8,9]
+    var events = EventResourceManager.instance().allEvents()
     let transitionAnimator = EventTransitionAnimator()
     var isAnimating = false
     
@@ -37,12 +37,13 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
+        return events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell") as! EventCell
         cell.isHidden = isAnimating
+        cell.eventName.text = events[indexPath.row].name
         return cell
     }
     
@@ -59,7 +60,7 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         UIView.animate(withDuration: 1, animations: {
             tableView.beginUpdates()
             tableView.moveRow(at: indexPath, to: IndexPath(row: 0, section: 0))
-            self.dataSource.insert(self.dataSource.remove(at: indexPath.row), at: 0)
+            self.events.insert(self.events.remove(at: indexPath.row), at: 0)
             tableView.endUpdates()
             tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
         }) { (finished) in

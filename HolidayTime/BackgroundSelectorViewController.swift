@@ -9,6 +9,7 @@
 import UIKit
 
 class BackgroundSelectorViewController: UIViewController {
+    private var gradientLayer = RadialGradientLayer()
     
     @IBOutlet weak var firstImageView: UIImageView!
     @IBOutlet weak var secondImageView: UIImageView!
@@ -19,13 +20,44 @@ class BackgroundSelectorViewController: UIViewController {
     
     @IBOutlet weak var imageSelectorBtn: UIButton!
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        if gradientLayer.superlayer == nil {
+            self.view.layer.insertSublayer(gradientLayer, at: 0)
+        }
+        gradientLayer.frame = self.view.bounds
+        
+        imageSelectorBtn.layer.borderColor = UIColor.white.cgColor
+        imageSelectorBtn.layer.borderWidth = 1
+        imageSelectorBtn.layer.cornerRadius = 5
+        imageSelectorBtn.layer.masksToBounds = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped(tapGestureRecognizer:)))
+        firstImageView.addGestureRecognizer(tapGesture)
+        secondImageView.addGestureRecognizer(tapGesture)
+        thirdImageView.addGestureRecognizer(tapGesture)
+        fourthImageView.addGestureRecognizer(tapGesture)
+        fifthImageView.addGestureRecognizer(tapGesture)
+        sixthImageView.addGestureRecognizer(tapGesture)
     }
     
 
+    func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        if let tappedImageView = tapGestureRecognizer.view as? UIImageView {
+            EventResourceManager.instance().eventImage = tappedImageView.image
+            EventResourceManager.instance().createEvent()
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
     @IBAction func selectImagePressed(_ sender: Any) {
     }
 
