@@ -85,6 +85,10 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
             dateErrorLabel.text = "This is not a valid date"
             dateErrorLabel.isHidden = false
             return
+        }else if date! < Date() {
+            dateErrorLabel.text = "This is not a future date"
+            dateErrorLabel.isHidden = false
+            return
         }
         
         let eventDict: [String : Any] = ["name" : nameTextField.text!,

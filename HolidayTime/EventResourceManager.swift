@@ -25,7 +25,7 @@ class EventResourceManager: NSObject {
     
     func allEvents() -> [Event] {
         if let eventsData: Data = UserDefaults.standard.object(forKey: Const.allEvents) as? Data {
-            return (NSKeyedUnarchiver.unarchiveObject(with: eventsData) as! [Event]).reversed()
+            return (NSKeyedUnarchiver.unarchiveObject(with: eventsData) as! [Event]).sorted{ $0.date < $1.date }
         }
         return [Event]()
     }
@@ -45,7 +45,8 @@ class EventResourceManager: NSObject {
                 allEvents.removeObject(each)
             }
         }
-        UserDefaults.standard.set(allEvents, forKey: Const.allEvents)
+        let data = NSKeyedArchiver.archivedData(withRootObject: allEvents)
+        UserDefaults.standard.set(data, forKey: Const.allEvents)
         UserDefaults.standard.synchronize()
     }
     

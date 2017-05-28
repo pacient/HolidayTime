@@ -46,4 +46,11 @@ class Event: NSObject, NSCoding {
         aCoder.encode(self.backgroundImage, forKey: "bgimage")
     }
     
+    public static func ==(lhs: Event, rhs: Event) -> Bool {
+        return  lhs.name == rhs.name &&
+                lhs.city == rhs.city &&
+                lhs.country == rhs.country &&
+                lhs.date == rhs.date
+    }
+    
 }

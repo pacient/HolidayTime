@@ -88,4 +88,17 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let action = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
+            EventResourceManager.instance().remove(event: self.events[index.row])
+            self.events.removeObject(self.events[index.row])
+            tableView.reloadData()
+        }
+        return [action]
+    }
 }

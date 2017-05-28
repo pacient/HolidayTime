@@ -28,7 +28,7 @@ class PickerDataResources: NSObject {
                      [String](),
                      [String](),
                      ]
-        for i in 1...30 {
+        for i in 1...31 {
             let extra = i < 10 ? "0" : ""
             dates[1].append("\(extra)\(i)")
         }
