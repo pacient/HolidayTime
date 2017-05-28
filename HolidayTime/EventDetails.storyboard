@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Event Detail View Controller-->
         <scene sceneID="cJD-8b-t9w">
             <objects>
-                <viewController id="ohm-LB-JNo" sceneMemberID="viewController">
+                <viewController id="ohm-LB-JNo" customClass="EventDetailViewController" customModule="HolidayTime" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kQT-Bm-oVZ"/>
                         <viewControllerLayoutGuide type="bottom" id="FwS-qo-ov9"/>
@@ -21,13 +21,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8L1-lj-oTW">
-                                <rect key="frame" x="16" y="28" width="39" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="jz6-gL-TY6"/>
-                                </constraints>
-                                <state key="normal" title="Menu"/>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brithday" translatesAutoresizingMaskIntoConstraints="NO" id="r2W-dd-BIw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GOx-ec-X4g">
                                 <rect key="frame" x="8" y="62" width="359" height="115"/>
                                 <subviews>
@@ -84,20 +80,50 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yyN-Tg-Sl5">
+                                <rect key="frame" x="8" y="185" width="359" height="2"/>
+                                <color key="progressTintColor" red="0.94084611744846103" green="1" blue="0.44058724581386077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="trackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8L1-lj-oTW">
+                                <rect key="frame" x="16" y="28" width="39" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="jz6-gL-TY6"/>
+                                </constraints>
+                                <state key="normal" title="Menu"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="yyN-Tg-Sl5" firstAttribute="leading" secondItem="GOx-ec-X4g" secondAttribute="leading" id="0d0-97-S8S"/>
+                            <constraint firstItem="yyN-Tg-Sl5" firstAttribute="trailing" secondItem="GOx-ec-X4g" secondAttribute="trailing" id="Afa-hg-ud9"/>
                             <constraint firstItem="GOx-ec-X4g" firstAttribute="leading" secondItem="usW-AY-btE" secondAttribute="leading" constant="8" id="G7r-yz-ywu"/>
+                            <constraint firstItem="yyN-Tg-Sl5" firstAttribute="top" secondItem="GOx-ec-X4g" secondAttribute="bottom" constant="8" id="NFp-Qo-yv0"/>
                             <constraint firstItem="8L1-lj-oTW" firstAttribute="top" secondItem="kQT-Bm-oVZ" secondAttribute="bottom" constant="8" id="UW8-xw-sWC"/>
                             <constraint firstItem="8L1-lj-oTW" firstAttribute="leading" secondItem="usW-AY-btE" secondAttribute="leading" constant="16" id="Y9Z-54-hjZ"/>
+                            <constraint firstAttribute="trailing" secondItem="r2W-dd-BIw" secondAttribute="trailing" id="dKa-47-iy6"/>
                             <constraint firstItem="GOx-ec-X4g" firstAttribute="top" secondItem="8L1-lj-oTW" secondAttribute="bottom" constant="12" id="eoN-Sb-2d3"/>
                             <constraint firstAttribute="trailing" secondItem="GOx-ec-X4g" secondAttribute="trailing" constant="8" id="pIw-US-FOT"/>
+                            <constraint firstItem="FwS-qo-ov9" firstAttribute="top" secondItem="r2W-dd-BIw" secondAttribute="bottom" id="sO6-xS-W1z"/>
+                            <constraint firstItem="r2W-dd-BIw" firstAttribute="leading" secondItem="usW-AY-btE" secondAttribute="leading" id="sgg-ix-k20"/>
+                            <constraint firstItem="r2W-dd-BIw" firstAttribute="top" secondItem="usW-AY-btE" secondAttribute="top" id="w8Y-ku-Nne"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="eventCardView" destination="GOx-ec-X4g" id="nDn-gP-zdh"/>
+                        <outlet property="eventDaysLabel" destination="tAX-Np-cjp" id="wAS-LG-Arm"/>
+                        <outlet property="eventImageView" destination="r2W-dd-BIw" id="jEJ-F1-ngf"/>
+                        <outlet property="eventNameLabel" destination="TWl-VC-8da" id="lSH-w9-h05"/>
+                        <outlet property="eventProgressView" destination="yyN-Tg-Sl5" id="Ufe-h9-kLn"/>
+                        <outlet property="eventTempertureLabel" destination="Ocu-Jg-ka6" id="RyM-9Q-cQR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LWn-Oi-yAS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="157"/>
+            <point key="canvasLocation" x="140" y="156.97151424287858"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="brithday" width="375" height="667"/>
+    </resources>
 </document>

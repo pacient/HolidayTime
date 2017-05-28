@@ -35,27 +35,33 @@ class BackgroundSelectorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let imgViewArray = [firstImageView,secondImageView,thirdImageView,fourthImageView,fifthImageView,sixthImageView]
+        imgViewArray.forEach{$0?.addGestureRecognizer(setTapGestureRecognizer())}
     
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped(tapGestureRecognizer:)))
-        firstImageView.addGestureRecognizer(tapGesture)
-        secondImageView.addGestureRecognizer(tapGesture)
-        thirdImageView.addGestureRecognizer(tapGesture)
-        fourthImageView.addGestureRecognizer(tapGesture)
-        fifthImageView.addGestureRecognizer(tapGesture)
-        sixthImageView.addGestureRecognizer(tapGesture)
+    func setTapGestureRecognizer() -> UITapGestureRecognizer {
+        return UITapGestureRecognizer(target: self, action: #selector(self.imageTapped(tapGestureRecognizer:)))
+        
     }
-    
 
     func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         if let tappedImageView = tapGestureRecognizer.view as? UIImageView {
             EventResourceManager.instance().eventImage = tappedImageView.image
             EventResourceManager.instance().createEvent()
-            self.navigationController?.popViewController(animated: true)
+            var controllers = self.navigationController?.viewControllers
+            for controller in controllers! {
+                if controller.isKind(of: EventCreatorViewController.self) || controller.isKind(of: BackgroundSelectorViewController.self) {
+                    controllers?.removeObject(controller)
+                }
+            }
+            self.navigationController?.setViewControllers(controllers!, animated: true)
         }
+    }
+    
+    @IBAction func backPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func selectImagePressed(_ sender: Any) {

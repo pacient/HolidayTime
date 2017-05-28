@@ -54,6 +54,11 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     //MARK: Button Actions
+    
+    @IBAction func backPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func donePressed(_ sender: Any) {
         nameErrorLabel.isHidden = true
         countryErrorLabel.isHidden = true
