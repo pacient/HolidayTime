@@ -29,6 +29,18 @@ class EventDetailViewController: UIViewController {
         eventNameLabel.text = event.name
         eventDaysLabel.text = getRemainingDays(forDate: event.date)
         eventImageView.image = event.backgroundImage
+        self.eventProgressView.progress = 0
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getProgress()
+    }
+    
+    func getProgress() {
+        let percent = (Date().timeIntervalSince1970 / event.date.timeIntervalSince1970) * 100
+        UIView.animate(withDuration: 0.5) {
+            self.eventProgressView.progress = Float(percent)
+        }
     }
 
     func getRemainingDays(forDate: Date) -> String {
@@ -38,5 +50,17 @@ class EventDetailViewController: UIViewController {
         
         let components = calendar.dateComponents([.day], from: today, to: forDate)
         return "\(components.day ?? 0)"
+    }
+    
+    //MARK: Button Actions
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func menuButtonPressed(_ sender: Any) {
+    }
+    @IBAction func checkButtonPressed(_ sender: Any) {
+    }
+    @IBAction func settingButtonPressed(_ sender: Any) {
     }
 }

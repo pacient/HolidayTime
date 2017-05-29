@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,11 +22,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brithday" translatesAutoresizingMaskIntoConstraints="NO" id="r2W-dd-BIw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="summer" translatesAutoresizingMaskIntoConstraints="NO" id="r2W-dd-BIw">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GOx-ec-X4g">
-                                <rect key="frame" x="8" y="62" width="359" height="115"/>
+                                <rect key="frame" x="8" y="63" width="359" height="115"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="800" verticalHuggingPriority="800" text="Name of the event goes here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWl-VC-8da">
                                         <rect key="frame" x="8" y="8" width="343" height="23"/>
@@ -81,32 +82,71 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yyN-Tg-Sl5">
-                                <rect key="frame" x="8" y="185" width="359" height="2"/>
+                                <rect key="frame" x="8" y="186" width="359" height="2"/>
                                 <color key="progressTintColor" red="0.94084611744846103" green="1" blue="0.44058724581386077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="trackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </progressView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8L1-lj-oTW">
-                                <rect key="frame" x="16" y="28" width="39" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRU-4y-GQI">
+                                <rect key="frame" x="16" y="20" width="35" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="jz6-gL-TY6"/>
+                                    <constraint firstAttribute="height" constant="35" id="nw6-C8-eFj"/>
+                                    <constraint firstAttribute="width" constant="35" id="vud-fz-ArS"/>
                                 </constraints>
-                                <state key="normal" title="Menu"/>
+                                <state key="normal" image="backButton"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="ohm-LB-JNo" eventType="touchUpInside" id="QVT-m2-pZg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAL-EX-yuM">
+                                <rect key="frame" x="58" y="20" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="8Nh-Dp-IeJ"/>
+                                    <constraint firstAttribute="width" constant="35" id="UG2-vt-0UA"/>
+                                </constraints>
+                                <state key="normal" image="menuButton"/>
+                                <connections>
+                                    <action selector="menuButtonPressed:" destination="ohm-LB-JNo" eventType="touchUpInside" id="77P-Yj-YTX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXS-J8-B0h">
+                                <rect key="frame" x="324" y="19.5" width="35" height="35"/>
+                                <state key="normal" image="settingsButton"/>
+                                <connections>
+                                    <action selector="settingButtonPressed:" destination="ohm-LB-JNo" eventType="touchUpInside" id="zXC-57-Gb3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vw-SD-b2b">
+                                <rect key="frame" x="281" y="19" width="35" height="35"/>
+                                <state key="normal" image="checkButton"/>
+                                <connections>
+                                    <action selector="checkButtonPressed:" destination="ohm-LB-JNo" eventType="touchUpInside" id="vzn-df-1UZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="yyN-Tg-Sl5" firstAttribute="leading" secondItem="GOx-ec-X4g" secondAttribute="leading" id="0d0-97-S8S"/>
+                            <constraint firstItem="aAL-EX-yuM" firstAttribute="centerY" secondItem="dRU-4y-GQI" secondAttribute="centerY" id="98j-3t-BEc"/>
                             <constraint firstItem="yyN-Tg-Sl5" firstAttribute="trailing" secondItem="GOx-ec-X4g" secondAttribute="trailing" id="Afa-hg-ud9"/>
+                            <constraint firstItem="fXS-J8-B0h" firstAttribute="height" secondItem="aAL-EX-yuM" secondAttribute="height" id="Awj-BN-b6D"/>
+                            <constraint firstItem="GOx-ec-X4g" firstAttribute="top" secondItem="dRU-4y-GQI" secondAttribute="bottom" constant="8" id="CFX-0R-mZ7"/>
+                            <constraint firstItem="dRU-4y-GQI" firstAttribute="top" secondItem="kQT-Bm-oVZ" secondAttribute="bottom" id="CbI-CY-cJW"/>
                             <constraint firstItem="GOx-ec-X4g" firstAttribute="leading" secondItem="usW-AY-btE" secondAttribute="leading" constant="8" id="G7r-yz-ywu"/>
+                            <constraint firstItem="6vw-SD-b2b" firstAttribute="width" secondItem="fXS-J8-B0h" secondAttribute="width" id="JQr-ek-lJY"/>
+                            <constraint firstItem="fXS-J8-B0h" firstAttribute="centerY" secondItem="aAL-EX-yuM" secondAttribute="centerY" id="KUr-Xo-YWD"/>
                             <constraint firstItem="yyN-Tg-Sl5" firstAttribute="top" secondItem="GOx-ec-X4g" secondAttribute="bottom" constant="8" id="NFp-Qo-yv0"/>
-                            <constraint firstItem="8L1-lj-oTW" firstAttribute="top" secondItem="kQT-Bm-oVZ" secondAttribute="bottom" constant="8" id="UW8-xw-sWC"/>
-                            <constraint firstItem="8L1-lj-oTW" firstAttribute="leading" secondItem="usW-AY-btE" secondAttribute="leading" constant="16" id="Y9Z-54-hjZ"/>
+                            <constraint firstItem="6vw-SD-b2b" firstAttribute="height" secondItem="fXS-J8-B0h" secondAttribute="height" id="PE7-gv-pFl"/>
+                            <constraint firstItem="fXS-J8-B0h" firstAttribute="width" secondItem="aAL-EX-yuM" secondAttribute="width" id="XFe-fO-Lor"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fXS-J8-B0h" secondAttribute="trailing" id="Xa0-Lg-tay"/>
+                            <constraint firstItem="6vw-SD-b2b" firstAttribute="centerY" secondItem="fXS-J8-B0h" secondAttribute="centerY" id="Y86-ud-1w3"/>
+                            <constraint firstItem="dRU-4y-GQI" firstAttribute="leading" secondItem="usW-AY-btE" secondAttribute="leadingMargin" id="c2a-I8-a0V"/>
                             <constraint firstAttribute="trailing" secondItem="r2W-dd-BIw" secondAttribute="trailing" id="dKa-47-iy6"/>
-                            <constraint firstItem="GOx-ec-X4g" firstAttribute="top" secondItem="8L1-lj-oTW" secondAttribute="bottom" constant="12" id="eoN-Sb-2d3"/>
                             <constraint firstAttribute="trailing" secondItem="GOx-ec-X4g" secondAttribute="trailing" constant="8" id="pIw-US-FOT"/>
                             <constraint firstItem="FwS-qo-ov9" firstAttribute="top" secondItem="r2W-dd-BIw" secondAttribute="bottom" id="sO6-xS-W1z"/>
                             <constraint firstItem="r2W-dd-BIw" firstAttribute="leading" secondItem="usW-AY-btE" secondAttribute="leading" id="sgg-ix-k20"/>
+                            <constraint firstItem="fXS-J8-B0h" firstAttribute="leading" secondItem="6vw-SD-b2b" secondAttribute="trailing" constant="8" id="szX-6O-Gw1"/>
                             <constraint firstItem="r2W-dd-BIw" firstAttribute="top" secondItem="usW-AY-btE" secondAttribute="top" id="w8Y-ku-Nne"/>
+                            <constraint firstItem="aAL-EX-yuM" firstAttribute="leading" secondItem="dRU-4y-GQI" secondAttribute="trailing" constant="7" id="wAb-63-8QC"/>
                         </constraints>
                     </view>
                     <connections>
@@ -124,6 +164,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="brithday" width="375" height="667"/>
+        <image name="backButton" width="70" height="70"/>
+        <image name="checkButton" width="70" height="70"/>
+        <image name="menuButton" width="70" height="70"/>
+        <image name="settingsButton" width="70" height="70"/>
+        <image name="summer" width="375" height="667"/>
     </resources>
 </document>
