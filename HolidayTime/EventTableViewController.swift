@@ -14,6 +14,7 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
     var events = EventResourceManager.instance().allEvents()
     let transitionAnimator = EventTransitionAnimator()
     var isAnimating = false
+    var selectedIndexPath: IndexPath = IndexPath(row: 0, section: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,9 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidAppear(_ animated: Bool) {
         events = EventResourceManager.instance().allEvents()
         tableview.reloadData()
+        if let selectedIndex = self.tableview.indexPathForSelectedRow {
+            self.tableview.deselectRow(at: selectedIndex, animated: false)
+        }
     }
     
     //TODO: This are to go to a view model for the event
@@ -44,6 +48,7 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
     //MARK: Nav Controller Delegate
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transitionAnimator.operation = operation
+        transitionAnimator.indexPath = selectedIndexPath
         return transitionAnimator
     }
     
@@ -66,27 +71,11 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         isAnimating = true
+        self.selectedIndexPath = indexPath
         let eventTapped = self.events[indexPath.row]
-        // Hide all the cells and move the selected cell to the top and then present the details controller
-        tableView.visibleCells.forEach { (cell) in
-            if !cell.isSelected {
-                UIView.animate(withDuration: 0.5, animations: {
-                    cell.isHidden = true
-                })
-            }
-        }
-        UIView.animate(withDuration: 1, animations: {
-            tableView.beginUpdates()
-            tableView.moveRow(at: indexPath, to: IndexPath(row: 0, section: 0))
-            self.events.insert(self.events.remove(at: indexPath.row), at: 0)
-            tableView.endUpdates()
-            tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-        }) { (finished) in
-            self.isAnimating = false
-            let vc = UIStoryboard(name: "EventDetails", bundle: nil).instantiateInitialViewController() as! EventDetailViewController
-            vc.event = eventTapped
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+        let vc = UIStoryboard(name: "EventDetails", bundle: nil).instantiateInitialViewController() as! EventDetailViewController
+        vc.event = eventTapped
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
