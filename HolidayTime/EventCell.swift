@@ -13,6 +13,7 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var eventDays: UILabel!
     @IBOutlet weak var eventTemperture: UILabel!
+    @IBOutlet weak var eventCard: UIView!
     
 
     override func awakeFromNib() {

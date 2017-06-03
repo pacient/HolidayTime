@@ -18,6 +18,7 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var eventCardView: UIView!
     
     var event: Event!
+    var cardColour: UIColor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ class EventDetailViewController: UIViewController {
     
     //TODO: Move this to a model view to clear things up
     func setupViews() {
+        eventCardView.backgroundColor = cardColour
         eventNameLabel.text = event.name
         eventDaysLabel.text = getRemainingDays(forDate: event.date)
         eventImageView.image = event.backgroundImage
@@ -37,9 +39,13 @@ class EventDetailViewController: UIViewController {
     }
     
     func getProgress() {
-        let percent = (Date().timeIntervalSince1970 / event.date.timeIntervalSince1970) * 100
-        UIView.animate(withDuration: 0.5) {
-            self.eventProgressView.progress = Float(percent)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd, yyyy"
+        let startDate = dateFormatter.date(from: "Jan 01, 2017")!
+        let percent = ((Date().timeIntervalSince1970 - startDate.timeIntervalSince1970) * 100) / (event.date.timeIntervalSince1970 - startDate.timeIntervalSince1970)
+        UIView.animate(withDuration: 1.0) {
+            self.eventProgressView.setProgress(Float(percent/100), animated: true)
+            print(self.eventProgressView.progress)
         }
     }
 

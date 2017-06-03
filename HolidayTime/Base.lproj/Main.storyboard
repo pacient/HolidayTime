@@ -103,6 +103,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="eventCard" destination="wZJ-CI-HVJ" id="O7l-Pc-gn8"/>
                                             <outlet property="eventDays" destination="uGf-lH-DoW" id="o6s-g6-wb9"/>
                                             <outlet property="eventName" destination="mHh-Gv-See" id="6EE-XF-vwM"/>
                                             <outlet property="eventTemperture" destination="MhA-M9-0jB" id="asU-ow-bRJ"/>
@@ -126,11 +127,11 @@
                         <constraints>
                             <constraint firstItem="hxQ-bX-Yjz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2Tf-My-3Dx"/>
                             <constraint firstItem="tEC-lv-8ag" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3z4-4z-28J"/>
-                            <constraint firstItem="SDB-cS-MF6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="6u4-Wv-XjX"/>
                             <constraint firstAttribute="trailing" secondItem="hxQ-bX-Yjz" secondAttribute="trailing" id="Ala-4E-tRG"/>
                             <constraint firstItem="tEC-lv-8ag" firstAttribute="top" secondItem="SDB-cS-MF6" secondAttribute="bottom" constant="8" id="TRL-nz-fsB"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hxQ-bX-Yjz" secondAttribute="bottom" id="Tna-4s-6Cj"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tEC-lv-8ag" secondAttribute="bottom" id="To3-ex-O80"/>
+                            <constraint firstItem="SDB-cS-MF6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="28" id="Wj0-CR-H8D"/>
                             <constraint firstItem="SDB-cS-MF6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Wmm-81-HbL"/>
                             <constraint firstItem="hxQ-bX-Yjz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="crv-2q-hTj"/>
                             <constraint firstAttribute="trailing" secondItem="tEC-lv-8ag" secondAttribute="trailing" id="mWp-9M-iaO"/>

@@ -29,6 +29,11 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
+    func reloadEvents() {
+        events = EventResourceManager.instance().allEvents()
+        self.tableview.reloadData()
+    }
+    
     //TODO: This are to go to a view model for the event
     func getRemainingDays(forDate: Date) -> String {
         let calendar = Calendar.current
@@ -37,6 +42,12 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let components = calendar.dateComponents([.day], from: today, to: forDate)
         return "\(components.day ?? 0)"
+    }
+    
+    func colourFor(row: Int) -> UIColor {
+        if row % 3 == 0 { return UIColor.CustomColors.blueCell }
+        if row % 2 == 0 { return UIColor.CustomColors.greenCell }
+        return UIColor.CustomColors.brownCell
     }
     
     //Button Actions
@@ -52,6 +63,7 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
             transitionAnimator.indexPath = selectedIndexPath
             return transitionAnimator
         }
+        reloadEvents()
         return nil
     }
     
@@ -69,6 +81,7 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.isHidden = isAnimating
         cell.eventName.text = events[indexPath.row].name
         cell.eventDays.text = getRemainingDays(forDate: events[indexPath.row].date)
+        cell.eventCard.backgroundColor = colourFor(row: indexPath.row)
         return cell
     }
     
@@ -78,6 +91,7 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         let eventTapped = self.events[indexPath.row]
         let vc = UIStoryboard(name: "EventDetails", bundle: nil).instantiateInitialViewController() as! EventDetailViewController
         vc.event = eventTapped
+        vc.cardColour = colourFor(row: indexPath.row)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
