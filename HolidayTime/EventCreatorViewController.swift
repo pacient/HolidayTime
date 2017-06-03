@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     private let gradientLayer = RadialGradientLayer()
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var cityTextField: UITextField!
@@ -27,16 +27,12 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
         super.viewDidLoad()
         
         let countryPicker = UIPickerView()
-        let datePicker = UIPickerView()
-        let pickers = [countryPicker, datePicker]
-        for (index,each) in pickers.enumerated(){
-            each.delegate = self
-            each.backgroundColor = .white
-            each.tag = index
-        }
+        countryPicker.delegate = self
+        countryPicker.backgroundColor = .white
+        
         
         countryTextField.inputView = countryPicker
-        dateTextField.inputView = datePicker
+        dateTextField.delegate = self
     }
     
     override func viewWillLayoutSubviews() {
@@ -50,6 +46,27 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
             field?.layer.borderColor = UIColor.white.cgColor
             field?.layer.borderWidth = 1.0
             field?.layer.cornerRadius = 5
+        }
+    }
+    
+    //MARK: Function
+    func datePickerValueChanged(sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd, yyyy"
+        
+        let selectedDate = dateFormatter.string(from: sender.date)
+        dateTextField.text = selectedDate
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.tag == 1 {
+            let datePick = UIDatePicker()
+            datePick.date = Date()
+            datePick.datePickerMode = .date
+            datePick.backgroundColor = .white
+            datePick.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: .valueChanged)
+            
+            textField.inputView = datePick
         }
     }
     
@@ -105,37 +122,20 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     //MARK: PickerView Delegate
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        if pickerView.tag == 0 {
-            return 1
-        }
-        return 3
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView.tag == 0 {
-            return countries.count
-        }
-        return dates[component].count
+        return countries.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView.tag == 0 {
-            return countries[row]
-        }
-        return dates[component][row]
+        return countries[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView.tag == 0 {
-            countryTextField.text = countries[row]
-            countryErrorLabel.isHidden = true
-        }else {
-            let month = dates[0][pickerView.selectedRow(inComponent: 0)]
-            let day = dates[1][pickerView.selectedRow(inComponent: 1)]
-            let year = dates[2][pickerView.selectedRow(inComponent: 2)]
-            dateTextField.text = "\(month) \(day), \(year)"
-            dateErrorLabel.isHidden = true
-        }
+        countryTextField.text = countries[row]
+        countryErrorLabel.isHidden = true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

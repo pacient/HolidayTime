@@ -29,7 +29,6 @@ class EventTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let storyFeedView = presenting ? fromView : toView
         let storyDetailView = presenting ? toView : fromView
         let eventsListVC = (presenting ? fromVC : toVC) as? EventTableViewController
-        let eventVC = (presenting ? toVC : fromVC) as? EventDetailViewController
         
         // Set the initial state of the alpha for the master and detail views so that we can fade them in and out during the animation.
         storyDetailView.alpha = presenting ? 0 : 1
