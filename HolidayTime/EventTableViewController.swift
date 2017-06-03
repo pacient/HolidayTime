@@ -19,11 +19,11 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.delegate = self
+        events = EventResourceManager.instance().allEvents()
+        
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        events = EventResourceManager.instance().allEvents()
-        tableview.reloadData()
         if let selectedIndex = self.tableview.indexPathForSelectedRow {
             self.tableview.deselectRow(at: selectedIndex, animated: false)
         }
@@ -47,9 +47,12 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
     
     //MARK: Nav Controller Delegate
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transitionAnimator.operation = operation
-        transitionAnimator.indexPath = selectedIndexPath
-        return transitionAnimator
+        if (toVC.isKind(of: EventDetailViewController.self) || toVC.isKind(of: EventTableViewController.self)) && (fromVC.isKind(of: EventTableViewController.self) || fromVC.isKind(of: EventDetailViewController.self)) {
+            transitionAnimator.operation = operation
+            transitionAnimator.indexPath = selectedIndexPath
+            return transitionAnimator
+        }
+        return nil
     }
     
     //MARK: TableView Delegate
