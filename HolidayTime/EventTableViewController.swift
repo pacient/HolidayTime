@@ -14,19 +14,22 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
     var events = EventResourceManager.instance().allEvents()
     let transitionAnimator = EventTransitionAnimator()
     var isAnimating = false
-    var selectedIndexPath: IndexPath = IndexPath(row: 0, section: 0)
+    var selectedIndexPath: IndexPath?
+    var animateLeft = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.delegate = self
         events = EventResourceManager.instance().allEvents()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadEvents), name: Notf.updateEvents, object: nil)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         if let selectedIndex = self.tableview.indexPathForSelectedRow {
             self.tableview.deselectRow(at: selectedIndex, animated: false)
         }
+        self.selectedIndexPath = nil
     }
     
     func reloadEvents() {
@@ -60,11 +63,20 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         if (toVC.isKind(of: EventDetailViewController.self) || toVC.isKind(of: EventTableViewController.self)) && (fromVC.isKind(of: EventTableViewController.self) || fromVC.isKind(of: EventDetailViewController.self)) {
             transitionAnimator.operation = operation
-            transitionAnimator.indexPath = selectedIndexPath
+            transitionAnimator.indexPath = selectedIndexPath!
+            animateLeft = false
             return transitionAnimator
         }
-        reloadEvents()
+        animateLeft = true
         return nil
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        if selectedIndexPath == nil && viewController.isKind(of: EventCreatorViewController.self) {
+            self.tableview.visibleCells.forEach{$0.isHidden = true}
+        }else if selectedIndexPath == nil {
+            self.tableview.visibleCells.forEach{$0.isHidden = false}
+        }
     }
     
     //MARK: TableView Delegate
@@ -83,6 +95,16 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.eventDays.text = getRemainingDays(forDate: events[indexPath.row].date)
         cell.eventCard.backgroundColor = colourFor(row: indexPath.row)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if selectedIndexPath != indexPath {
+            let direction: CGFloat = animateLeft ? -1 : 1
+            cell.transform = CGAffineTransform(translationX: cell.bounds.size.width*direction, y: 0)
+            UIView.animate(withDuration: 0.3) {
+                cell.transform = .identity
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

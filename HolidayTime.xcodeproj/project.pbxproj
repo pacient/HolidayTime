@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3814E2221EE301E800C5FB0D /* Notf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814E2211EE301E800C5FB0D /* Notf.swift */; };
 		3861E0571ED96A7F0037F8C8 /* EventTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861E0561ED96A7F0037F8C8 /* EventTransitionAnimator.swift */; };
 		3861E05A1ED9741E0037F8C8 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861E0591ED9741E0037F8C8 /* EventModel.swift */; };
 		3861E05C1ED976EF0037F8C8 /* EventResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861E05B1ED976EF0037F8C8 /* EventResourceManager.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3814E2211EE301E800C5FB0D /* Notf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notf.swift; sourceTree = "<group>"; };
 		3861E0561ED96A7F0037F8C8 /* EventTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTransitionAnimator.swift; sourceTree = "<group>"; };
 		3861E0591ED9741E0037F8C8 /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		3861E05B1ED976EF0037F8C8 /* EventResourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventResourceManager.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				3861E05D1ED977FC0037F8C8 /* Const.swift */,
 				3861E0661ED982290037F8C8 /* RadialGradientLayer.swift */,
 				38CCCCC71ED9CB9D00277BB9 /* PickerDataResources.swift */,
+				3814E2211EE301E800C5FB0D /* Notf.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				38CCCCC81ED9CB9D00277BB9 /* PickerDataResources.swift in Sources */,
 				3861E0571ED96A7F0037F8C8 /* EventTransitionAnimator.swift in Sources */,
 				387A91F11EDB245C00CE55BA /* EventDetailViewController.swift in Sources */,
+				3814E2221EE301E800C5FB0D /* Notf.swift in Sources */,
 				38DAE6721ED9640200D56225 /* EventCell.swift in Sources */,
 				38DAE6751ED9645200D56225 /* EventTableViewController.swift in Sources */,
 				38C9DC611EDAB82B006E4A9E /* BackgroundSelectorViewController.swift in Sources */,

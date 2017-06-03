@@ -9,7 +9,7 @@
 import UIKit
 
 class EventTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
-    private let duration: TimeInterval = 1.5
+    private let duration: TimeInterval = 1.0
     var operation: UINavigationControllerOperation = .push
     var indexPath: IndexPath = IndexPath(row: 0, section: 0)
     
@@ -65,7 +65,8 @@ class EventTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
                     storyDetailView.alpha = 1
                 })
             }else {
-                UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.15, animations: {
+                let relativeDuration = self.indexPath.row == 0 ? 1.0 : 0.15
+                UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: relativeDuration, animations: {
                     storyFeedView.alpha = 1
                     storyDetailView.alpha = 0
                 })

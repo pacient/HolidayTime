@@ -50,6 +50,7 @@ class BackgroundSelectorViewController: UIViewController {
         if let tappedImageView = tapGestureRecognizer.view as? UIImageView {
             EventResourceManager.instance().eventImage = tappedImageView.image
             EventResourceManager.instance().createEvent()
+            NotificationCenter.default.post(name: Notf.updateEvents, object: nil)
             var controllers = self.navigationController?.viewControllers
             for controller in controllers! {
                 if controller.isKind(of: EventCreatorViewController.self) || controller.isKind(of: BackgroundSelectorViewController.self) {
