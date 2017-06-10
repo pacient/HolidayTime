@@ -14,12 +14,14 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var countryTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
-    
     @IBOutlet weak var nameErrorLabel: UILabel!
     @IBOutlet weak var countryErrorLabel: UILabel!
     @IBOutlet weak var dateErrorLabel: UILabel!
+    @IBOutlet weak var vcTitle: UILabel!
     
-
+    var viewTitle: String!
+    var isEventEditing = false
+    var event: Event?
     let countries = PickerDataResources.instance().allCountries()
     var dates = PickerDataResources.instance().allDates()
     
@@ -30,9 +32,20 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
         countryPicker.delegate = self
         countryPicker.backgroundColor = .white
         
-        
         countryTextField.inputView = countryPicker
         dateTextField.delegate = self
+        
+        self.vcTitle.text = viewTitle
+        if let event = event {
+            self.nameTextField.text = event.name
+            self.cityTextField.text = event.city
+            self.countryTextField.text = event.country
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM dd, yyyy"
+            let dateText = dateFormatter.string(from: event.date)
+            self.dateTextField.text = dateText
+            EventResourceManager.instance().setupValues(data: ["eventID" : event.eventID])
+        }
     }
     
     override func viewWillLayoutSubviews() {
@@ -61,7 +74,7 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField.tag == 1 {
             let datePick = UIDatePicker()
-            datePick.date = Date()
+            datePick.date = dateTextField!.text != "" ? event!.date : Date()
             datePick.datePickerMode = .date
             datePick.backgroundColor = .white
             datePick.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: .valueChanged)
@@ -115,7 +128,8 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
         
         EventResourceManager.instance().setupValues(data: eventDict)
         
-        let vc = UIStoryboard(name: "EventCreator", bundle: nil).instantiateViewController(withIdentifier: "bgVC")
+        let vc = UIStoryboard(name: "EventCreator", bundle: nil).instantiateViewController(withIdentifier: "bgVC") as! BackgroundSelectorViewController
+        vc.isEventEditing = self.isEventEditing
         navigationController?.pushViewController(vc, animated: true)
     }
     

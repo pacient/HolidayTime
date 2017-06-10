@@ -15,6 +15,7 @@ class Event: NSObject, NSCoding {
     var city: String
     var country: String
     var backgroundImage: UIImage
+    var eventID: String
     
     init(data: [String : Any]) {
         self.name = data["name"] as! String
@@ -22,6 +23,7 @@ class Event: NSObject, NSCoding {
         self.city = data["city"] as! String
         self.country = data["country"] as! String
         self.backgroundImage = data["bgimage"] as! UIImage
+        self.eventID = data["eventID"] as! String
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -30,11 +32,13 @@ class Event: NSObject, NSCoding {
         let city = aDecoder.decodeObject(forKey: "city") as! String
         let country = aDecoder.decodeObject(forKey: "country") as! String
         let bgimage = aDecoder.decodeObject(forKey: "bgimage") as! UIImage
+        let eventID = aDecoder.decodeObject(forKey: "eventID") as!  String
         let data: [String : Any] = ["name" : name,
                                           "date" : date,
                                           "city" : city,
                                           "country" : country,
-                                          "bgimage" : bgimage]
+                                          "bgimage" : bgimage,
+                                          "eventID" : eventID]
         self.init(data: data)
     }
     
@@ -44,13 +48,10 @@ class Event: NSObject, NSCoding {
         aCoder.encode(self.city, forKey: "city")
         aCoder.encode(self.country, forKey: "country")
         aCoder.encode(self.backgroundImage, forKey: "bgimage")
+        aCoder.encode(self.eventID, forKey: "eventID")
     }
     
     public static func ==(lhs: Event, rhs: Event) -> Bool {
-        return  lhs.name == rhs.name &&
-                lhs.city == rhs.city &&
-                lhs.country == rhs.country &&
-                lhs.date == rhs.date
+        return  lhs.eventID == rhs.eventID
     }
-    
 }

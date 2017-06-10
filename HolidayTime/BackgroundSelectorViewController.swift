@@ -17,8 +17,9 @@ class BackgroundSelectorViewController: UIViewController {
     @IBOutlet weak var fourthImageView: UIImageView!
     @IBOutlet weak var fifthImageView: UIImageView!
     @IBOutlet weak var sixthImageView: UIImageView!
-    
     @IBOutlet weak var imageSelectorBtn: UIButton!
+    
+    var isEventEditing = false
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -49,7 +50,12 @@ class BackgroundSelectorViewController: UIViewController {
     func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         if let tappedImageView = tapGestureRecognizer.view as? UIImageView {
             EventResourceManager.instance().eventImage = tappedImageView.image
-            EventResourceManager.instance().createEvent()
+            if isEventEditing {
+                EventResourceManager.instance().updateEvent()
+                NotificationCenter.default.post(name: Notf.updateView, object: nil)
+            }else {
+                EventResourceManager.instance().createEvent()
+            }
             NotificationCenter.default.post(name: Notf.updateEvents, object: nil)
             var controllers = self.navigationController?.viewControllers
             for controller in controllers! {

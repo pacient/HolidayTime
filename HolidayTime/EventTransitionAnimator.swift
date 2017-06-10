@@ -64,26 +64,12 @@ class EventTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
                     storyFeedView.alpha = 0
                     storyDetailView.alpha = 1
                 })
-            }else {
-                let relativeDuration = self.indexPath.row == 0 ? 1.0 : 0.15
-                UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: relativeDuration, animations: {
-                    storyFeedView.alpha = 1
-                    storyDetailView.alpha = 0
-                })
-                
-                if self.indexPath.row != 0 {
-                    UIView.addKeyframe(withRelativeStartTime: 1.0, relativeDuration: 0.7, animations: {
-                        eventsListVC.events.insert(eventsListVC.events.remove(at: 0), at: self.indexPath.row)
-                        eventsListVC.tableview.moveRow(at: IndexPath(row: 0, section: 0), to: self.indexPath)
-                    })
-                }
             }
         }, completion: { (finished) in
             eventsListVC.isAnimating = false
-            if !presenting {
-                eventsListVC.tableview.reloadData()
-                eventsListVC.tableview.visibleCells.forEach{$0.isHidden = false}
-            }
+            storyFeedView.alpha = 1
+            eventsListVC.tableview.reloadData()
+            eventsListVC.tableview.visibleCells.forEach{$0.isHidden = false}
             transitionContext.completeTransition(finished)
         })
     }

@@ -10,4 +10,5 @@ import Foundation
 
 struct Notf {
     static let updateEvents = Notification.Name(rawValue: "updateEvents")
+    static let updateView = Notification.Name(rawValue: "updateView")
 }

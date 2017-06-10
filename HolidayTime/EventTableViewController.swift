@@ -32,6 +32,12 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         self.selectedIndexPath = nil
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        events = EventResourceManager.instance().allEvents()
+        self.tableview.reloadData()
+    }
+    
     func reloadEvents() {
         events = EventResourceManager.instance().allEvents()
         self.tableview.reloadData()
@@ -55,7 +61,8 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
     
     //Button Actions
     @IBAction func addEventPressed(_ sender: Any) {
-        let vc = UIStoryboard(name: "EventCreator", bundle: nil).instantiateInitialViewController()!
+        let vc = UIStoryboard(name: "EventCreator", bundle: nil).instantiateInitialViewController() as! EventCreatorViewController
+        vc.viewTitle = "Create Event"
         navigationController?.pushViewController(vc, animated: true)
     }
     

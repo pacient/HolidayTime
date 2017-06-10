@@ -22,6 +22,7 @@ class EventDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: Notf.updateView, object: nil)
         setupViews()
     }
     
@@ -30,12 +31,26 @@ class EventDetailViewController: UIViewController {
         eventCardView.backgroundColor = cardColour
         eventNameLabel.text = event.name
         eventDaysLabel.text = getRemainingDays(forDate: event.date)
-        eventImageView.image = event.backgroundImage
+        UIView.transition(with: self.eventImageView, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            self.eventImageView.image = self.event.backgroundImage
+        }, completion: nil)
         self.eventProgressView.progress = 0
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    @objc fileprivate func updateView() {
+        let allEvents = EventResourceManager.instance().allEvents()
+        allEvents.forEach { (event) in
+            if self.event.eventID == event.eventID {
+                self.event = event
+            }
+        }
+        setupViews()
         getProgress()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateView()
     }
     
     func getProgress() {
@@ -65,8 +80,15 @@ class EventDetailViewController: UIViewController {
     
     @IBAction func menuButtonPressed(_ sender: Any) {
     }
+    
     @IBAction func checkButtonPressed(_ sender: Any) {
     }
+    
     @IBAction func settingButtonPressed(_ sender: Any) {
+        let vc = UIStoryboard(name: "EventCreator", bundle: nil).instantiateInitialViewController() as! EventCreatorViewController
+        vc.isEventEditing = true
+        vc.event = self.event
+        vc.viewTitle = "Edit Event"
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
