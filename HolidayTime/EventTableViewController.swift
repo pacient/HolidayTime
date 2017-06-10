@@ -101,6 +101,7 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.eventName.text = events[indexPath.row].name
         cell.eventDays.text = getRemainingDays(forDate: events[indexPath.row].date)
         cell.eventCard.backgroundColor = colourFor(row: indexPath.row)
+        cell.eventCity.text = events[indexPath.row].city
         return cell
     }
     

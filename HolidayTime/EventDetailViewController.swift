@@ -16,6 +16,8 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var eventImageView: UIImageView!
     @IBOutlet weak var eventProgressView: UIProgressView!
     @IBOutlet weak var eventCardView: UIView!
+    @IBOutlet weak var eventCityLabel: UILabel!
+    @IBOutlet weak var eventWeatherImgView: UIImageView!
     
     var event: Event!
     var cardColour: UIColor!
@@ -30,6 +32,7 @@ class EventDetailViewController: UIViewController {
     func setupViews() {
         eventCardView.backgroundColor = cardColour
         eventNameLabel.text = event.name
+        eventCityLabel.text = event.city
         eventDaysLabel.text = getRemainingDays(forDate: event.date)
         UIView.transition(with: self.eventImageView, duration: 0.3, options: .transitionCrossDissolve, animations: {
             self.eventImageView.image = self.event.backgroundImage
