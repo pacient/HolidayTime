@@ -85,7 +85,8 @@ class EventDetailViewController: UIViewController {
     }
     
     @IBAction func checkButtonPressed(_ sender: Any) {
-        let vc = UIStoryboard(name: "EventChecklist", bundle: nil).instantiateInitialViewController()!
+        let vc = UIStoryboard(name: "EventChecklist", bundle: nil).instantiateInitialViewController() as! EventChecklistViewController
+        vc.tasks = event.tasks
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: true, completion: nil)
     }

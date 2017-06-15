@@ -16,6 +16,7 @@ class Event: NSObject, NSCoding {
     var country: String
     var backgroundImage: UIImage
     var eventID: String
+    var tasks: [ChecklistTask]
     
     init(data: [String : Any]) {
         self.name = data["name"] as! String
@@ -24,6 +25,7 @@ class Event: NSObject, NSCoding {
         self.country = data["country"] as! String
         self.backgroundImage = data["bgimage"] as! UIImage
         self.eventID = data["eventID"] as! String
+        self.tasks = [ChecklistTask]()
     }
     
     required convenience init?(coder aDecoder: NSCoder) {

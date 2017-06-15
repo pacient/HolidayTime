@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3814E2221EE301E800C5FB0D /* Notf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814E2211EE301E800C5FB0D /* Notf.swift */; };
+		383247521EF28EF700F93633 /* ChecklistTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383247511EF28EF700F93633 /* ChecklistTask.swift */; };
+		383247541EF2956E00F93633 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383247531EF2956E00F93633 /* TaskCell.swift */; };
 		3861E0571ED96A7F0037F8C8 /* EventTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861E0561ED96A7F0037F8C8 /* EventTransitionAnimator.swift */; };
 		3861E05A1ED9741E0037F8C8 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861E0591ED9741E0037F8C8 /* EventModel.swift */; };
 		3861E05C1ED976EF0037F8C8 /* EventResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861E05B1ED976EF0037F8C8 /* EventResourceManager.swift */; };
@@ -52,6 +54,8 @@
 
 /* Begin PBXFileReference section */
 		3814E2211EE301E800C5FB0D /* Notf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notf.swift; sourceTree = "<group>"; };
+		383247511EF28EF700F93633 /* ChecklistTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistTask.swift; sourceTree = "<group>"; };
+		383247531EF2956E00F93633 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		3861E0561ED96A7F0037F8C8 /* EventTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTransitionAnimator.swift; sourceTree = "<group>"; };
 		3861E0591ED9741E0037F8C8 /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		3861E05B1ED976EF0037F8C8 /* EventResourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventResourceManager.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				3861E0591ED9741E0037F8C8 /* EventModel.swift */,
+				383247511EF28EF700F93633 /* ChecklistTask.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				38DAE6711ED9640200D56225 /* EventCell.swift */,
+				383247531EF2956E00F93633 /* TaskCell.swift */,
 			);
 			name = "Custom Cells";
 			sourceTree = "<group>";
@@ -389,10 +395,12 @@
 				38942D601EF194510002A2E3 /* EventChecklistViewController.swift in Sources */,
 				38C9DC611EDAB82B006E4A9E /* BackgroundSelectorViewController.swift in Sources */,
 				3861E0671ED982290037F8C8 /* RadialGradientLayer.swift in Sources */,
+				383247521EF28EF700F93633 /* ChecklistTask.swift in Sources */,
 				3861E05A1ED9741E0037F8C8 /* EventModel.swift in Sources */,
 				3861E0651ED981960037F8C8 /* EventCreatorViewController.swift in Sources */,
 				3861E0611ED97C8E0037F8C8 /* Array.swift in Sources */,
 				38DAE6431ED95F7D00D56225 /* AppDelegate.swift in Sources */,
+				383247541EF2956E00F93633 /* TaskCell.swift in Sources */,
 				3861E05E1ED977FC0037F8C8 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
