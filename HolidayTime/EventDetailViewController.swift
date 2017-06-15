@@ -76,8 +76,15 @@ class EventDetailViewController: UIViewController {
         return "\(components.day ?? 0)"
     }
     
+    @IBAction func unwindFromChecklist(_ sender: UIStoryboardSegue) {
+        let destination = sender.source as! EventChecklistViewController
+        self.event = destination.event
+    }
+    
     //MARK: Button Actions
     @IBAction func backButtonPressed(_ sender: Any) {
+        EventResourceManager.instance().setupValues(with: event)
+        EventResourceManager.instance().updateEvent()
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -86,7 +93,7 @@ class EventDetailViewController: UIViewController {
     
     @IBAction func checkButtonPressed(_ sender: Any) {
         let vc = UIStoryboard(name: "EventChecklist", bundle: nil).instantiateInitialViewController() as! EventChecklistViewController
-        vc.tasks = event.tasks
+        vc.event = event
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: true, completion: nil)
     }

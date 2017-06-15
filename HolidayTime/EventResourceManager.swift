@@ -16,6 +16,7 @@ class EventResourceManager: NSObject {
     var eventImage: UIImage?
     var eventDate: Date?
     var eventID: String?
+    var eventTasks: [ChecklistTask]?
     
     open class func instance() -> EventResourceManager {
         struct Struc {
@@ -60,6 +61,7 @@ class EventResourceManager: NSObject {
                 ev.country = self.eventCountry!
                 ev.date = self.eventDate!
                 ev.backgroundImage = self.eventImage!
+                ev.tasks = self.eventTasks!
             }
         }
         let data = NSKeyedArchiver.archivedData(withRootObject: allEvents)
@@ -73,9 +75,19 @@ class EventResourceManager: NSObject {
                          "country" : self.eventCountry!,
                          "date" : self.eventDate!,
                          "bgimage" : self.eventImage!,
-                         "eventID" : setEventID()] as [String : Any]
+                         "eventID" : String.getRandomID()] as [String : Any]
         let event = Event(data: eventDict)
         self.add(event: event)
+    }
+    
+    func setupValues(with event: Event) {
+            self.eventName = event.name
+            self.eventCity = event.city
+            self.eventCountry = event.country
+            self.eventImage = event.backgroundImage
+            self.eventDate = event.date
+            self.eventID = event.eventID
+            self.eventTasks = event.tasks
     }
     
     func setupValues(data: [String : Any]) {
@@ -104,16 +116,5 @@ class EventResourceManager: NSObject {
         if let id = data["eventID"] as? String {
             self.eventID = id
         }
-    }
-    
-    //This sets a random string with lowercase, uppercase and numbers with 8 charactes
-    private func setEventID() -> String {
-        let a = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
-        var s = ""
-        for _ in 0..<8 {
-            let r = Int(arc4random_uniform(UInt32(a.characters.count)))
-            s += String(a[a.index(a.startIndex, offsetBy: r)])
-        }
-        return s
     }
 }

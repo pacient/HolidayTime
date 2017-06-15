@@ -44,11 +44,11 @@
                                             <rect key="frame" x="0.0" y="74" width="375" height="593"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <prototypes>
-                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskCell" rowHeight="45" id="Mc1-kQ-Bcj" customClass="TaskCell" customModule="HolidayTime" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="28" width="375" height="45"/>
+                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskCell" rowHeight="60" id="Mc1-kQ-Bcj" customClass="TaskCell" customModule="HolidayTime" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mc1-kQ-Bcj" id="RLz-64-jz0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sTv-jN-TF9">
@@ -59,40 +59,49 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HlC-Ar-223">
-                                                                <rect key="frame" x="8" y="36" width="359" height="1"/>
+                                                                <rect key="frame" x="8" y="51" width="359" height="1"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="CoX-Vk-UZd"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAk-a3-on3">
-                                                                <rect key="frame" x="8" y="9" width="1" height="27"/>
+                                                                <rect key="frame" x="8" y="9" width="1" height="42"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="1" id="LXv-mi-tPE"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQh-7S-kk3">
-                                                                <rect key="frame" x="366" y="8" width="1" height="29"/>
+                                                                <rect key="frame" x="366" y="8" width="1" height="44"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="1" id="5Qd-pt-6Ve"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="km0-LE-h5g">
-                                                                <rect key="frame" x="9" y="9" width="357" height="27"/>
+                                                                <rect key="frame" x="9" y="9" width="357" height="42"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is an example of a task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOQ-HF-ECr">
-                                                                        <rect key="frame" x="8" y="4" width="199" height="19"/>
+                                                                        <rect key="frame" x="8" y="11.5" width="199" height="19"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selectedTask" translatesAutoresizingMaskIntoConstraints="NO" id="fj3-td-H0S">
+                                                                        <rect key="frame" x="324" y="8.5" width="25" height="25"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="25" id="drI-00-6H7"/>
+                                                                            <constraint firstAttribute="width" constant="25" id="nGl-ge-WRr"/>
+                                                                        </constraints>
+                                                                    </imageView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20379387842465754" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
+                                                                    <constraint firstItem="fj3-td-H0S" firstAttribute="centerY" secondItem="km0-LE-h5g" secondAttribute="centerY" id="Ibk-sO-uyY"/>
                                                                     <constraint firstItem="xOQ-HF-ECr" firstAttribute="centerY" secondItem="km0-LE-h5g" secondAttribute="centerY" id="KR7-oj-h5r"/>
                                                                     <constraint firstItem="xOQ-HF-ECr" firstAttribute="leading" secondItem="km0-LE-h5g" secondAttribute="leading" constant="8" id="YZ6-ny-oeK"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="fj3-td-H0S" secondAttribute="trailing" constant="8" id="anO-IS-vXk"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
@@ -117,6 +126,7 @@
                                                     </tableViewCellContentView>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <connections>
+                                                        <outlet property="selectedCellImageView" destination="fj3-td-H0S" id="pnP-FF-ABV"/>
                                                         <outlet property="taskTitle" destination="xOQ-HF-ECr" id="jzW-DW-v88"/>
                                                     </connections>
                                                 </tableViewCell>
@@ -126,7 +136,7 @@
                                                 <outlet property="delegate" destination="cLz-f4-ZJX" id="Zxi-c4-Xuh"/>
                                             </connections>
                                         </tableView>
-                                        <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bGA-y1-DqG">
+                                        <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGA-y1-DqG">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <textAttributes key="titleTextAttributes">
@@ -148,6 +158,7 @@
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="Fe7-be-ug7" secondAttribute="bottom" id="2Yb-mP-phw"/>
                                         <constraint firstItem="Vb6-8A-t7l" firstAttribute="leading" secondItem="jrM-3i-4qR" secondAttribute="leading" id="63p-zf-vcI"/>
+                                        <constraint firstItem="bGA-y1-DqG" firstAttribute="top" secondItem="jrM-3i-4qR" secondAttribute="top" id="95g-Dg-5aZ"/>
                                         <constraint firstAttribute="trailing" secondItem="bGA-y1-DqG" secondAttribute="trailing" id="9eF-Ea-ezN"/>
                                         <constraint firstAttribute="trailing" secondItem="Vb6-8A-t7l" secondAttribute="trailing" id="Ggg-cf-DMR"/>
                                         <constraint firstItem="Fe7-be-ug7" firstAttribute="top" secondItem="Vb6-8A-t7l" secondAttribute="bottom" id="QHb-9g-kw3"/>
@@ -172,11 +183,16 @@
                         <outlet property="navBar" destination="bGA-y1-DqG" id="zaf-E2-nHg"/>
                         <outlet property="tableview" destination="Fe7-be-ug7" id="PGk-wz-esz"/>
                         <outlet property="taskTextField" destination="Vb6-8A-t7l" id="o2d-bY-8tS"/>
+                        <segue destination="Y9I-kb-ZhM" kind="unwind" identifier="unwindChecklist" unwindAction="unwindFromChecklist:" id="Khb-zt-7FU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rPJ-Mz-13r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Y9I-kb-ZhM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-236" y="169.56521739130437"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="selectedTask" width="120" height="120"/>
+    </resources>
 </document>

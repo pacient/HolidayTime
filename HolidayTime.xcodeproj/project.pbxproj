@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3814E2221EE301E800C5FB0D /* Notf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814E2211EE301E800C5FB0D /* Notf.swift */; };
+		3819D08A1EF2C7A900BFED42 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3819D0891EF2C7A900BFED42 /* String.swift */; };
 		383247521EF28EF700F93633 /* ChecklistTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383247511EF28EF700F93633 /* ChecklistTask.swift */; };
 		383247541EF2956E00F93633 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383247531EF2956E00F93633 /* TaskCell.swift */; };
 		3861E0571ED96A7F0037F8C8 /* EventTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861E0561ED96A7F0037F8C8 /* EventTransitionAnimator.swift */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		3814E2211EE301E800C5FB0D /* Notf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notf.swift; sourceTree = "<group>"; };
+		3819D0891EF2C7A900BFED42 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		383247511EF28EF700F93633 /* ChecklistTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistTask.swift; sourceTree = "<group>"; };
 		383247531EF2956E00F93633 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		3861E0561ED96A7F0037F8C8 /* EventTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTransitionAnimator.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				3861E0601ED97C8E0037F8C8 /* Array.swift */,
 				387D0DE91EE2B7FA00AC2D4B /* UIColor.swift */,
+				3819D0891EF2C7A900BFED42 /* String.swift */,
 			);
 			name = Extenstions;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3819D08A1EF2C7A900BFED42 /* String.swift in Sources */,
 				3861E05C1ED976EF0037F8C8 /* EventResourceManager.swift in Sources */,
 				387D0DEA1EE2B7FA00AC2D4B /* UIColor.swift in Sources */,
 				38CCCCC81ED9CB9D00277BB9 /* PickerDataResources.swift in Sources */,

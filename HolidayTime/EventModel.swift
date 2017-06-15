@@ -25,7 +25,11 @@ class Event: NSObject, NSCoding {
         self.country = data["country"] as! String
         self.backgroundImage = data["bgimage"] as! UIImage
         self.eventID = data["eventID"] as! String
-        self.tasks = [ChecklistTask]()
+        if let tasks = data["tasks"] as? [ChecklistTask]{
+            self.tasks = tasks
+        }else {
+            self.tasks = [ChecklistTask]()
+        }
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -35,12 +39,14 @@ class Event: NSObject, NSCoding {
         let country = aDecoder.decodeObject(forKey: "country") as! String
         let bgimage = aDecoder.decodeObject(forKey: "bgimage") as! UIImage
         let eventID = aDecoder.decodeObject(forKey: "eventID") as!  String
+        let tasks = aDecoder.decodeObject(forKey: "tasks") as! [ChecklistTask]
         let data: [String : Any] = ["name" : name,
                                           "date" : date,
                                           "city" : city,
                                           "country" : country,
                                           "bgimage" : bgimage,
-                                          "eventID" : eventID]
+                                          "eventID" : eventID,
+                                          "tasks" : tasks]
         self.init(data: data)
     }
     
@@ -51,6 +57,7 @@ class Event: NSObject, NSCoding {
         aCoder.encode(self.country, forKey: "country")
         aCoder.encode(self.backgroundImage, forKey: "bgimage")
         aCoder.encode(self.eventID, forKey: "eventID")
+        aCoder.encode(self.tasks, forKey: "tasks")
     }
     
     public static func ==(lhs: Event, rhs: Event) -> Bool {
