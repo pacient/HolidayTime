@@ -91,9 +91,9 @@ class BackgroundSelectorViewController: UIViewController, UIImagePickerControlle
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        picker.dismiss(animated: true, completion: nil)
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             finishEvent(with: image)
         }
-        picker.dismiss(animated: true, completion: nil)
     }
 }
