@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BackgroundSelectorViewController: UIViewController {
+class BackgroundSelectorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     private var gradientLayer = RadialGradientLayer()
     
     @IBOutlet weak var firstImageView: UIImageView!
@@ -52,22 +52,26 @@ class BackgroundSelectorViewController: UIViewController {
 
     func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         if let tappedImageView = tapGestureRecognizer.view as? UIImageView {
-            EventResourceManager.instance().eventImage = tappedImageView.image
-            if isEventEditing {
-                EventResourceManager.instance().updateEvent()
-                NotificationCenter.default.post(name: Notf.updateView, object: nil)
-            }else {
-                EventResourceManager.instance().createEvent()
-            }
-            NotificationCenter.default.post(name: Notf.updateEvents, object: nil)
-            var controllers = self.navigationController?.viewControllers
-            for controller in controllers! {
-                if controller.isKind(of: EventCreatorViewController.self) || controller.isKind(of: BackgroundSelectorViewController.self) {
-                    controllers?.removeObject(controller)
-                }
-            }
-            self.navigationController?.setViewControllers(controllers!, animated: true)
+            finishEvent(with: tappedImageView.image!)
         }
+    }
+    
+    func finishEvent(with image: UIImage) {
+        EventResourceManager.instance().eventImage = image
+        if isEventEditing {
+            EventResourceManager.instance().updateEvent()
+            NotificationCenter.default.post(name: Notf.updateView, object: nil)
+        }else {
+            EventResourceManager.instance().createEvent()
+        }
+        NotificationCenter.default.post(name: Notf.updateEvents, object: nil)
+        var controllers = self.navigationController?.viewControllers
+        for controller in controllers! {
+            if controller.isKind(of: EventCreatorViewController.self) || controller.isKind(of: BackgroundSelectorViewController.self) {
+                controllers?.removeObject(controller)
+            }
+        }
+        self.navigationController?.setViewControllers(controllers!, animated: true)
     }
     
     @IBAction func backPressed(_ sender: Any) {
@@ -75,6 +79,21 @@ class BackgroundSelectorViewController: UIViewController {
     }
     
     @IBAction func selectImagePressed(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = false
+        self.present(imagePicker, animated: true, completion: nil)
     }
-
+    //MARK: Image Picker Delegate
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            finishEvent(with: image)
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
 }

@@ -36,8 +36,10 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
         dateTextField.delegate = self
         navBar.setBackgroundImage(#imageLiteral(resourceName: "transparent"), for: .default)
         navBar.shadowImage = #imageLiteral(resourceName: "transparent")
-        
         navBar.topItem?.title = viewTitle
+        if !isEventEditing {
+            navBar.topItem?.rightBarButtonItem = nil
+        }
         if let event = event {
             self.nameTextField.text = event.name
             self.cityTextField.text = event.city
@@ -46,7 +48,7 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
             dateFormatter.dateFormat = "MMM dd, yyyy"
             let dateText = dateFormatter.string(from: event.date)
             self.dateTextField.text = dateText
-            EventResourceManager.instance().setupValues(data: ["eventID" : event.eventID])
+            EventResourceManager.instance().setupValues(with: event)
         }
     }
     
@@ -85,48 +87,70 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
         }
     }
     
-    //MARK: Button Actions
-    
-    @IBAction func backPressed(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    @IBAction func donePressed(_ sender: Any) {
+    func verifyTextFields() -> Bool {
         nameErrorLabel.isHidden = true
         countryErrorLabel.isHidden = true
         dateErrorLabel.isHidden = true
-        //TODO: Guard every textfield is filled up
         guard nameTextField.text != "" else {
             nameErrorLabel.isHidden = false
-            return
+            return false
         }
         guard countryTextField.text != "" else {
             countryErrorLabel.isHidden = false
-            return
+            return false
         }
         guard dateTextField.text != "" else {
             dateErrorLabel.isHidden = false
-            return
+            return false
         }
-        
+        return true
+    }
+    
+    func getValidDate() -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM dd, yyyy"
         let date = dateFormatter.date(from: dateTextField.text!)
         if date == nil {
-            //handle wrong date entered here
             dateErrorLabel.text = "This is not a valid date"
             dateErrorLabel.isHidden = false
-            return
+            return nil
         }else if date! < Date() {
             dateErrorLabel.text = "This is not a future date"
             dateErrorLabel.isHidden = false
-            return
+            return nil
         }
-        
+        return date
+    }
+    //MARK: Button Actions
+    @IBAction func backPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func doneBarButtonPressed(_ sender: Any) {
+        guard verifyTextFields() == true else {return}
+        guard let date = getValidDate() else {return}
+        let tasks = event!.tasks
         let eventDict: [String : Any] = ["name" : nameTextField.text!,
                          "city" : cityTextField.text!,
                          "country" : countryTextField.text!,
-                         "date" : date!]
+                         "date" : date,
+                         "tasks" : tasks,
+                         "bgimage" : event!.backgroundImage]
+        
+        EventResourceManager.instance().setupValues(data: eventDict)
+        EventResourceManager.instance().updateEvent()
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func donePressed(_ sender: Any) {
+        guard verifyTextFields() == true else {return}
+        guard let date = getValidDate() else {return}
+        let tasks = event != nil ? event!.tasks : [ChecklistTask]()
+        let eventDict: [String : Any] = ["name" : nameTextField.text!,
+                         "city" : cityTextField.text!,
+                         "country" : countryTextField.text!,
+                         "date" : date,
+                         "tasks" : tasks]
         
         EventResourceManager.instance().setupValues(data: eventDict)
         

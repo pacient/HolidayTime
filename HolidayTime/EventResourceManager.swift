@@ -16,7 +16,7 @@ class EventResourceManager: NSObject {
     var eventImage: UIImage?
     var eventDate: Date?
     var eventID: String?
-    var eventTasks: [ChecklistTask]?
+    var eventTasks = [ChecklistTask]()
     
     open class func instance() -> EventResourceManager {
         struct Struc {
@@ -61,7 +61,7 @@ class EventResourceManager: NSObject {
                 ev.country = self.eventCountry!
                 ev.date = self.eventDate!
                 ev.backgroundImage = self.eventImage!
-                ev.tasks = self.eventTasks!
+                ev.tasks = self.eventTasks
             }
         }
         let data = NSKeyedArchiver.archivedData(withRootObject: allEvents)
@@ -94,7 +94,7 @@ class EventResourceManager: NSObject {
         if let name = data["name"] as? String{
             self.eventName = name
         }
-        
+
         if let city = data["city"] as? String {
             self.eventCity = city
         } else {
@@ -115,6 +115,10 @@ class EventResourceManager: NSObject {
         
         if let id = data["eventID"] as? String {
             self.eventID = id
+        }
+        
+        if let tasks = data["tasks"] as? [ChecklistTask] {
+            self.eventTasks = tasks
         }
     }
 }

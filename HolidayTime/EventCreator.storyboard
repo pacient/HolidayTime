@@ -107,10 +107,10 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vR3-Tx-p4g">
-                                <rect key="frame" x="167" y="318" width="42" height="35"/>
+                                <rect key="frame" x="95" y="318" width="186" height="35"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Next"/>
+                                <state key="normal" title="Choose Background"/>
                                 <connections>
                                     <action selector="donePressed:" destination="ix4-Lb-48J" eventType="touchUpInside" id="AcP-9F-Gqn"/>
                                 </connections>
@@ -145,6 +145,12 @@
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="backPressed:" destination="ix4-Lb-48J" id="qsr-z9-2Gq"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="pfx-BY-LdP">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="doneBarButtonPressed:" destination="ix4-Lb-48J" id="WMk-Gc-5Zw"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
