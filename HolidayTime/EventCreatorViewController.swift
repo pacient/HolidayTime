@@ -17,7 +17,7 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var nameErrorLabel: UILabel!
     @IBOutlet weak var countryErrorLabel: UILabel!
     @IBOutlet weak var dateErrorLabel: UILabel!
-    @IBOutlet weak var vcTitle: UILabel!
+    @IBOutlet weak var navBar: UINavigationBar!
     
     var viewTitle: String!
     var isEventEditing = false
@@ -34,8 +34,10 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
         
         countryTextField.inputView = countryPicker
         dateTextField.delegate = self
+        navBar.setBackgroundImage(#imageLiteral(resourceName: "transparent"), for: .default)
+        navBar.shadowImage = #imageLiteral(resourceName: "transparent")
         
-        self.vcTitle.text = viewTitle
+        navBar.topItem?.title = viewTitle
         if let event = event {
             self.nameTextField.text = event.name
             self.cityTextField.text = event.city

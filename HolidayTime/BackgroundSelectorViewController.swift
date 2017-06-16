@@ -18,6 +18,7 @@ class BackgroundSelectorViewController: UIViewController {
     @IBOutlet weak var fifthImageView: UIImageView!
     @IBOutlet weak var sixthImageView: UIImageView!
     @IBOutlet weak var imageSelectorBtn: UIButton!
+    @IBOutlet weak var navBar: UINavigationBar!
     
     var isEventEditing = false
     
@@ -37,6 +38,9 @@ class BackgroundSelectorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navBar.setBackgroundImage(#imageLiteral(resourceName: "transparent"), for: .default)
+        navBar.shadowImage = #imageLiteral(resourceName: "transparent")
+        
         let imgViewArray = [firstImageView,secondImageView,thirdImageView,fourthImageView,fifthImageView,sixthImageView]
         imgViewArray.forEach{$0?.addGestureRecognizer(setTapGestureRecognizer())}
     
@@ -44,7 +48,6 @@ class BackgroundSelectorViewController: UIViewController {
     
     func setTapGestureRecognizer() -> UITapGestureRecognizer {
         return UITapGestureRecognizer(target: self, action: #selector(self.imageTapped(tapGestureRecognizer:)))
-        
     }
 
     func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
