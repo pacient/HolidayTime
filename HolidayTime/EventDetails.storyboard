@@ -43,7 +43,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbJ-YO-6lQ">
-                                        <rect key="frame" x="233" y="61" width="14" height="20"/>
+                                        <rect key="frame" x="225.5" y="61" width="14" height="20"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -55,7 +55,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="365" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAX-Np-cjp">
-                                        <rect key="frame" x="247" y="39" width="67" height="47"/>
+                                        <rect key="frame" x="243.5" y="39" width="67" height="47"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -83,7 +83,7 @@
                                 <color key="backgroundColor" red="0.094117647058823528" green="0.58039215686274503" blue="0.61568627450980395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="cbJ-YO-6lQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Yht-pn-IQs" secondAttribute="trailing" constant="4" id="0hL-Ub-LcS"/>
-                                    <constraint firstItem="RmC-TU-FlP" firstAttribute="leading" secondItem="tAX-Np-cjp" secondAttribute="trailing" id="25P-Sv-3AM"/>
+                                    <constraint firstItem="RmC-TU-FlP" firstAttribute="leading" secondItem="tAX-Np-cjp" secondAttribute="trailing" constant="4" id="25P-Sv-3AM"/>
                                     <constraint firstItem="cbJ-YO-6lQ" firstAttribute="bottom" secondItem="tAX-Np-cjp" secondAttribute="bottom" constant="-5" id="9l0-Mv-h0n"/>
                                     <constraint firstItem="Yht-pn-IQs" firstAttribute="leading" secondItem="Ocu-Jg-ka6" secondAttribute="trailing" constant="8" id="DiJ-Yp-fwY"/>
                                     <constraint firstItem="lUe-ye-Ufj" firstAttribute="centerY" secondItem="Ocu-Jg-ka6" secondAttribute="centerY" id="M9N-4T-yeN"/>
@@ -97,7 +97,7 @@
                                     <constraint firstItem="TWl-VC-8da" firstAttribute="top" secondItem="GOx-ec-X4g" secondAttribute="top" constant="8" id="heu-cZ-eoG"/>
                                     <constraint firstItem="lUe-ye-Ufj" firstAttribute="leading" secondItem="GOx-ec-X4g" secondAttribute="leading" constant="8" id="kFR-3G-iZV"/>
                                     <constraint firstAttribute="trailing" secondItem="TWl-VC-8da" secondAttribute="trailing" constant="8" id="mUo-Tb-j1w"/>
-                                    <constraint firstItem="tAX-Np-cjp" firstAttribute="leading" secondItem="cbJ-YO-6lQ" secondAttribute="trailing" id="pXk-xk-vm4"/>
+                                    <constraint firstItem="tAX-Np-cjp" firstAttribute="leading" secondItem="cbJ-YO-6lQ" secondAttribute="trailing" constant="4" id="pXk-xk-vm4"/>
                                     <constraint firstItem="tAX-Np-cjp" firstAttribute="top" secondItem="TWl-VC-8da" secondAttribute="bottom" constant="8" id="prH-fO-JEO"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
