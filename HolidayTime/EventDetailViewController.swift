@@ -18,6 +18,7 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var eventCardView: UIView!
     @IBOutlet weak var eventCityLabel: UILabel!
     @IBOutlet weak var eventWeatherImgView: UIImageView!
+    @IBOutlet weak var daysWordLabel: UILabel!
     
     var event: Event!
     var cardColour: UIColor!
@@ -33,7 +34,8 @@ class EventDetailViewController: UIViewController {
         eventCardView.backgroundColor = cardColour
         eventNameLabel.text = event.name
         eventCityLabel.text = event.city
-        eventDaysLabel.text = getRemainingDays(forDate: event.date)
+        eventDaysLabel.text = event.date.getRemainingDays()
+        daysWordLabel.text = eventDaysLabel.text == "1" ? "day" : "days"
         UIView.transition(with: self.eventImageView, duration: 0.3, options: .transitionCrossDissolve, animations: {
             self.eventImageView.image = self.event.backgroundImage
         }, completion: nil)
@@ -65,15 +67,6 @@ class EventDetailViewController: UIViewController {
             self.eventProgressView.setProgress(Float(percent/100), animated: true)
             print(self.eventProgressView.progress)
         }
-    }
-
-    func getRemainingDays(forDate: Date) -> String {
-        let calendar = Calendar.current
-        
-        let today = calendar.date(bySettingHour: 12, minute: 00, second: 00, of: Date())!
-        
-        let components = calendar.dateComponents([.day], from: today, to: forDate)
-        return "\(components.day ?? 0)"
     }
     
     @IBAction func unwindFromChecklist(_ sender: UIStoryboardSegue) {

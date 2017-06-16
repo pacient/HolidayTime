@@ -43,16 +43,6 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         self.tableview.reloadData()
     }
     
-    //TODO: This are to go to a view model for the event
-    func getRemainingDays(forDate: Date) -> String {
-        let calendar = Calendar.current
-        
-        let today = calendar.date(bySettingHour: 12, minute: 00, second: 00, of: Date())!
-        
-        let components = calendar.dateComponents([.day], from: today, to: forDate)
-        return "\(components.day ?? 0)"
-    }
-    
     func colourFor(row: Int) -> UIColor {
         if row % 3 == 0 { return UIColor.CustomColors.blueCell }
         if row % 2 == 0 { return UIColor.CustomColors.greenCell }
@@ -99,9 +89,10 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell") as! EventCell
         cell.isHidden = isAnimating
         cell.eventName.text = events[indexPath.row].name
-        cell.eventDays.text = getRemainingDays(forDate: events[indexPath.row].date)
+        cell.eventDays.text = events[indexPath.row].date.getRemainingDays()
         cell.eventCard.backgroundColor = colourFor(row: indexPath.row)
         cell.eventCity.text = events[indexPath.row].city
+        cell.daysWordLabel.text = cell.eventDays.text == "1" ? "day" : "days"
         return cell
     }
     

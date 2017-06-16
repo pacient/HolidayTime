@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct ChecklistTask: Codable, Equatable {
-    enum TaskStatus: Int, Codable {
+class ChecklistTask: NSObject, NSCoding {
+    enum TaskStatus: Int {
         case done
         case todo
     }
@@ -21,6 +21,21 @@ struct ChecklistTask: Codable, Equatable {
         self.title = title
         self.status = status
         self.id = id
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        let title = aDecoder.decodeObject(forKey: "taskTitle") as! String
+        let id = aDecoder.decodeObject(forKey: "taskID") as! String
+        let statusRawValue = aDecoder.decodeInteger(forKey: "taskStatus")
+        let status = TaskStatus(rawValue: statusRawValue)!
+        self.init(title: title, status: status, id: id)
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.title, forKey: "taskTitle")
+        let statusRawValue = self.status.rawValue
+        aCoder.encode(statusRawValue, forKey: "taskStatus")
+        aCoder.encode(self.id, forKey: "taskID")
     }
     
     public static func ==(lhs: ChecklistTask, rhs: ChecklistTask) -> Bool {

@@ -21,6 +21,7 @@ class TaskCell: UITableViewCell {
                 selectedCellImageView.image = #imageLiteral(resourceName: "selectedTask")
             case .todo:
                 selectedCellImageView.image = #imageLiteral(resourceName: "unselectedTask")
+            default:break
             }
         }
     }

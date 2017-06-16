@@ -176,6 +176,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="daysWordLabel" destination="RmC-TU-FlP" id="SFl-18-GqP"/>
                         <outlet property="eventCardView" destination="GOx-ec-X4g" id="nDn-gP-zdh"/>
                         <outlet property="eventCityLabel" destination="lUe-ye-Ufj" id="3VJ-Vb-0qO"/>
                         <outlet property="eventDaysLabel" destination="tAX-Np-cjp" id="wAS-LG-Arm"/>

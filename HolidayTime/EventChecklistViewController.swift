@@ -16,30 +16,28 @@ class EventChecklistViewController: UIViewController, UITableViewDelegate, UITab
     
     var event: Event!
     var tasks: [ChecklistTask] {
-        get {
-            return event.tasks
-        }
-        set {
-            event.tasks = newValue
-        }
+        get { return event.tasks }
+        set { event.tasks = newValue }
     }
+    var todoTasks: [ChecklistTask] { return tasks.reversed().filter{$0.status == .todo} }
+    var doneTasks: [ChecklistTask] { return tasks.reversed().filter{$0.status == .done} }
     
-    var todoTasks: [ChecklistTask] {
-       return tasks.reversed().filter{$0.status == .todo}
-    }
-    var doneTasks: [ChecklistTask] {
-        return tasks.reversed().filter{$0.status == .done}
-    }
-    
+    //MARK: VC Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.setBackgroundImage(#imageLiteral(resourceName: "transparent"), for: .default)
         navBar.shadowImage = #imageLiteral(resourceName: "transparent")
-        taskTextField.attributedPlaceholder = NSAttributedString(string: "Enter Text Here", attributes: [NSForegroundColorAttributeName : UIColor.lightGray])
+        taskTextField.attributedPlaceholder = NSAttributedString(string: "Enter Text Here", attributes: [NSForegroundColorAttributeName : UIColor(white: 0.9, alpha: 1)])
         taskTextField.delegate = self
     }
     
+    override func viewWillLayoutSubviews() {
+        taskTextField.layer.borderColor = UIColor.white.cgColor
+        taskTextField.layer.borderWidth = 1.0
+        taskTextField.layer.cornerRadius = 0
+    }
     
+    //MARK: IBActions
     @IBAction func donePressed(_ sender: Any) {
         performSegue(withIdentifier: "unwindChecklist", sender: self)
     }
@@ -81,6 +79,7 @@ class EventChecklistViewController: UIViewController, UITableViewDelegate, UITab
             case .todo:
                 self.tasks[taskIndex].status = .done
                 cell.task = self.tasks[taskIndex]
+            default:break
             }
             tableView.reloadSections([0,1], with: .automatic)
         }
@@ -127,6 +126,7 @@ class EventChecklistViewController: UIViewController, UITableViewDelegate, UITab
         tasks.append(newTask)
         let indexPath = IndexPath(row: 0, section: 0)
         tableview.insertRows(at: [indexPath], with: .top)
+        textField.text = ""
         return true
     }
     

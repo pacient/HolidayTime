@@ -74,7 +74,7 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField.tag == 1 {
             let datePick = UIDatePicker()
-            datePick.date = dateTextField!.text != "" ? event!.date : Date()
+            datePick.date = isEventEditing ? event!.date : Date()
             datePick.datePickerMode = .date
             datePick.backgroundColor = .white
             datePick.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: .valueChanged)

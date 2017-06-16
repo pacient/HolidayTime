@@ -18,7 +18,7 @@ class RadialGradientLayer: CALayer {
         return (bounds.width + bounds.height)/2
     }
     
-    var colors: [UIColor] = [UIColor(red:0.71, green:0.70, blue:0.45, alpha:1.0), UIColor(red:0.40, green:0.39, blue:0.20, alpha:1.0)] {
+    var colors: [UIColor] = [UIColor(red:0.00, green:0.54, blue:0.69, alpha:1.0), UIColor(red:0.13, green:0.33, blue:0.59, alpha:1.0)] {
         didSet {
             setNeedsDisplay()
         }
