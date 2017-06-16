@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class EventTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate {
+class EventTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, GADAdLoaderDelegate {
 
+    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var tableview: UITableView!
     var events = EventResourceManager.instance().allEvents()
     let transitionAnimator = EventTransitionAnimator()
@@ -21,6 +23,8 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         navigationController?.delegate = self
         events = EventResourceManager.instance().allEvents()
+        
+        loadAd()
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadEvents), name: Notf.updateEvents, object: nil)
     }
@@ -43,13 +47,22 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         self.tableview.reloadData()
     }
     
+    fileprivate func loadAd() {
+        bannerView.adSize = kGADAdSizeSmartBannerPortrait
+        bannerView.adUnitID = Const.banner_adunit
+        bannerView.rootViewController = self
+        let request = GADRequest()
+        request.testDevices = [kGADSimulatorID]
+        bannerView.load(request)
+    }
+    
     func colourFor(row: Int) -> UIColor {
         if row % 3 == 0 { return UIColor.CustomColors.blueCell }
         if row % 2 == 0 { return UIColor.CustomColors.greenCell }
         return UIColor.CustomColors.brownCell
     }
     
-    //Button Actions
+    //MARK: Button Actions
     @IBAction func addEventPressed(_ sender: Any) {
         let vc = UIStoryboard(name: "EventCreator", bundle: nil).instantiateInitialViewController() as! EventCreatorViewController
         vc.viewTitle = "Create Event"
@@ -127,5 +140,11 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
             tableView.reloadData()
         }
         return [action]
+    }
+    
+    //MARK: Ad delegate
+    func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: GADRequestError) {
+        print(error)
+        bannerView.isHidden = true
     }
 }

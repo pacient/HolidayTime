@@ -1,0 +1,6 @@
+framework module Pods_HolidayTime {
+  umbrella header "Pods-HolidayTime-umbrella.h"
+
+  export *
+  module * { export * }
+}

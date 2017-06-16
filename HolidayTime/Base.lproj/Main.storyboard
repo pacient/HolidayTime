@@ -34,7 +34,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="124" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tEC-lv-8ag">
-                                <rect key="frame" x="0.0" y="78" width="375" height="589"/>
+                                <rect key="frame" x="0.0" y="78" width="375" height="539"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -151,6 +151,13 @@
                                     <action selector="addEventPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dcd-u5-6eR"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LfQ-tI-IHL" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.5194777397260274" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6ZL-0I-b8c"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -159,15 +166,19 @@
                             <constraint firstAttribute="trailing" secondItem="hxQ-bX-Yjz" secondAttribute="trailing" id="Ala-4E-tRG"/>
                             <constraint firstItem="tEC-lv-8ag" firstAttribute="top" secondItem="SDB-cS-MF6" secondAttribute="bottom" constant="8" id="TRL-nz-fsB"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hxQ-bX-Yjz" secondAttribute="bottom" id="Tna-4s-6Cj"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tEC-lv-8ag" secondAttribute="bottom" id="To3-ex-O80"/>
                             <constraint firstItem="SDB-cS-MF6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="28" id="Wj0-CR-H8D"/>
                             <constraint firstItem="SDB-cS-MF6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Wmm-81-HbL"/>
+                            <constraint firstAttribute="trailing" secondItem="LfQ-tI-IHL" secondAttribute="trailing" id="Z6d-Jh-Egz"/>
                             <constraint firstItem="hxQ-bX-Yjz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="crv-2q-hTj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LfQ-tI-IHL" secondAttribute="bottom" id="lE5-bI-wum"/>
                             <constraint firstAttribute="trailing" secondItem="tEC-lv-8ag" secondAttribute="trailing" id="mWp-9M-iaO"/>
+                            <constraint firstItem="LfQ-tI-IHL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tpg-pL-9Gc"/>
+                            <constraint firstItem="LfQ-tI-IHL" firstAttribute="top" secondItem="tEC-lv-8ag" secondAttribute="bottom" id="wR4-Cy-bCX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZV3-cI-nkS"/>
                     <connections>
+                        <outlet property="bannerView" destination="LfQ-tI-IHL" id="RgH-nO-S3X"/>
                         <outlet property="tableview" destination="tEC-lv-8ag" id="7Jh-g4-qyd"/>
                     </connections>
                 </viewController>

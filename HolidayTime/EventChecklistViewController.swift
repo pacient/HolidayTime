@@ -63,6 +63,7 @@ class EventChecklistViewController: UIViewController, UITableViewDelegate, UITab
             cell.task = todoTasks[indexPath.row]
         case 1://Done Tasks
             cell.task = doneTasks[indexPath.row]
+        default:break
         }
         return cell
     }
