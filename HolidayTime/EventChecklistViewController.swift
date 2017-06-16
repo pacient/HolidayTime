@@ -63,7 +63,6 @@ class EventChecklistViewController: UIViewController, UITableViewDelegate, UITab
             cell.task = todoTasks[indexPath.row]
         case 1://Done Tasks
             cell.task = doneTasks[indexPath.row]
-        default:break
         }
         return cell
     }
@@ -79,7 +78,6 @@ class EventChecklistViewController: UIViewController, UITableViewDelegate, UITab
             case .todo:
                 self.tasks[taskIndex].status = .done
                 cell.task = self.tasks[taskIndex]
-            default:break
             }
             tableView.reloadSections([0,1], with: .automatic)
         }

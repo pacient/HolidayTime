@@ -18,10 +18,9 @@ class TaskCell: UITableViewCell {
             taskTitle.text = task.title
             switch task.status {
             case .done:
-                selectedCellImageView.image = #imageLiteral(resourceName: "selectedTask")
+                selectedCellImageView.image = #imageLiteral(resourceName: "Path 2")
             case .todo:
                 selectedCellImageView.image = #imageLiteral(resourceName: "unselectedTask")
-            default:break
             }
         }
     }
