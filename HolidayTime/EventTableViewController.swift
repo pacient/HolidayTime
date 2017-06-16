@@ -24,7 +24,7 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         navigationController?.delegate = self
         events = EventResourceManager.instance().allEvents()
         
-        loadAd()
+        ReusableManager.instance().loadAd(bannerView: bannerView, viewController: self)
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadEvents), name: Notf.updateEvents, object: nil)
     }
@@ -45,15 +45,6 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
     func reloadEvents() {
         events = EventResourceManager.instance().allEvents()
         self.tableview.reloadData()
-    }
-    
-    fileprivate func loadAd() {
-        bannerView.adSize = kGADAdSizeSmartBannerPortrait
-        bannerView.adUnitID = Const.banner_adunit
-        bannerView.rootViewController = self
-        let request = GADRequest()
-        request.testDevices = [kGADSimulatorID]
-        bannerView.load(request)
     }
     
     func colourFor(row: Int) -> UIColor {

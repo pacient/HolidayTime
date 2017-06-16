@@ -148,10 +148,18 @@
                                     <action selector="checkButtonPressed:" destination="ohm-LB-JNo" eventType="touchUpInside" id="vzn-df-1UZ"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BVH-dJ-j1W" customClass="GADBannerView">
+                                <rect key="frame" x="-4" y="617" width="383" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="aj8-kg-hAm"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="yyN-Tg-Sl5" firstAttribute="leading" secondItem="GOx-ec-X4g" secondAttribute="leading" id="0d0-97-S8S"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BVH-dJ-j1W" secondAttribute="trailing" constant="-20" id="5L2-v2-svZ"/>
                             <constraint firstItem="aAL-EX-yuM" firstAttribute="centerY" secondItem="dRU-4y-GQI" secondAttribute="centerY" id="98j-3t-BEc"/>
                             <constraint firstItem="yyN-Tg-Sl5" firstAttribute="trailing" secondItem="GOx-ec-X4g" secondAttribute="trailing" id="Afa-hg-ud9"/>
                             <constraint firstItem="fXS-J8-B0h" firstAttribute="height" secondItem="aAL-EX-yuM" secondAttribute="height" id="Awj-BN-b6D"/>
@@ -166,6 +174,7 @@
                             <constraint firstItem="6vw-SD-b2b" firstAttribute="centerY" secondItem="fXS-J8-B0h" secondAttribute="centerY" id="Y86-ud-1w3"/>
                             <constraint firstItem="dRU-4y-GQI" firstAttribute="leading" secondItem="usW-AY-btE" secondAttribute="leadingMargin" id="c2a-I8-a0V"/>
                             <constraint firstAttribute="trailing" secondItem="r2W-dd-BIw" secondAttribute="trailing" id="dKa-47-iy6"/>
+                            <constraint firstItem="FwS-qo-ov9" firstAttribute="top" secondItem="BVH-dJ-j1W" secondAttribute="bottom" id="jUu-rR-duN"/>
                             <constraint firstAttribute="trailing" secondItem="GOx-ec-X4g" secondAttribute="trailing" constant="8" id="pIw-US-FOT"/>
                             <constraint firstItem="dRU-4y-GQI" firstAttribute="top" secondItem="usW-AY-btE" secondAttribute="topMargin" constant="20" id="pNe-cv-tRl"/>
                             <constraint firstItem="FwS-qo-ov9" firstAttribute="top" secondItem="r2W-dd-BIw" secondAttribute="bottom" id="sO6-xS-W1z"/>
@@ -173,9 +182,11 @@
                             <constraint firstItem="fXS-J8-B0h" firstAttribute="leading" secondItem="6vw-SD-b2b" secondAttribute="trailing" constant="8" id="szX-6O-Gw1"/>
                             <constraint firstItem="r2W-dd-BIw" firstAttribute="top" secondItem="usW-AY-btE" secondAttribute="top" id="w8Y-ku-Nne"/>
                             <constraint firstItem="aAL-EX-yuM" firstAttribute="leading" secondItem="dRU-4y-GQI" secondAttribute="trailing" constant="7" id="wAb-63-8QC"/>
+                            <constraint firstItem="BVH-dJ-j1W" firstAttribute="leading" secondItem="usW-AY-btE" secondAttribute="leadingMargin" constant="-20" id="x0Q-Kh-BgX"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="BVH-dJ-j1W" id="8i6-Tp-NNT"/>
                         <outlet property="daysWordLabel" destination="RmC-TU-FlP" id="SFl-18-GqP"/>
                         <outlet property="eventCardView" destination="GOx-ec-X4g" id="nDn-gP-zdh"/>
                         <outlet property="eventCityLabel" destination="lUe-ye-Ufj" id="3VJ-Vb-0qO"/>

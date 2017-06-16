@@ -21,6 +21,7 @@
 		3861E0671ED982290037F8C8 /* RadialGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861E0661ED982290037F8C8 /* RadialGradientLayer.swift */; };
 		387A91F11EDB245C00CE55BA /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387A91F01EDB245C00CE55BA /* EventDetailViewController.swift */; };
 		387D0DEA1EE2B7FA00AC2D4B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D0DE91EE2B7FA00AC2D4B /* UIColor.swift */; };
+		3885385F1EF41CAA0026FBC5 /* ReusableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3885385E1EF41CAA0026FBC5 /* ReusableManager.swift */; };
 		388566971EF3ED5B00A7C215 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388566961EF3ED5B00A7C215 /* Date.swift */; };
 		38942D5D1EF18C030002A2E3 /* EventChecklist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38942D5C1EF18C030002A2E3 /* EventChecklist.storyboard */; };
 		38942D601EF194510002A2E3 /* EventChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38942D5F1EF194510002A2E3 /* EventChecklistViewController.swift */; };
@@ -73,6 +74,7 @@
 		3861E0661ED982290037F8C8 /* RadialGradientLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadialGradientLayer.swift; sourceTree = "<group>"; };
 		387A91F01EDB245C00CE55BA /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		387D0DE91EE2B7FA00AC2D4B /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		3885385E1EF41CAA0026FBC5 /* ReusableManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableManager.swift; sourceTree = "<group>"; };
 		388566961EF3ED5B00A7C215 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		38942D5C1EF18C030002A2E3 /* EventChecklist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventChecklist.storyboard; sourceTree = "<group>"; };
 		38942D5F1EF194510002A2E3 /* EventChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventChecklistViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				3861E0661ED982290037F8C8 /* RadialGradientLayer.swift */,
 				38CCCCC71ED9CB9D00277BB9 /* PickerDataResources.swift */,
 				3814E2211EE301E800C5FB0D /* Notf.swift */,
+				3885385E1EF41CAA0026FBC5 /* ReusableManager.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 			files = (
 				3819D08A1EF2C7A900BFED42 /* String.swift in Sources */,
 				3861E05C1ED976EF0037F8C8 /* EventResourceManager.swift in Sources */,
+				3885385F1EF41CAA0026FBC5 /* ReusableManager.swift in Sources */,
 				387D0DEA1EE2B7FA00AC2D4B /* UIColor.swift in Sources */,
 				38CCCCC81ED9CB9D00277BB9 /* PickerDataResources.swift in Sources */,
 				3861E0571ED96A7F0037F8C8 /* EventTransitionAnimator.swift in Sources */,

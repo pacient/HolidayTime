@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class EventDetailViewController: UIViewController {
 
@@ -19,6 +20,7 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var eventCityLabel: UILabel!
     @IBOutlet weak var eventWeatherImgView: UIImageView!
     @IBOutlet weak var daysWordLabel: UILabel!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     var event: Event!
     var cardColour: UIColor!
@@ -56,6 +58,7 @@ class EventDetailViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         updateView()
+        ReusableManager.instance().loadAd(bannerView: bannerView, viewController: self)
     }
     
     func getProgress() {
