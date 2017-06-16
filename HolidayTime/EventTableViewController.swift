@@ -24,7 +24,7 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         navigationController?.delegate = self
         events = EventResourceManager.instance().allEvents()
         
-        ReusableManager.instance().loadAd(bannerView: bannerView, viewController: self)
+        self.loadBannerAd(to: bannerView)
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadEvents), name: Notf.updateEvents, object: nil)
     }

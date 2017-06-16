@@ -58,7 +58,7 @@ class EventDetailViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         updateView()
-        ReusableManager.instance().loadAd(bannerView: bannerView, viewController: self)
+        self.loadBannerAd(to: bannerView)
     }
     
     func getProgress() {

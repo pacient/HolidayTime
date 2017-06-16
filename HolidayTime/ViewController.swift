@@ -1,5 +1,5 @@
 //
-//  ReusableManager.swift
+//  ViewController.swift
 //  HolidayTime
 //
 //  Created by Vasil Nunev on 16/06/2017.
@@ -9,18 +9,11 @@
 import Foundation
 import GoogleMobileAds
 
-class ReusableManager: NSObject {
-    open class func instance() -> ReusableManager {
-        struct Struc {
-            static let instance = ReusableManager()
-        }
-        return Struc.instance
-    }
-    
-    func loadAd(bannerView: GADBannerView, viewController: UIViewController) {
+extension UIViewController {
+    func loadBannerAd(to bannerView: GADBannerView) {
         bannerView.adSize = kGADAdSizeSmartBannerPortrait
         bannerView.adUnitID = Const.banner_adunit
-        bannerView.rootViewController = viewController
+        bannerView.rootViewController = self
         let request = GADRequest()
         request.testDevices = [kGADSimulatorID]
         bannerView.load(request)
