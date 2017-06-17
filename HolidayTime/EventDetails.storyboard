@@ -30,7 +30,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="summer" translatesAutoresizingMaskIntoConstraints="NO" id="r2W-dd-BIw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ishan-seefromthesky-193036" translatesAutoresizingMaskIntoConstraints="NO" id="r2W-dd-BIw">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GOx-ec-X4g">
@@ -166,6 +166,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="summer" width="375" height="667"/>
+        <image name="ishan-seefromthesky-193036" width="375" height="667"/>
     </resources>
 </document>

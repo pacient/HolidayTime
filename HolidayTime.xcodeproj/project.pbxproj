@@ -11,6 +11,7 @@
 		3819D08A1EF2C7A900BFED42 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3819D0891EF2C7A900BFED42 /* String.swift */; };
 		383247521EF28EF700F93633 /* ChecklistTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383247511EF28EF700F93633 /* ChecklistTask.swift */; };
 		383247541EF2956E00F93633 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383247531EF2956E00F93633 /* TaskCell.swift */; };
+		383DA44F1EF5743C00F24365 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383DA44E1EF5743C00F24365 /* WeatherManager.swift */; };
 		3861E0571ED96A7F0037F8C8 /* EventTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861E0561ED96A7F0037F8C8 /* EventTransitionAnimator.swift */; };
 		3861E05A1ED9741E0037F8C8 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861E0591ED9741E0037F8C8 /* EventModel.swift */; };
 		3861E05C1ED976EF0037F8C8 /* EventResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861E05B1ED976EF0037F8C8 /* EventResourceManager.swift */; };
@@ -64,6 +65,7 @@
 		3819D0891EF2C7A900BFED42 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		383247511EF28EF700F93633 /* ChecklistTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistTask.swift; sourceTree = "<group>"; };
 		383247531EF2956E00F93633 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		383DA44E1EF5743C00F24365 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		3861E0561ED96A7F0037F8C8 /* EventTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTransitionAnimator.swift; sourceTree = "<group>"; };
 		3861E0591ED9741E0037F8C8 /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		3861E05B1ED976EF0037F8C8 /* EventResourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventResourceManager.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				3861E0661ED982290037F8C8 /* RadialGradientLayer.swift */,
 				38CCCCC71ED9CB9D00277BB9 /* PickerDataResources.swift */,
 				3814E2211EE301E800C5FB0D /* Notf.swift */,
+				383DA44E1EF5743C00F24365 /* WeatherManager.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				388538611EF41EE50026FBC5 /* ViewController.swift in Sources */,
 				38CCCCC81ED9CB9D00277BB9 /* PickerDataResources.swift in Sources */,
 				3861E0571ED96A7F0037F8C8 /* EventTransitionAnimator.swift in Sources */,
+				383DA44F1EF5743C00F24365 /* WeatherManager.swift in Sources */,
 				387A91F11EDB245C00CE55BA /* EventDetailViewController.swift in Sources */,
 				3814E2221EE301E800C5FB0D /* Notf.swift in Sources */,
 				38DAE6721ED9640200D56225 /* EventCell.swift in Sources */,

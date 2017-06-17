@@ -7,5 +7,6 @@ target 'HolidayTime' do
 
 	pod 'Firebase/Core'
 	pod 'Firebase/AdMob'
-
+	pod 'Alamofire', '~> 4.4'
+	pod 'SwiftyJSON'
 end

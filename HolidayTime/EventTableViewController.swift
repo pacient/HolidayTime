@@ -97,6 +97,13 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.eventCard.backgroundColor = colourFor(row: indexPath.row)
         cell.eventCity.text = events[indexPath.row].city
         cell.daysWordLabel.text = cell.eventDays.text == "1" ? "day" : "days"
+        cell.eventTemperture.isHidden = true
+        WeatherManager.instance().getWeather(forCity: events[indexPath.row].city, country: events[indexPath.row].country) { (weatherResult) in
+            if let weather = weatherResult {
+                cell.eventTemperture.isHidden = false
+                cell.eventTemperture.text = weather["temperture"]
+            }
+        }
         return cell
     }
     
