@@ -217,7 +217,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_6553" translatesAutoresizingMaskIntoConstraints="NO" id="WNg-yT-Kk9">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ishan-seefromthesky-193036" translatesAutoresizingMaskIntoConstraints="NO" id="WNg-yT-Kk9">
                                 <rect key="frame" x="16" y="84" width="103.5" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="NWd-gD-CDS"/>
@@ -247,7 +247,7 @@
                                     <constraint firstAttribute="height" constant="130" id="j9i-Dw-jBs"/>
                                 </constraints>
                             </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brithday" translatesAutoresizingMaskIntoConstraints="NO" id="xIW-Rd-aio">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="birthday" translatesAutoresizingMaskIntoConstraints="NO" id="xIW-Rd-aio">
                                 <rect key="frame" x="135.5" y="222" width="104" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="PvC-pD-k5U"/>
@@ -338,10 +338,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="IMG_6553" width="375" height="667"/>
         <image name="autumn" width="375" height="667"/>
-        <image name="brithday" width="375" height="667"/>
+        <image name="birthday" width="375" height="667"/>
         <image name="concert" width="375" height="667"/>
+        <image name="ishan-seefromthesky-193036" width="375" height="667"/>
         <image name="spring" width="375" height="667"/>
         <image name="winter" width="375" height="667"/>
     </resources>

@@ -7,10 +7,12 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "autumn@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "autumn@3x.png",
       "scale" : "3x"
     }
   ],
