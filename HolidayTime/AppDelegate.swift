@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         FIRApp.configure()
         GADMobileAds.configure(withApplicationID: "ca-app-pub-9037734016404410~5700632488")
         UIApplication.shared.statusBarStyle = .lightContent
