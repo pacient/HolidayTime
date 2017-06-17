@@ -49,11 +49,11 @@ class EventDetailViewController: UIViewController {
     fileprivate func setupBarButtons() {
         navBar.setBackgroundImage(#imageLiteral(resourceName: "transparent"), for: .default)
         navBar.shadowImage = #imageLiteral(resourceName: "transparent")
-        let backItem = getBarButton(image: #imageLiteral(resourceName: "BackButton-1"), action: #selector(backButtonPressed(_:)))
-        let menuItem = getBarButton(image: #imageLiteral(resourceName: "MenuButton-1"), action: #selector(menuButtonPressed(_:)))
+        let backItem = getBarButton(image: #imageLiteral(resourceName: "backButton"), action: #selector(backButtonPressed(_:)))
+        let menuItem = getBarButton(image: #imageLiteral(resourceName: "menuButton"), action: #selector(menuButtonPressed(_:)))
         navBar.topItem?.setLeftBarButtonItems([backItem,menuItem], animated: true)
         
-        let editButton = getBarButton(image: #imageLiteral(resourceName: "editButton"), action: #selector(settingButtonPressed(_:)))
+        let editButton = getBarButton(image: #imageLiteral(resourceName: "pencilButton"), action: #selector(settingButtonPressed(_:)))
         let taskButton = getBarButton(image: #imageLiteral(resourceName: "checklistButton"), action: #selector(checkButtonPressed(_:)))
         navBar.topItem?.setRightBarButtonItems([editButton,taskButton], animated: true)
     }

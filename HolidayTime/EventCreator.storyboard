@@ -157,7 +157,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="0.9529411793" green="0.68627452850000004" blue="0.13333334029999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.32333067705189178" green="0.58589772656676309" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="l1H-Il-fWb" firstAttribute="trailing" secondItem="Ej3-hR-N7u" secondAttribute="trailingMargin" id="00u-xw-Dq5"/>
                             <constraint firstItem="FFR-Nu-njp" firstAttribute="centerY" secondItem="7WI-AX-xcQ" secondAttribute="centerY" id="0NF-vd-cla"/>
@@ -217,38 +217,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="summer" translatesAutoresizingMaskIntoConstraints="NO" id="WNg-yT-Kk9">
-                                <rect key="frame" x="16" y="84" width="100" height="130"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_6553" translatesAutoresizingMaskIntoConstraints="NO" id="WNg-yT-Kk9">
+                                <rect key="frame" x="16" y="84" width="103.5" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="NWd-gD-CDS"/>
                                 </constraints>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="autumn" translatesAutoresizingMaskIntoConstraints="NO" id="kFZ-Jl-W0m">
-                                <rect key="frame" x="259" y="84" width="100" height="130"/>
+                                <rect key="frame" x="255.5" y="84" width="103.5" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="Lgg-Kh-4by"/>
                                 </constraints>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winter" translatesAutoresizingMaskIntoConstraints="NO" id="KQO-2W-MdU">
-                                <rect key="frame" x="137" y="84" width="100" height="130"/>
+                                <rect key="frame" x="135.5" y="84" width="104" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="4Z0-fg-dvp"/>
                                 </constraints>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spring" translatesAutoresizingMaskIntoConstraints="NO" id="k0k-ud-YKb">
-                                <rect key="frame" x="16" y="222" width="100" height="130"/>
+                                <rect key="frame" x="16" y="222" width="103.5" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="PvB-tA-qQY"/>
                                 </constraints>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="concert" translatesAutoresizingMaskIntoConstraints="NO" id="Jxa-wg-8Wc">
-                                <rect key="frame" x="259" y="222" width="100" height="130"/>
+                                <rect key="frame" x="255.5" y="222" width="103.5" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="j9i-Dw-jBs"/>
                                 </constraints>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brithday" translatesAutoresizingMaskIntoConstraints="NO" id="xIW-Rd-aio">
-                                <rect key="frame" x="137" y="222" width="100" height="130"/>
+                                <rect key="frame" x="135.5" y="222" width="104" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="PvC-pD-k5U"/>
                                 </constraints>
@@ -280,7 +280,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Choose a Background" id="0Gb-X9-67L">
-                                        <barButtonItem key="leftBarButtonItem" title="&lt;Back" id="spZ-ru-wh3">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="spZ-ru-wh3">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="backPressed:" destination="eco-PM-M2b" id="tMW-nG-pmn"/>
@@ -290,7 +290,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="0.9529411793" green="0.68627452850000004" blue="0.13333334029999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.26344559252525451" green="0.54611635147854742" blue="0.9529411793" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="WNg-yT-Kk9" firstAttribute="leading" secondItem="bUp-eD-7ZD" secondAttribute="leadingMargin" id="10z-bF-0ed"/>
                             <constraint firstItem="KQO-2W-MdU" firstAttribute="width" secondItem="kFZ-Jl-W0m" secondAttribute="width" id="4eL-nj-pVx"/>
@@ -299,14 +299,14 @@
                             <constraint firstItem="KQO-2W-MdU" firstAttribute="width" secondItem="WNg-yT-Kk9" secondAttribute="width" id="Dac-Fg-KuC"/>
                             <constraint firstItem="KQO-2W-MdU" firstAttribute="centerY" secondItem="WNg-yT-Kk9" secondAttribute="centerY" id="EaG-tt-rVd"/>
                             <constraint firstItem="zYd-nF-6iU" firstAttribute="centerX" secondItem="bUp-eD-7ZD" secondAttribute="centerX" id="FCQ-PS-KJh"/>
-                            <constraint firstItem="xIW-Rd-aio" firstAttribute="leading" secondItem="k0k-ud-YKb" secondAttribute="trailing" constant="21" id="Frl-b1-pes"/>
+                            <constraint firstItem="xIW-Rd-aio" firstAttribute="leading" secondItem="k0k-ud-YKb" secondAttribute="trailing" constant="16" id="Frl-b1-pes"/>
                             <constraint firstItem="zYd-nF-6iU" firstAttribute="top" secondItem="xIW-Rd-aio" secondAttribute="bottom" constant="8" id="G7A-L6-EP8"/>
-                            <constraint firstItem="kFZ-Jl-W0m" firstAttribute="leading" secondItem="KQO-2W-MdU" secondAttribute="trailing" constant="22" id="QfJ-sp-Zzv"/>
+                            <constraint firstItem="kFZ-Jl-W0m" firstAttribute="leading" secondItem="KQO-2W-MdU" secondAttribute="trailing" constant="16" id="QfJ-sp-Zzv"/>
                             <constraint firstItem="xIW-Rd-aio" firstAttribute="centerY" secondItem="Jxa-wg-8Wc" secondAttribute="centerY" id="Saj-6Q-555"/>
                             <constraint firstItem="n1w-mt-7SK" firstAttribute="top" secondItem="zYd-nF-6iU" secondAttribute="bottom" constant="8" id="TUQ-g1-GUO"/>
                             <constraint firstItem="n1w-mt-7SK" firstAttribute="leading" secondItem="bUp-eD-7ZD" secondAttribute="leadingMargin" id="V5Q-bw-NO7"/>
-                            <constraint firstItem="KQO-2W-MdU" firstAttribute="leading" secondItem="WNg-yT-Kk9" secondAttribute="trailing" constant="21" id="V5m-MI-1tc"/>
-                            <constraint firstItem="Jxa-wg-8Wc" firstAttribute="leading" secondItem="xIW-Rd-aio" secondAttribute="trailing" constant="22" id="VZg-ZF-qMY"/>
+                            <constraint firstItem="KQO-2W-MdU" firstAttribute="leading" secondItem="WNg-yT-Kk9" secondAttribute="trailing" constant="16" id="V5m-MI-1tc"/>
+                            <constraint firstItem="Jxa-wg-8Wc" firstAttribute="leading" secondItem="xIW-Rd-aio" secondAttribute="trailing" constant="16" id="VZg-ZF-qMY"/>
                             <constraint firstAttribute="leadingMargin" secondItem="k0k-ud-YKb" secondAttribute="leading" id="Xg0-cu-ybe"/>
                             <constraint firstItem="n1w-mt-7SK" firstAttribute="trailing" secondItem="bUp-eD-7ZD" secondAttribute="trailingMargin" id="dBa-3t-JsU"/>
                             <constraint firstItem="oLA-06-vfL" firstAttribute="top" secondItem="E5s-JZ-rxd" secondAttribute="bottom" id="dYB-7O-4f3"/>
@@ -338,11 +338,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="IMG_6553" width="375" height="667"/>
         <image name="autumn" width="375" height="667"/>
         <image name="brithday" width="375" height="667"/>
         <image name="concert" width="375" height="667"/>
         <image name="spring" width="375" height="667"/>
-        <image name="summer" width="375" height="667"/>
         <image name="winter" width="375" height="667"/>
     </resources>
 </document>
