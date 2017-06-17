@@ -74,7 +74,7 @@ class EventResourceManager: NSObject {
                          "city" : self.eventCity!,
                          "country" : self.eventCountry!,
                          "date" : self.eventDate!,
-                         "bgimage" : self.eventImage!,
+                         "bgimage" : UIImagePNGRepresentation(self.eventImage!)!,
                          "eventID" : String.getRandomID()] as [String : Any]
         let event = Event(data: eventDict)
         self.add(event: event)

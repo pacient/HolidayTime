@@ -10,20 +10,25 @@ import UIKit
 
 class Event: NSObject, NSCoding {
     
-    var name: String
-    var date: Date
-    var city: String
-    var country: String
-    var backgroundImage: UIImage
-    var eventID: String
-    var tasks: [ChecklistTask]
+    var name: String!
+    var date: Date!
+    var city: String!
+    var country: String!
+    var backgroundImage: UIImage!
+    var eventID: String!
+    var tasks: [ChecklistTask]!
     
-    init(data: [String : Any]) {
+    override init() {
+    }
+    
+    convenience init(data: [String : Any]) {
+        self.init()
         self.name = data["name"] as! String
         self.date = data["date"] as! Date
         self.city = data["city"] as! String
         self.country = data["country"] as! String
-        self.backgroundImage = data["bgimage"] as! UIImage
+        let imageData = data["bgimage"] as! Data
+        self.backgroundImage = UIImage(data: imageData)
         self.eventID = data["eventID"] as! String
         if let tasks = data["tasks"] as? [ChecklistTask]{
             self.tasks = tasks
@@ -33,21 +38,15 @@ class Event: NSObject, NSCoding {
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        let name = aDecoder.decodeObject(forKey: "name") as! String
-        let date = aDecoder.decodeObject(forKey: "date") as! Date
-        let city = aDecoder.decodeObject(forKey: "city") as! String
-        let country = aDecoder.decodeObject(forKey: "country") as! String
-        let bgimage = aDecoder.decodeObject(forKey: "bgimage") as! UIImage
-        let eventID = aDecoder.decodeObject(forKey: "eventID") as!  String
-        let tasks = aDecoder.decodeObject(forKey: "tasks") as! [ChecklistTask]
-        let data: [String : Any] = ["name" : name,
-                                          "date" : date,
-                                          "city" : city,
-                                          "country" : country,
-                                          "bgimage" : bgimage,
-                                          "eventID" : eventID,
-                                          "tasks" : tasks]
-        self.init(data: data)
+        self.init()
+        self.name = aDecoder.decodeObject(forKey: "name") as! String
+        self.date = aDecoder.decodeObject(forKey: "date") as! Date
+        self.city = aDecoder.decodeObject(forKey: "city") as! String
+        self.country = aDecoder.decodeObject(forKey: "country") as! String
+        let bgimageData = aDecoder.decodeObject(forKey: "bgimage") as! Data
+        self.backgroundImage = UIImage(data: bgimageData)!
+        self.eventID = aDecoder.decodeObject(forKey: "eventID") as!  String
+        self.tasks = aDecoder.decodeObject(forKey: "tasks") as! [ChecklistTask]
     }
     
     func encode(with aCoder: NSCoder) {
@@ -55,7 +54,8 @@ class Event: NSObject, NSCoding {
         aCoder.encode(self.date, forKey: "date")
         aCoder.encode(self.city, forKey: "city")
         aCoder.encode(self.country, forKey: "country")
-        aCoder.encode(self.backgroundImage, forKey: "bgimage")
+        let imageData = UIImagePNGRepresentation(self.backgroundImage)
+        aCoder.encode(imageData, forKey: "bgimage")
         aCoder.encode(self.eventID, forKey: "eventID")
         aCoder.encode(self.tasks, forKey: "tasks")
     }

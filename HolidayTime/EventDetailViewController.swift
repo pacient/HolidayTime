@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMobileAds
 
-class EventDetailViewController: UIViewController {
+class EventDetailViewController: UIViewController, UINavigationBarDelegate {
 
     @IBOutlet weak var eventNameLabel: UILabel!
     @IBOutlet weak var eventTempertureLabel: UILabel!
@@ -31,6 +31,14 @@ class EventDetailViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: Notf.updateView, object: nil)
         setupViews()
         setupBarButtons()
+        
+        navBar.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateView()
+        self.loadBannerAd(to: bannerView)
     }
     
     //TODO: Move this to a model view to clear things up
@@ -73,14 +81,10 @@ class EventDetailViewController: UIViewController {
         let button = UIButton(type: .custom)
         button.addTarget(self, action: action, for: .touchUpInside)
         button.setImage(image, for: .normal)
+        button.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
         return UIBarButtonItem(customView: button)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        updateView()
-        self.loadBannerAd(to: bannerView)
-    }
     
     func getProgress() {
         let dateFormatter = DateFormatter()
@@ -121,5 +125,9 @@ class EventDetailViewController: UIViewController {
         vc.event = self.event
         vc.viewTitle = "Edit Event"
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        return UIBarPosition.topAttached
     }
 }
