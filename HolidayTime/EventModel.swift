@@ -17,6 +17,8 @@ class Event: NSObject, NSCoding {
     var backgroundImage: UIImage!
     var eventID: String!
     var tasks: [ChecklistTask]!
+    var cityTemperture: String?
+    var weatherCode: String?
     
     override init() {
     }
@@ -27,8 +29,7 @@ class Event: NSObject, NSCoding {
         self.date = data["date"] as! Date
         self.city = data["city"] as! String
         self.country = data["country"] as! String
-        let imageData = data["bgimage"] as! Data
-        self.backgroundImage = UIImage(data: imageData)
+        self.backgroundImage = data["bgimage"] as! UIImage
         self.eventID = data["eventID"] as! String
         if let tasks = data["tasks"] as? [ChecklistTask]{
             self.tasks = tasks
@@ -43,8 +44,7 @@ class Event: NSObject, NSCoding {
         self.date = aDecoder.decodeObject(forKey: "date") as! Date
         self.city = aDecoder.decodeObject(forKey: "city") as! String
         self.country = aDecoder.decodeObject(forKey: "country") as! String
-        let bgimageData = aDecoder.decodeObject(forKey: "bgimage") as! Data
-        self.backgroundImage = UIImage(data: bgimageData)!
+        self.backgroundImage = aDecoder.decodeObject(forKey: "bgimage") as! UIImage
         self.eventID = aDecoder.decodeObject(forKey: "eventID") as!  String
         self.tasks = aDecoder.decodeObject(forKey: "tasks") as! [ChecklistTask]
     }
@@ -54,8 +54,7 @@ class Event: NSObject, NSCoding {
         aCoder.encode(self.date, forKey: "date")
         aCoder.encode(self.city, forKey: "city")
         aCoder.encode(self.country, forKey: "country")
-        let imageData = UIImagePNGRepresentation(self.backgroundImage)
-        aCoder.encode(imageData, forKey: "bgimage")
+        aCoder.encode(self.backgroundImage, forKey: "bgimage")
         aCoder.encode(self.eventID, forKey: "eventID")
         aCoder.encode(self.tasks, forKey: "tasks")
     }

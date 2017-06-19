@@ -23,7 +23,6 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         navigationController?.delegate = self
         events = EventResourceManager.instance().allEvents()
-        
         self.loadBannerAd(to: bannerView)
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadEvents), name: Notf.updateEvents, object: nil)
@@ -98,11 +97,15 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.eventCity.text = events[indexPath.row].city
         cell.daysWordLabel.text = cell.eventDays.text == "1" ? "day" : "days"
         cell.eventTemperture.isHidden = true
-        WeatherManager.instance().getWeather(forCity: events[indexPath.row].city, country: events[indexPath.row].country) { (weatherResult) in
-            if let weather = weatherResult {
-                cell.eventTemperture.isHidden = false
-                cell.eventTemperture.text = weather["temperture"]
-            }
+        if cell.eventWeatherImage.image == nil {
+            WeatherManager.instance().getWeather(forCity: events[indexPath.row].city, country: events[indexPath.row].country, completionHandler: { (results) in
+                if let results = results {
+                    cell.eventTemperture.isHidden = false
+                    cell.eventTemperture.text = results["temperture"]
+                    self.events[indexPath.row].cityTemperture = results["temperture"]
+                    self.events[indexPath.row].weatherCode = results["code"]
+                }
+            })
         }
         return cell
     }

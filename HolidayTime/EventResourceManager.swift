@@ -66,7 +66,6 @@ class EventResourceManager: NSObject {
         }
         let data = NSKeyedArchiver.archivedData(withRootObject: allEvents)
         UserDefaults.standard.set(data, forKey: Const.allEvents)
-        UserDefaults.standard.synchronize()
     }
     
     func createEvent() {
@@ -74,7 +73,7 @@ class EventResourceManager: NSObject {
                          "city" : self.eventCity!,
                          "country" : self.eventCountry!,
                          "date" : self.eventDate!,
-                         "bgimage" : UIImagePNGRepresentation(self.eventImage!)!,
+                         "bgimage" : self.eventImage!,
                          "eventID" : String.getRandomID()] as [String : Any]
         let event = Event(data: eventDict)
         self.add(event: event)

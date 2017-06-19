@@ -145,7 +145,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDB-cS-MF6">
-                                <rect key="frame" x="16" y="48" width="22" height="22"/>
+                                <rect key="frame" x="16" y="46" width="22" height="22"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="addEventPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dcd-u5-6eR"/>
@@ -164,9 +164,9 @@
                             <constraint firstItem="hxQ-bX-Yjz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2Tf-My-3Dx"/>
                             <constraint firstItem="tEC-lv-8ag" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3z4-4z-28J"/>
                             <constraint firstAttribute="trailing" secondItem="hxQ-bX-Yjz" secondAttribute="trailing" id="Ala-4E-tRG"/>
-                            <constraint firstItem="tEC-lv-8ag" firstAttribute="top" secondItem="SDB-cS-MF6" secondAttribute="bottom" constant="8" id="TRL-nz-fsB"/>
+                            <constraint firstItem="SDB-cS-MF6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="26" id="QHH-Dt-aT3"/>
+                            <constraint firstItem="tEC-lv-8ag" firstAttribute="top" secondItem="SDB-cS-MF6" secondAttribute="bottom" constant="10" id="TRL-nz-fsB"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hxQ-bX-Yjz" secondAttribute="bottom" id="Tna-4s-6Cj"/>
-                            <constraint firstItem="SDB-cS-MF6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="28" id="Wj0-CR-H8D"/>
                             <constraint firstItem="SDB-cS-MF6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Wmm-81-HbL"/>
                             <constraint firstAttribute="trailing" secondItem="LfQ-tI-IHL" secondAttribute="trailing" id="Z6d-Jh-Egz"/>
                             <constraint firstItem="hxQ-bX-Yjz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="crv-2q-hTj"/>

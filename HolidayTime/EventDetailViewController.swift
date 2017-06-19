@@ -48,6 +48,10 @@ class EventDetailViewController: UIViewController, UINavigationBarDelegate {
         eventCityLabel.text = event.city
         eventDaysLabel.text = event.date.getRemainingDays()
         daysWordLabel.text = eventDaysLabel.text == "1" ? "day" : "days"
+        if let temp = event.cityTemperture {
+            eventTempertureLabel.isHidden = false
+            eventTempertureLabel.text = temp
+        }
         UIView.transition(with: self.eventImageView, duration: 0.3, options: .transitionCrossDissolve, animations: {
             self.eventImageView.image = self.event.backgroundImage
         }, completion: nil)
