@@ -51,6 +51,7 @@ class EventDetailViewController: UIViewController, UINavigationBarDelegate {
         if let temp = event.cityTemperture {
             eventTempertureLabel.isHidden = false
             eventTempertureLabel.text = temp
+            eventWeatherImgView.image = WeatherManager.instance().image(forCode: event.weatherCode!)
         }
         UIView.transition(with: self.eventImageView, duration: 0.3, options: .transitionCrossDissolve, animations: {
             self.eventImageView.image = self.event.backgroundImage

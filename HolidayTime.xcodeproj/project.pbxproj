@@ -29,6 +29,7 @@
 		389C05771EF4095500CFC480 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 389C05761EF4095500CFC480 /* GoogleService-Info.plist */; };
 		38C9DC611EDAB82B006E4A9E /* BackgroundSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C9DC601EDAB82B006E4A9E /* BackgroundSelectorViewController.swift */; };
 		38CCCCC81ED9CB9D00277BB9 /* PickerDataResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CCCCC71ED9CB9D00277BB9 /* PickerDataResources.swift */; };
+		38D47DCB1EF970420020C4F7 /* weatherIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38D47DCA1EF970420020C4F7 /* weatherIcons.xcassets */; };
 		38DAE6431ED95F7D00D56225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAE6421ED95F7D00D56225 /* AppDelegate.swift */; };
 		38DAE6481ED95F7D00D56225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DAE6461ED95F7D00D56225 /* Main.storyboard */; };
 		38DAE64A1ED95F7D00D56225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38DAE6491ED95F7D00D56225 /* Assets.xcassets */; };
@@ -83,6 +84,7 @@
 		389C05761EF4095500CFC480 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		38C9DC601EDAB82B006E4A9E /* BackgroundSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundSelectorViewController.swift; sourceTree = "<group>"; };
 		38CCCCC71ED9CB9D00277BB9 /* PickerDataResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerDataResources.swift; sourceTree = "<group>"; };
+		38D47DCA1EF970420020C4F7 /* weatherIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = weatherIcons.xcassets; sourceTree = "<group>"; };
 		38DAE63F1ED95F7D00D56225 /* HolidayTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HolidayTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38DAE6421ED95F7D00D56225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38DAE6471ED95F7D00D56225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				38DAE64B1ED95F7D00D56225 /* LaunchScreen.storyboard */,
 				38DAE64E1ED95F7D00D56225 /* Info.plist */,
 				389C05761EF4095500CFC480 /* GoogleService-Info.plist */,
+				38D47DCA1EF970420020C4F7 /* weatherIcons.xcassets */,
 			);
 			path = HolidayTime;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				38DAE64A1ED95F7D00D56225 /* Assets.xcassets in Resources */,
 				38DAE6771ED9698500D56225 /* EventDetails.storyboard in Resources */,
 				389C05771EF4095500CFC480 /* GoogleService-Info.plist in Resources */,
+				38D47DCB1EF970420020C4F7 /* weatherIcons.xcassets in Resources */,
 				3861E0631ED97E880037F8C8 /* EventCreator.storyboard in Resources */,
 				38DAE6481ED95F7D00D56225 /* Main.storyboard in Resources */,
 			);

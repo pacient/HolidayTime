@@ -96,7 +96,6 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.eventCard.backgroundColor = colourFor(row: indexPath.row)
         cell.eventCity.text = events[indexPath.row].city
         cell.daysWordLabel.text = cell.eventDays.text == "1" ? "day" : "days"
-        cell.eventTemperture.isHidden = true
         if cell.eventWeatherImage.image == nil {
             WeatherManager.instance().getWeather(forCity: events[indexPath.row].city, country: events[indexPath.row].country, completionHandler: { (results) in
                 if let results = results {
@@ -104,6 +103,7 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
                     cell.eventTemperture.text = results["temperture"]
                     self.events[indexPath.row].cityTemperture = results["temperture"]
                     self.events[indexPath.row].weatherCode = results["code"]
+                    cell.eventWeatherImage.image = WeatherManager.instance().image(forCode: results["code"]!)
                 }
             })
         }
