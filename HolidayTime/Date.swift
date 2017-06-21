@@ -16,6 +16,9 @@ extension Date {
         
         let components = calendar.dateComponents([.day], from: today, to: self)
         if let daysRemaining = components.day {
+            if daysRemaining + 1 <= 0 {
+                return "0"
+            }
             return "\(daysRemaining + 1)"
         }
         return "0"

@@ -46,7 +46,8 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         self.tableview.reloadData()
     }
     
-    func colourFor(row: Int) -> UIColor {
+    func colourFor(row: Int, expired: Bool = false) -> UIColor {
+        if expired { return .lightGray }
         if row % 3 == 0 { return UIColor.CustomColors.blueCell }
         if row % 2 == 0 { return UIColor.CustomColors.greenCell }
         return UIColor.CustomColors.brownCell
@@ -104,7 +105,7 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.isHidden = isAnimating
         cell.eventName.text = events[indexPath.row].name
         cell.eventDays.text = events[indexPath.row].date.getRemainingDays()
-        cell.eventCard.backgroundColor = colourFor(row: indexPath.row)
+        cell.eventCard.backgroundColor = colourFor(row: indexPath.row, expired: events[indexPath.row].date.getRemainingDays() == "0")
         cell.eventCity.text = events[indexPath.row].city
         cell.daysWordLabel.text = cell.eventDays.text == "1" ? "day" : "days"
         if shouldUpdateWeather(of: events[indexPath.row]){
@@ -141,7 +142,7 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         let eventTapped = self.events[indexPath.row]
         let vc = UIStoryboard(name: "EventDetails", bundle: nil).instantiateInitialViewController() as! EventDetailViewController
         vc.event = eventTapped
-        vc.cardColour = colourFor(row: indexPath.row)
+        vc.cardColour = colourFor(row: indexPath.row, expired: events[indexPath.row].date.getRemainingDays() == "0")
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -30,7 +30,28 @@ class EventResourceManager: NSObject {
     
     func allEvents() -> [Event] {
         if let eventsData: Data = UserDefaults.standard.object(forKey: Const.allEvents) as? Data {
-            return (NSKeyedUnarchiver.unarchiveObject(with: eventsData) as! [Event]).sorted{ $0.date < $1.date }
+            let events = (NSKeyedUnarchiver.unarchiveObject(with: eventsData) as! [Event])
+            var before: [Event] = []
+            var after: [Event] = []
+            let now = Date()
+            var shouldUpdateEvents = false
+            events.forEach({ (event) in
+                if now.timeIntervalSince(event.date).hoursPasted() >= 168 {
+                    shouldUpdateEvents = true
+                }else {
+                    if event.date < Date() {
+                        before.append(event)
+                    }else {
+                        after.append(event)
+                    }
+                }
+            })
+            before.sort(by: { (one, two) in one.date < two.date })
+            after.sort(by: { (one, two) in one.date < two.date })
+            if shouldUpdateEvents {
+                saveEvents(events: after+before)
+            }
+            return after + before
         }
         return [Event]()
     }
@@ -38,9 +59,7 @@ class EventResourceManager: NSObject {
     func add(event: Event) {
         var allEvents = self.allEvents()
         allEvents.append(event)
-        let data: Data = NSKeyedArchiver.archivedData(withRootObject: allEvents)
-        UserDefaults.standard.set(data, forKey: Const.allEvents)
-        UserDefaults.standard.synchronize()
+        saveEvents(events: allEvents)
     }
     
     func remove(event: Event) {
@@ -50,7 +69,11 @@ class EventResourceManager: NSObject {
                 allEvents.removeObject(each)
             }
         }
-        let data = NSKeyedArchiver.archivedData(withRootObject: allEvents)
+        saveEvents(events: allEvents)
+    }
+    
+    func saveEvents(events: [Event]) {
+        let data = NSKeyedArchiver.archivedData(withRootObject: events)
         UserDefaults.standard.set(data, forKey: Const.allEvents)
         UserDefaults.standard.synchronize()
     }
