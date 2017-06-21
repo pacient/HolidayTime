@@ -59,7 +59,7 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
             let lastWeatherUpdate = event.lastWeatherUpdate!
             let now = Date()
             let hoursSinceLastUpdate = now.timeIntervalSince(lastWeatherUpdate).hoursPasted()
-            return hoursSinceLastUpdate >= 24
+            return hoursSinceLastUpdate >= 3
         }
     }
     
