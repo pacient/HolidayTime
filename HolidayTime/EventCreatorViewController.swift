@@ -137,6 +137,19 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
                          "tasks" : tasks,
                          "bgimage" : event!.backgroundImage]
         
+        if EventResourceManager.instance().eventCity != cityTextField.text! || EventResourceManager.instance().eventCountry != countryTextField.text! {
+            WeatherManager.instance().getWeather(forCity: cityTextField.text!, country: countryTextField.text!, completionHandler: { (results) in
+                if let results = results {
+                    EventResourceManager.instance().setupValues(data: eventDict)
+                    EventResourceManager.instance().eventTemperture = results["temperture"]
+                    EventResourceManager.instance().eventWeatherCode = results["code"]
+                    EventResourceManager.instance().eventLastUpdatedWeather = Date()
+                    EventResourceManager.instance().updateEvent()
+                    NotificationCenter.default.post(name: Notf.updateView, object: nil)
+                }
+            })
+        }
+        
         EventResourceManager.instance().setupValues(data: eventDict)
         EventResourceManager.instance().updateEvent()
         self.navigationController?.popViewController(animated: true)

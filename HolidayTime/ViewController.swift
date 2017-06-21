@@ -16,6 +16,7 @@ extension UIViewController {
         bannerView.rootViewController = self
         let request = GADRequest()
         request.testDevices = [kGADSimulatorID]
+        request.contentURL = "https://www.booking.com/"
         bannerView.load(request)
     }
 }

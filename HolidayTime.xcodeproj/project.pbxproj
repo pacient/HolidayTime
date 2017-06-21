@@ -27,6 +27,7 @@
 		38942D5D1EF18C030002A2E3 /* EventChecklist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38942D5C1EF18C030002A2E3 /* EventChecklist.storyboard */; };
 		38942D601EF194510002A2E3 /* EventChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38942D5F1EF194510002A2E3 /* EventChecklistViewController.swift */; };
 		389C05771EF4095500CFC480 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 389C05761EF4095500CFC480 /* GoogleService-Info.plist */; };
+		38B0CC171EFAB38100CD3200 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B0CC161EFAB38100CD3200 /* TimeInterval.swift */; };
 		38C9DC611EDAB82B006E4A9E /* BackgroundSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C9DC601EDAB82B006E4A9E /* BackgroundSelectorViewController.swift */; };
 		38CCCCC81ED9CB9D00277BB9 /* PickerDataResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CCCCC71ED9CB9D00277BB9 /* PickerDataResources.swift */; };
 		38D47DCB1EF970420020C4F7 /* weatherIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38D47DCA1EF970420020C4F7 /* weatherIcons.xcassets */; };
@@ -82,6 +83,7 @@
 		38942D5C1EF18C030002A2E3 /* EventChecklist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventChecklist.storyboard; sourceTree = "<group>"; };
 		38942D5F1EF194510002A2E3 /* EventChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventChecklistViewController.swift; sourceTree = "<group>"; };
 		389C05761EF4095500CFC480 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		38B0CC161EFAB38100CD3200 /* TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
 		38C9DC601EDAB82B006E4A9E /* BackgroundSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundSelectorViewController.swift; sourceTree = "<group>"; };
 		38CCCCC71ED9CB9D00277BB9 /* PickerDataResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerDataResources.swift; sourceTree = "<group>"; };
 		38D47DCA1EF970420020C4F7 /* weatherIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = weatherIcons.xcassets; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				3819D0891EF2C7A900BFED42 /* String.swift */,
 				388566961EF3ED5B00A7C215 /* Date.swift */,
 				388538601EF41EE50026FBC5 /* ViewController.swift */,
+				38B0CC161EFAB38100CD3200 /* TimeInterval.swift */,
 			);
 			name = Extenstions;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				3861E05C1ED976EF0037F8C8 /* EventResourceManager.swift in Sources */,
 				387D0DEA1EE2B7FA00AC2D4B /* UIColor.swift in Sources */,
 				388538611EF41EE50026FBC5 /* ViewController.swift in Sources */,
+				38B0CC171EFAB38100CD3200 /* TimeInterval.swift in Sources */,
 				38CCCCC81ED9CB9D00277BB9 /* PickerDataResources.swift in Sources */,
 				3861E0571ED96A7F0037F8C8 /* EventTransitionAnimator.swift in Sources */,
 				383DA44F1EF5743C00F24365 /* WeatherManager.swift in Sources */,

@@ -52,6 +52,17 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         return UIColor.CustomColors.brownCell
     }
     
+    func shouldUpdateWeather(of event: Event) -> Bool {
+        if event.lastWeatherUpdate == nil {
+            return true
+        }else {
+            let lastWeatherUpdate = event.lastWeatherUpdate!
+            let now = Date()
+            let hoursSinceLastUpdate = now.timeIntervalSince(lastWeatherUpdate).hoursPasted()
+            return hoursSinceLastUpdate >= 24
+        }
+    }
+    
     //MARK: Button Actions
     @IBAction func addEventPressed(_ sender: Any) {
         let vc = UIStoryboard(name: "EventCreator", bundle: nil).instantiateInitialViewController() as! EventCreatorViewController
@@ -96,17 +107,21 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.eventCard.backgroundColor = colourFor(row: indexPath.row)
         cell.eventCity.text = events[indexPath.row].city
         cell.daysWordLabel.text = cell.eventDays.text == "1" ? "day" : "days"
-        if cell.eventWeatherImage.image == nil {
+        if shouldUpdateWeather(of: events[indexPath.row]){
             WeatherManager.instance().getWeather(forCity: events[indexPath.row].city, country: events[indexPath.row].country, completionHandler: { (results) in
                 if let results = results {
-                    cell.eventTemperture.isHidden = false
-                    cell.eventTemperture.text = results["temperture"]
                     self.events[indexPath.row].cityTemperture = results["temperture"]
                     self.events[indexPath.row].weatherCode = results["code"]
-                    cell.eventWeatherImage.image = WeatherManager.instance().image(forCode: results["code"]!)
+                    self.events[indexPath.row].lastWeatherUpdate = Date()
+                    EventResourceManager.instance().setupValues(with: self.events[indexPath.row])
+                    EventResourceManager.instance().updateEvent()
+                    cell.eventTemperture.text = self.events[indexPath.row].cityTemperture
+                    cell.eventWeatherImage.image = WeatherManager.instance().image(forCode: self.events[indexPath.row].weatherCode ?? "404")
                 }
             })
         }
+        cell.eventTemperture.text = self.events[indexPath.row].cityTemperture ?? ""
+        cell.eventWeatherImage.image = WeatherManager.instance().image(forCode: self.events[indexPath.row].weatherCode ?? "404")
         return cell
     }
     

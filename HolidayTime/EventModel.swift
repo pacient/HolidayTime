@@ -19,9 +19,9 @@ class Event: NSObject, NSCoding {
     var tasks: [ChecklistTask]!
     var cityTemperture: String?
     var weatherCode: String?
+    var lastWeatherUpdate: Date?
     
-    override init() {
-    }
+    override init() {}
     
     convenience init(data: [String : Any]) {
         self.init()
@@ -47,6 +47,9 @@ class Event: NSObject, NSCoding {
         self.backgroundImage = aDecoder.decodeObject(forKey: "bgimage") as! UIImage
         self.eventID = aDecoder.decodeObject(forKey: "eventID") as!  String
         self.tasks = aDecoder.decodeObject(forKey: "tasks") as! [ChecklistTask]
+        self.cityTemperture = aDecoder.decodeObject(forKey: "cityTemperture") as? String
+        self.weatherCode = aDecoder.decodeObject(forKey: "weatherCode") as? String
+        self.lastWeatherUpdate = aDecoder.decodeObject(forKey: "lastWeatherUpdate") as? Date
     }
     
     func encode(with aCoder: NSCoder) {
@@ -57,6 +60,9 @@ class Event: NSObject, NSCoding {
         aCoder.encode(self.backgroundImage, forKey: "bgimage")
         aCoder.encode(self.eventID, forKey: "eventID")
         aCoder.encode(self.tasks, forKey: "tasks")
+        aCoder.encode(self.cityTemperture, forKey: "cityTemperture")
+        aCoder.encode(self.weatherCode, forKey: "weatherCode")
+        aCoder.encode(self.lastWeatherUpdate, forKey: "lastWeatherUpdate")
     }
     
     public static func ==(lhs: Event, rhs: Event) -> Bool {
