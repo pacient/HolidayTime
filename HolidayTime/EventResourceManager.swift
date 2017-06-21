@@ -33,13 +33,16 @@ class EventResourceManager: NSObject {
             let events = (NSKeyedUnarchiver.unarchiveObject(with: eventsData) as! [Event])
             var before: [Event] = []
             var after: [Event] = []
-            let now = Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM dd, yyyy"
+            let nowStr = dateFormatter.string(from: Date())
+            let now = dateFormatter.date(from: nowStr)!
             var shouldUpdateEvents = false
             events.forEach({ (event) in
                 if now.timeIntervalSince(event.date).hoursPasted() >= 168 {
                     shouldUpdateEvents = true
                 }else {
-                    if event.date < Date() {
+                    if event.date < now {
                         before.append(event)
                     }else {
                         after.append(event)

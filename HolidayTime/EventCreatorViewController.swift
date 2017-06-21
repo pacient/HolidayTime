@@ -109,6 +109,7 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
     func getValidDate() -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM dd, yyyy"
+        dateFormatter.locale = Locale.current
         let date = dateFormatter.date(from: dateTextField.text!)
         if date == nil {
             dateErrorLabel.text = "This is not a valid date"

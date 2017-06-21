@@ -19,7 +19,7 @@ extension Date {
             if daysRemaining + 1 <= 0 {
                 return "0"
             }
-            return "\(daysRemaining + 1)"
+            return daysRemaining == 0 ? "0" : "\(daysRemaining + 1)"
         }
         return "0"
     }
