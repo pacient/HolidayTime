@@ -10,6 +10,7 @@ import Foundation
 
 struct Const {
     static let allEvents = "allEvents"
+    static let firstLaunch = "firstLaunch"
     
     //Ad IDs
     static let banner_adunit = "ca-app-pub-9037734016404410/7177365686"

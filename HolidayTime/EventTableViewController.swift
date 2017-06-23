@@ -29,6 +29,14 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        //First Launch stuff
+        let isFirstLaunch = UserDefaults.standard.bool(forKey: Const.firstLaunch)
+        if isFirstLaunch {
+            UserDefaults.standard.set(false, forKey: Const.firstLaunch)
+            let vc = UIStoryboard(name: "FirstLaunch", bundle: nil).instantiateInitialViewController()!
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
         if let selectedIndex = self.tableview.indexPathForSelectedRow {
             self.tableview.deselectRow(at: selectedIndex, animated: false)
         }
@@ -51,17 +59,6 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         if row % 3 == 0 { return UIColor.CustomColors.blueCell }
         if row % 2 == 0 { return UIColor.CustomColors.greenCell }
         return UIColor.CustomColors.brownCell
-    }
-    
-    func shouldUpdateWeather(of event: Event) -> Bool {
-        if event.lastWeatherUpdate == nil {
-            return true
-        }else {
-            let lastWeatherUpdate = event.lastWeatherUpdate!
-            let now = Date()
-            let hoursSinceLastUpdate = now.timeIntervalSince(lastWeatherUpdate).hoursPasted()
-            return hoursSinceLastUpdate >= 3
-        }
     }
     
     //MARK: Button Actions

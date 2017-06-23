@@ -19,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
         GADMobileAds.configure(withApplicationID: "ca-app-pub-9037734016404410~5700632488")
         UIApplication.shared.statusBarStyle = .lightContent
+        
+        if UserDefaults.standard.object(forKey: Const.firstLaunch) == nil {
+            UserDefaults.standard.set(true, forKey: Const.firstLaunch)
+        }
+        
         return true
     }
 

@@ -12,6 +12,8 @@
 		383247521EF28EF700F93633 /* ChecklistTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383247511EF28EF700F93633 /* ChecklistTask.swift */; };
 		383247541EF2956E00F93633 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383247531EF2956E00F93633 /* TaskCell.swift */; };
 		383DA44F1EF5743C00F24365 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383DA44E1EF5743C00F24365 /* WeatherManager.swift */; };
+		385DAFBA1EFD5CC100DE45CD /* FirstLaunch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385DAFB91EFD5CC100DE45CD /* FirstLaunch.storyboard */; };
+		385DAFBC1EFD60B500DE45CD /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385DAFBB1EFD60B500DE45CD /* FirstLaunchViewController.swift */; };
 		3861E0571ED96A7F0037F8C8 /* EventTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861E0561ED96A7F0037F8C8 /* EventTransitionAnimator.swift */; };
 		3861E05A1ED9741E0037F8C8 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861E0591ED9741E0037F8C8 /* EventModel.swift */; };
 		3861E05C1ED976EF0037F8C8 /* EventResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861E05B1ED976EF0037F8C8 /* EventResourceManager.swift */; };
@@ -69,6 +71,8 @@
 		383247511EF28EF700F93633 /* ChecklistTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistTask.swift; sourceTree = "<group>"; };
 		383247531EF2956E00F93633 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		383DA44E1EF5743C00F24365 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		385DAFB91EFD5CC100DE45CD /* FirstLaunch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstLaunch.storyboard; sourceTree = "<group>"; };
+		385DAFBB1EFD60B500DE45CD /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
 		3861E0561ED96A7F0037F8C8 /* EventTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTransitionAnimator.swift; sourceTree = "<group>"; };
 		3861E0591ED9741E0037F8C8 /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		3861E05B1ED976EF0037F8C8 /* EventResourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventResourceManager.swift; sourceTree = "<group>"; };
@@ -287,6 +291,7 @@
 				38C9DC5F1EDAB813006E4A9E /* Event Creator */,
 				38DAE6741ED9645200D56225 /* EventTableViewController.swift */,
 				387A91F01EDB245C00CE55BA /* EventDetailViewController.swift */,
+				385DAFBB1EFD60B500DE45CD /* FirstLaunchViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				38DAE6761ED9698500D56225 /* EventDetails.storyboard */,
 				3861E0621ED97E880037F8C8 /* EventCreator.storyboard */,
 				38942D5C1EF18C030002A2E3 /* EventChecklist.storyboard */,
+				385DAFB91EFD5CC100DE45CD /* FirstLaunch.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -415,6 +421,7 @@
 			files = (
 				38942D5D1EF18C030002A2E3 /* EventChecklist.storyboard in Resources */,
 				38DAE64D1ED95F7D00D56225 /* LaunchScreen.storyboard in Resources */,
+				385DAFBA1EFD5CC100DE45CD /* FirstLaunch.storyboard in Resources */,
 				38DAE64A1ED95F7D00D56225 /* Assets.xcassets in Resources */,
 				38DAE6771ED9698500D56225 /* EventDetails.storyboard in Resources */,
 				389C05771EF4095500CFC480 /* GoogleService-Info.plist in Resources */,
@@ -509,6 +516,7 @@
 				38918B601EFD4665005FBA5D /* EventViewModel.swift in Sources */,
 				38C9DC611EDAB82B006E4A9E /* BackgroundSelectorViewController.swift in Sources */,
 				388566971EF3ED5B00A7C215 /* Date.swift in Sources */,
+				385DAFBC1EFD60B500DE45CD /* FirstLaunchViewController.swift in Sources */,
 				3861E0671ED982290037F8C8 /* RadialGradientLayer.swift in Sources */,
 				383247521EF28EF700F93633 /* ChecklistTask.swift in Sources */,
 				3861E05A1ED9741E0037F8C8 /* EventModel.swift in Sources */,

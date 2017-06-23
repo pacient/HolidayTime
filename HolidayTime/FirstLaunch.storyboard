@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SIs-t7-1M6">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--First Launch View Controller-->
+        <scene sceneID="xAx-It-P5M">
+            <objects>
+                <viewController id="SIs-t7-1M6" customClass="FirstLaunchViewController" customModule="HolidayTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m2O-UN-XbY"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hf9-ce-f7K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mpM-nf-omE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Holiday Time!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umi-bD-o3Z">
+                                <rect key="frame" x="24.5" y="36" width="326.5" height="26.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lets set your first holiday/event to get started." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDP-RM-31l">
+                                <rect key="frame" x="56.5" y="78" width="262.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="23" id="Yvw-Am-T1U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhonePalm" translatesAutoresizingMaskIntoConstraints="NO" id="zJ4-I3-l1t">
+                                <rect key="frame" x="115" y="189" width="144" height="289"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iha-yw-mme">
+                                <rect key="frame" x="169.5" y="486" width="35" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextPressed:" destination="SIs-t7-1M6" eventType="touchUpInside" id="iYd-Nw-puw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.098039215690000001" green="0.48627450979999998" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="umi-bD-o3Z" secondAttribute="trailing" constant="8" id="BDG-ON-42R"/>
+                            <constraint firstItem="zJ4-I3-l1t" firstAttribute="centerY" secondItem="mpM-nf-omE" secondAttribute="centerY" id="CVt-OM-V1c"/>
+                            <constraint firstItem="YDP-RM-31l" firstAttribute="leading" secondItem="umi-bD-o3Z" secondAttribute="leading" constant="32" id="Cfo-u3-PwE"/>
+                            <constraint firstItem="umi-bD-o3Z" firstAttribute="top" secondItem="m2O-UN-XbY" secondAttribute="bottom" constant="16" id="Ead-eG-1Eh"/>
+                            <constraint firstItem="YDP-RM-31l" firstAttribute="trailing" secondItem="umi-bD-o3Z" secondAttribute="trailing" constant="-32" id="TTV-AH-Kmp"/>
+                            <constraint firstItem="umi-bD-o3Z" firstAttribute="centerX" secondItem="mpM-nf-omE" secondAttribute="centerX" id="Ye0-Pq-cT2"/>
+                            <constraint firstItem="zJ4-I3-l1t" firstAttribute="centerX" secondItem="mpM-nf-omE" secondAttribute="centerX" id="ZW1-Ni-IjK"/>
+                            <constraint firstItem="umi-bD-o3Z" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mpM-nf-omE" secondAttribute="leadingMargin" constant="8" id="ded-a1-hJo"/>
+                            <constraint firstItem="Iha-yw-mme" firstAttribute="centerX" secondItem="mpM-nf-omE" secondAttribute="centerX" id="f54-ZL-uuN"/>
+                            <constraint firstItem="YDP-RM-31l" firstAttribute="top" secondItem="umi-bD-o3Z" secondAttribute="bottom" constant="16" id="oBx-u5-zov"/>
+                            <constraint firstItem="Iha-yw-mme" firstAttribute="top" secondItem="zJ4-I3-l1t" secondAttribute="bottom" constant="8" id="scR-jW-b3V"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="JY6-GO-836"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ath-O8-2vA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1020" y="-81.409295352323838"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8we-eG-klO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="dhz-co-MiJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LRB-iY-2jc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SIs-t7-1M6" kind="relationship" relationship="rootViewController" id="NHc-pr-VzE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FSC-o3-mKZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="354" y="-81"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="iPhonePalm" width="144" height="289"/>
+    </resources>
+</document>
