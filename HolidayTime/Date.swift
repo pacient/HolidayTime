@@ -12,14 +12,14 @@ extension Date {
     func getRemainingDays() -> String {
         let calendar = Calendar.current
         
-        let today = calendar.date(bySettingHour: 12, minute: 00, second: 00, of: Date())!
+        let today = calendar.date(bySettingHour: 23, minute: 00, second: 00, of: Date())!
         
         let components = calendar.dateComponents([.day], from: today, to: self)
         if let daysRemaining = components.day {
             if daysRemaining + 1 <= 0 {
                 return "0"
             }
-            return daysRemaining == 0 ? "0" : "\(daysRemaining + 1)"
+            return daysRemaining < 0 ? "0" : "\(daysRemaining + 1)"
         }
         return "0"
     }

@@ -24,6 +24,7 @@
 		387D0DEA1EE2B7FA00AC2D4B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D0DE91EE2B7FA00AC2D4B /* UIColor.swift */; };
 		388538611EF41EE50026FBC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388538601EF41EE50026FBC5 /* ViewController.swift */; };
 		388566971EF3ED5B00A7C215 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388566961EF3ED5B00A7C215 /* Date.swift */; };
+		38918B601EFD4665005FBA5D /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38918B5F1EFD4665005FBA5D /* EventViewModel.swift */; };
 		38942D5D1EF18C030002A2E3 /* EventChecklist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38942D5C1EF18C030002A2E3 /* EventChecklist.storyboard */; };
 		38942D601EF194510002A2E3 /* EventChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38942D5F1EF194510002A2E3 /* EventChecklistViewController.swift */; };
 		389C05771EF4095500CFC480 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 389C05761EF4095500CFC480 /* GoogleService-Info.plist */; };
@@ -80,6 +81,7 @@
 		387D0DE91EE2B7FA00AC2D4B /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		388538601EF41EE50026FBC5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		388566961EF3ED5B00A7C215 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		38918B5F1EFD4665005FBA5D /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		38942D5C1EF18C030002A2E3 /* EventChecklist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventChecklist.storyboard; sourceTree = "<group>"; };
 		38942D5F1EF194510002A2E3 /* EventChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventChecklistViewController.swift; sourceTree = "<group>"; };
 		389C05761EF4095500CFC480 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -184,6 +186,14 @@
 			name = Extenstions;
 			sourceTree = "<group>";
 		};
+		38918B5E1EFD4644005FBA5D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				38918B5F1EFD4665005FBA5D /* EventViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		38942D5E1EF194290002A2E3 /* Event Details Buttons Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +236,7 @@
 		38DAE6411ED95F7D00D56225 /* HolidayTime */ = {
 			isa = PBXGroup;
 			children = (
+				38918B5E1EFD4644005FBA5D /* ViewModel */,
 				3861E05F1ED97C7E0037F8C8 /* Extenstions */,
 				3861E0581ED973FD0037F8C8 /* Models */,
 				3861E0551ED96A560037F8C8 /* Helpers */,
@@ -495,6 +506,7 @@
 				38DAE6721ED9640200D56225 /* EventCell.swift in Sources */,
 				38DAE6751ED9645200D56225 /* EventTableViewController.swift in Sources */,
 				38942D601EF194510002A2E3 /* EventChecklistViewController.swift in Sources */,
+				38918B601EFD4665005FBA5D /* EventViewModel.swift in Sources */,
 				38C9DC611EDAB82B006E4A9E /* BackgroundSelectorViewController.swift in Sources */,
 				388566971EF3ED5B00A7C215 /* Date.swift in Sources */,
 				3861E0671ED982290037F8C8 /* RadialGradientLayer.swift in Sources */,

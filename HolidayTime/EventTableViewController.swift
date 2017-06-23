@@ -103,26 +103,20 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell") as! EventCell
         cell.isHidden = isAnimating
-        cell.eventName.text = events[indexPath.row].name
-        cell.eventDays.text = events[indexPath.row].date.getRemainingDays()
-        cell.eventCard.backgroundColor = colourFor(row: indexPath.row, expired: events[indexPath.row].date.getRemainingDays() == "0")
-        cell.eventCity.text = events[indexPath.row].city
+        let eventModel = EventViewModel(event: events[indexPath.row])
+        cell.eventName.text = eventModel.eventName
+        cell.eventDays.text = eventModel.remainingDaysText
+        cell.eventCard.backgroundColor = colourFor(row: indexPath.row, expired: eventModel.remainingDaysText == "0")
+        cell.eventCity.text = eventModel.cityText
         cell.daysWordLabel.text = cell.eventDays.text == "1" ? "day" : "days"
-        if shouldUpdateWeather(of: events[indexPath.row]){
-            WeatherManager.instance().getWeather(forCity: events[indexPath.row].city, country: events[indexPath.row].country, completionHandler: { (results) in
-                if let results = results {
-                    self.events[indexPath.row].cityTemperture = results["temperture"]
-                    self.events[indexPath.row].weatherCode = results["code"]
-                    self.events[indexPath.row].lastWeatherUpdate = Date()
-                    EventResourceManager.instance().setupValues(with: self.events[indexPath.row])
-                    EventResourceManager.instance().updateEvent()
-                    cell.eventTemperture.text = self.events[indexPath.row].cityTemperture
-                    cell.eventWeatherImage.image = WeatherManager.instance().image(forCode: self.events[indexPath.row].weatherCode ?? "404")
-                }
+        if eventModel.shouldUpdateWeather {
+            eventModel.updateWeather(completion: {
+                cell.eventTemperture.text = eventModel.degreesText
+                cell.eventWeatherImage.image = WeatherManager.instance().image(forCode: eventModel.weatherCode ?? "404")
             })
         }
-        cell.eventTemperture.text = self.events[indexPath.row].cityTemperture ?? ""
-        cell.eventWeatherImage.image = WeatherManager.instance().image(forCode: self.events[indexPath.row].weatherCode ?? "404")
+        cell.eventTemperture.text = eventModel.degreesText
+        cell.eventWeatherImage.image = WeatherManager.instance().image(forCode: eventModel.weatherCode ?? "404")
         return cell
     }
     
@@ -139,9 +133,8 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         isAnimating = true
         self.selectedIndexPath = indexPath
-        let eventTapped = self.events[indexPath.row]
         let vc = UIStoryboard(name: "EventDetails", bundle: nil).instantiateInitialViewController() as! EventDetailViewController
-        vc.event = eventTapped
+        vc.event = self.events[indexPath.row]
         vc.cardColour = colourFor(row: indexPath.row, expired: events[indexPath.row].date.getRemainingDays() == "0")
         self.navigationController?.pushViewController(vc, animated: true)
     }
