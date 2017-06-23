@@ -23,7 +23,6 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
     var isEventEditing = false
     var event: Event?
     let countries = PickerDataResources.instance().allCountries()
-    var dates = PickerDataResources.instance().allDates()
     
     override func viewDidLoad() {
         super.viewDidLoad()
