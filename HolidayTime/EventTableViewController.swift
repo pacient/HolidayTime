@@ -54,13 +54,6 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         self.tableview.reloadData()
     }
     
-    func colourFor(row: Int, expired: Bool = false) -> UIColor {
-        if expired { return .lightGray }
-        if row % 3 == 0 { return UIColor.CustomColors.blueCell }
-        if row % 2 == 0 { return UIColor.CustomColors.greenCell }
-        return UIColor.CustomColors.brownCell
-    }
-    
     //MARK: Button Actions
     @IBAction func addEventPressed(_ sender: Any) {
         let vc = UIStoryboard(name: "EventCreator", bundle: nil).instantiateInitialViewController() as! EventCreatorViewController
@@ -103,7 +96,7 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         let eventModel = EventViewModel(event: events[indexPath.row])
         cell.eventName.text = eventModel.eventName
         cell.eventDays.text = eventModel.remainingDaysText
-        cell.eventCard.backgroundColor = colourFor(row: indexPath.row, expired: eventModel.remainingDaysText == "0")
+        cell.eventCard.backgroundColor = eventModel.colourFor(row: indexPath.row)
         cell.eventCity.text = eventModel.cityText
         cell.daysWordLabel.text = cell.eventDays.text == "1" ? "day" : "days"
         if eventModel.shouldUpdateWeather {
@@ -130,9 +123,10 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         isAnimating = true
         self.selectedIndexPath = indexPath
+        let eventModel = EventViewModel(event: self.events[indexPath.row])
         let vc = UIStoryboard(name: "EventDetails", bundle: nil).instantiateInitialViewController() as! EventDetailViewController
         vc.event = self.events[indexPath.row]
-        vc.cardColour = colourFor(row: indexPath.row, expired: events[indexPath.row].date.getRemainingDays() == "0")
+        vc.cardColour = eventModel.colourFor(row: indexPath.row)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

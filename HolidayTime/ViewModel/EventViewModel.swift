@@ -42,6 +42,16 @@ class EventViewModel {
             return hoursSinceLastUpdate >= 3
         }
     }
+    var isExpire: Bool {
+        return remainingDaysText == "0"
+    }
+    
+    func colourFor(row: Int) -> UIColor {
+        if isExpire { return .lightGray }
+        if row % 3 == 0 { return UIColor.CustomColors.blueCell }
+        if row % 2 == 0 { return UIColor.CustomColors.greenCell }
+        return UIColor.CustomColors.brownCell
+    }
     
     func getProgress(_ completion: @escaping (_ percent: Float) -> () ) {
         let dateFormatter = DateFormatter()
