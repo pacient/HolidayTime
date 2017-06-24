@@ -32,6 +32,8 @@
 		389C05771EF4095500CFC480 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 389C05761EF4095500CFC480 /* GoogleService-Info.plist */; };
 		38B0CC171EFAB38100CD3200 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B0CC161EFAB38100CD3200 /* TimeInterval.swift */; };
 		38C9DC611EDAB82B006E4A9E /* BackgroundSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C9DC601EDAB82B006E4A9E /* BackgroundSelectorViewController.swift */; };
+		38CB0A871EFE7AAA0046A936 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38CB0A861EFE7AAA0046A936 /* Menu.storyboard */; };
+		38CB0A891EFE7B480046A936 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CB0A881EFE7B480046A936 /* MenuViewController.swift */; };
 		38CCCCC81ED9CB9D00277BB9 /* PickerDataResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CCCCC71ED9CB9D00277BB9 /* PickerDataResources.swift */; };
 		38D47DCB1EF970420020C4F7 /* weatherIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38D47DCA1EF970420020C4F7 /* weatherIcons.xcassets */; };
 		38DAE6431ED95F7D00D56225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAE6421ED95F7D00D56225 /* AppDelegate.swift */; };
@@ -91,6 +93,8 @@
 		389C05761EF4095500CFC480 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		38B0CC161EFAB38100CD3200 /* TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
 		38C9DC601EDAB82B006E4A9E /* BackgroundSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundSelectorViewController.swift; sourceTree = "<group>"; };
+		38CB0A861EFE7AAA0046A936 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
+		38CB0A881EFE7B480046A936 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		38CCCCC71ED9CB9D00277BB9 /* PickerDataResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerDataResources.swift; sourceTree = "<group>"; };
 		38D47DCA1EF970420020C4F7 /* weatherIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = weatherIcons.xcassets; sourceTree = "<group>"; };
 		38DAE63F1ED95F7D00D56225 /* HolidayTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HolidayTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				38942D5F1EF194510002A2E3 /* EventChecklistViewController.swift */,
+				38CB0A881EFE7B480046A936 /* MenuViewController.swift */,
 			);
 			name = "Event Details Buttons Controllers";
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 				3861E0621ED97E880037F8C8 /* EventCreator.storyboard */,
 				38942D5C1EF18C030002A2E3 /* EventChecklist.storyboard */,
 				385DAFB91EFD5CC100DE45CD /* FirstLaunch.storyboard */,
+				38CB0A861EFE7AAA0046A936 /* Menu.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -424,6 +430,7 @@
 				385DAFBA1EFD5CC100DE45CD /* FirstLaunch.storyboard in Resources */,
 				38DAE64A1ED95F7D00D56225 /* Assets.xcassets in Resources */,
 				38DAE6771ED9698500D56225 /* EventDetails.storyboard in Resources */,
+				38CB0A871EFE7AAA0046A936 /* Menu.storyboard in Resources */,
 				389C05771EF4095500CFC480 /* GoogleService-Info.plist in Resources */,
 				38D47DCB1EF970420020C4F7 /* weatherIcons.xcassets in Resources */,
 				3861E0631ED97E880037F8C8 /* EventCreator.storyboard in Resources */,
@@ -507,6 +514,7 @@
 				38B0CC171EFAB38100CD3200 /* TimeInterval.swift in Sources */,
 				38CCCCC81ED9CB9D00277BB9 /* PickerDataResources.swift in Sources */,
 				3861E0571ED96A7F0037F8C8 /* EventTransitionAnimator.swift in Sources */,
+				38CB0A891EFE7B480046A936 /* MenuViewController.swift in Sources */,
 				383DA44F1EF5743C00F24365 /* WeatherManager.swift in Sources */,
 				387A91F11EDB245C00CE55BA /* EventDetailViewController.swift in Sources */,
 				3814E2221EE301E800C5FB0D /* Notf.swift in Sources */,

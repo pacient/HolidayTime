@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qpJ-kF-rOG">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Menu View Controller-->
+        <scene sceneID="hv5-nR-HPA">
+            <objects>
+                <viewController id="qpJ-kF-rOG" customClass="MenuViewController" customModule="HolidayTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8VP-Y5-zlx"/>
+                        <viewControllerLayoutGuide type="bottom" id="hAg-7n-fyd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eik-oJ-rH6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a2K-AA-3HA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="22P-dK-1le">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n8g-o1-wFd">
+                                            <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                            <textAttributes key="titleTextAttributes">
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </textAttributes>
+                                            <items>
+                                                <navigationItem title="Menu" id="VBY-qq-W3x"/>
+                                            </items>
+                                        </navigationBar>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="n8g-o1-wFd" firstAttribute="leading" secondItem="22P-dK-1le" secondAttribute="leading" id="0Xx-cq-0Qw"/>
+                                        <constraint firstAttribute="trailing" secondItem="n8g-o1-wFd" secondAttribute="trailing" id="tEw-ce-Ll0"/>
+                                        <constraint firstItem="n8g-o1-wFd" firstAttribute="top" secondItem="22P-dK-1le" secondAttribute="top" constant="20" id="tsj-Dk-T9Q"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="a2K-AA-3HA" secondAttribute="trailing" id="5p3-BI-tBY"/>
+                            <constraint firstItem="hAg-7n-fyd" firstAttribute="top" secondItem="a2K-AA-3HA" secondAttribute="bottom" id="S75-5o-dwt"/>
+                            <constraint firstItem="a2K-AA-3HA" firstAttribute="leading" secondItem="eik-oJ-rH6" secondAttribute="leading" id="Ts5-vL-F87"/>
+                            <constraint firstItem="a2K-AA-3HA" firstAttribute="top" secondItem="eik-oJ-rH6" secondAttribute="top" id="VRe-kz-uRY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navBar" destination="n8g-o1-wFd" id="avu-CB-IvB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PbI-Kn-3mj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="239.19999999999999" y="-306.29685157421289"/>
+        </scene>
+    </scenes>
+</document>

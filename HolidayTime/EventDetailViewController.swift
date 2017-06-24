@@ -115,6 +115,8 @@ class EventDetailViewController: UIViewController, UINavigationBarDelegate {
     }
     
     @IBAction func menuButtonPressed(_ sender: Any) {
+        let vc = UIStoryboard(name: "Menu", bundle: nil).instantiateInitialViewController()!
+        self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func checkButtonPressed(_ sender: Any) {
