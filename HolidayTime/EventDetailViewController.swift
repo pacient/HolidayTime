@@ -63,8 +63,8 @@ class EventDetailViewController: UIViewController, UINavigationBarDelegate {
         navBar.setBackgroundImage(#imageLiteral(resourceName: "transparent"), for: .default)
         navBar.shadowImage = #imageLiteral(resourceName: "transparent")
         let backItem = getBarButton(image: #imageLiteral(resourceName: "backButton"), action: #selector(backButtonPressed(_:)))
-        let menuItem = getBarButton(image: #imageLiteral(resourceName: "menuButton"), action: #selector(menuButtonPressed(_:)))
-        navBar.topItem?.setLeftBarButtonItems([backItem,menuItem], animated: true)
+        //let menuItem = getBarButton(image: #imageLiteral(resourceName: "menuButton"), action: #selector(menuButtonPressed(_:)))
+        navBar.topItem?.setLeftBarButtonItems([backItem,/*menuItem*/], animated: true)
         
         let editButton = getBarButton(image: #imageLiteral(resourceName: "pencilButton"), action: #selector(settingButtonPressed(_:)))
         let taskButton = getBarButton(image: #imageLiteral(resourceName: "checklistButton"), action: #selector(checkButtonPressed(_:)))
@@ -116,6 +116,7 @@ class EventDetailViewController: UIViewController, UINavigationBarDelegate {
     
     @IBAction func menuButtonPressed(_ sender: Any) {
         let vc = UIStoryboard(name: "Menu", bundle: nil).instantiateInitialViewController()!
+        vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: true, completion: nil)
     }
     

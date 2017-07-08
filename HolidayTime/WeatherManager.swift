@@ -83,13 +83,14 @@ class WeatherManager: NSObject {
         }
     }
     
-    func getWeather(forCity city: String, country: String, completionHandler: @escaping (_ results: [String : String]?) -> () ) {
+    func getWeather(forCity city: String, country: String, tempFormat: String, completionHandler: @escaping (_ results: [String : String]?) -> () ) {
         let urlString = "\(apiURLString)&q=\(city),\(country)".replacingOccurrences(of: " ", with: "%20")
         let url = URL(string: urlString)!
         Alamofire.request(url).responseJSON(completionHandler: { (response) in
             if let value = response.result.value, let json = JSON(value).dictionaryObject, let current = json["current"] as? [String : Any] {
                 var results = [String : String]()
-                if let temperture = current["temp_c"] as? Double, let condition = current["condition"] as? [String : Any] {
+                let tempStr = tempFormat == "Celsius" ? "temp_c" : "temp_f"
+                if let temperture = current[tempStr] as? Double, let condition = current["condition"] as? [String : Any] {
                     results["temperture"] = "\(Int(temperture))°"
                     let code = condition["code"] as! Int
                     results["code"] = "\(code)"

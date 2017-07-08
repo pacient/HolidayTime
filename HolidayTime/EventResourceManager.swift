@@ -20,6 +20,7 @@ class EventResourceManager: NSObject {
     var eventTemperture: String?
     var eventWeatherCode: String?
     var eventLastUpdatedWeather: Date?
+    var tempFormat: String?
     
     open class func instance() -> EventResourceManager {
         struct Struc {
@@ -94,6 +95,7 @@ class EventResourceManager: NSObject {
                 ev.cityTemperture = self.eventTemperture
                 ev.lastWeatherUpdate = self.eventLastUpdatedWeather
                 ev.weatherCode = self.eventWeatherCode
+                ev.tempFormat = self.tempFormat!
             }
         }
         let data = NSKeyedArchiver.archivedData(withRootObject: allEvents)
@@ -106,7 +108,8 @@ class EventResourceManager: NSObject {
                          "country" : self.eventCountry!,
                          "date" : self.eventDate!,
                          "bgimage" : self.eventImage!,
-                         "eventID" : String.getRandomID()] as [String : Any]
+                         "eventID" : String.getRandomID(),
+                         "tempFormat" : self.tempFormat!] as [String : Any]
         let event = Event(data: eventDict)
         self.add(event: event)
     }
@@ -122,6 +125,7 @@ class EventResourceManager: NSObject {
         self.eventTemperture = event.cityTemperture
         self.eventWeatherCode = event.weatherCode
         self.eventLastUpdatedWeather = event.lastWeatherUpdate
+        self.tempFormat = event.tempFormat
     }
     
     func setupValues(data: [String : Any]) {
@@ -153,6 +157,9 @@ class EventResourceManager: NSObject {
         
         if let tasks = data["tasks"] as? [ChecklistTask] {
             self.eventTasks = tasks
+        }
+        if let tempFormat = data["tempFormat"] as? String {
+            self.tempFormat = tempFormat
         }
     }
 }

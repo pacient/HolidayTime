@@ -32,6 +32,9 @@ class EventViewModel {
     var backgroundImage: UIImage {
         return event.backgroundImage
     }
+    var tempFormat: String {
+        return event.tempFormat
+    }
     var shouldUpdateWeather: Bool {
         if event.lastWeatherUpdate == nil {
             return true
@@ -64,7 +67,7 @@ class EventViewModel {
     }
     
     func updateWeather(completion: @escaping () -> () ) {
-        WeatherManager.instance().getWeather(forCity: event.city, country: event.country) { (results) in
+        WeatherManager.instance().getWeather(forCity: event.city, country: event.country, tempFormat: event.tempFormat ?? "Celsius") { (results) in
             if let results = results {
                 self.event.cityTemperture = results["temperture"]
                 self.event.weatherCode = results["code"]

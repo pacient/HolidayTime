@@ -14,6 +14,7 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var countryTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var tempertureTextField: UITextField!
     @IBOutlet weak var nameErrorLabel: UILabel!
     @IBOutlet weak var countryErrorLabel: UILabel!
     @IBOutlet weak var dateErrorLabel: UILabel!
@@ -23,6 +24,7 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
     var isEventEditing = false
     var event: Event?
     let countries = PickerDataResources.instance().allCountries()
+    let tempFormats = ["Celsius", "Fahrenheit"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,7 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
         
         countryTextField.inputView = countryPicker
         dateTextField.delegate = self
+        tempertureTextField.delegate = self
         navBar.setBackgroundImage(#imageLiteral(resourceName: "transparent"), for: .default)
         navBar.shadowImage = #imageLiteral(resourceName: "transparent")
         navBar.topItem?.title = viewTitle
@@ -47,6 +50,7 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
             dateFormatter.dateFormat = "MMM dd, yyyy"
             let dateText = dateFormatter.string(from: event.date)
             self.dateTextField.text = dateText
+            self.tempertureTextField.text = event.tempFormat
             EventResourceManager.instance().setupValues(with: event)
         }
     }
@@ -57,7 +61,7 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
             self.view.layer.insertSublayer(gradientLayer, at: 0)
         }
         gradientLayer.frame = self.view.bounds
-        let textFields = [nameTextField,cityTextField,countryTextField,dateTextField]
+        let textFields = [nameTextField,cityTextField,countryTextField,dateTextField,tempertureTextField]
         textFields.forEach { (field) in
             field?.layer.borderColor = UIColor.white.cgColor
             field?.layer.borderWidth = 1.0
@@ -83,6 +87,14 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
             datePick.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: .valueChanged)
             
             textField.inputView = datePick
+        }else if textField.tag == 2 {
+            let tempPicker = UIPickerView()
+            tempPicker.tag = 2
+            tempPicker.backgroundColor = .white
+            tempPicker.delegate = self
+            textField.inputView = tempPicker
+            let selectedRow = self.tempertureTextField.text == "Celsius" ? 0 : 1
+            tempPicker.selectRow(selectedRow, inComponent: 0, animated: true)
         }
     }
     
@@ -135,10 +147,11 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
                          "country" : countryTextField.text!,
                          "date" : date,
                          "tasks" : tasks,
-                         "bgimage" : event!.backgroundImage]
+                         "bgimage" : event!.backgroundImage,
+                         "tempFormat" : tempertureTextField.text!]
         
-        if EventResourceManager.instance().eventCity != cityTextField.text! || EventResourceManager.instance().eventCountry != countryTextField.text! {
-            WeatherManager.instance().getWeather(forCity: cityTextField.text!, country: countryTextField.text!, completionHandler: { (results) in
+        if EventResourceManager.instance().eventCity != cityTextField.text! || EventResourceManager.instance().eventCountry != countryTextField.text! || EventResourceManager.instance().tempFormat != tempertureTextField.text! {
+            WeatherManager.instance().getWeather(forCity: cityTextField.text!, country: countryTextField.text!, tempFormat: tempertureTextField.text!, completionHandler: { (results) in
                 if let results = results {
                     EventResourceManager.instance().setupValues(data: eventDict)
                     EventResourceManager.instance().eventTemperture = results["temperture"]
@@ -163,7 +176,8 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
                          "city" : cityTextField.text!,
                          "country" : countryTextField.text!,
                          "date" : date,
-                         "tasks" : tasks]
+                         "tasks" : tasks,
+                         "tempFormat" : tempertureTextField.text!]
         
         EventResourceManager.instance().setupValues(data: eventDict)
         
@@ -179,17 +193,23 @@ class EventCreatorViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return countries.count
+        return pickerView.tag == 2 ? tempFormats.count : countries.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return countries[row]
+        return pickerView.tag == 2 ? tempFormats[row] : countries[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        countryTextField.text = countries[row]
-        countryErrorLabel.isHidden = true
+        if pickerView.tag == 2 {
+            tempertureTextField.text = tempFormats[row]
+        }else {
+            countryTextField.text = countries[row]
+            countryErrorLabel.isHidden = true
+        }
     }
+    
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)

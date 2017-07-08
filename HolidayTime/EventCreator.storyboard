@@ -106,15 +106,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vR3-Tx-p4g">
-                                <rect key="frame" x="95" y="318" width="186" height="35"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Choose Background"/>
-                                <connections>
-                                    <action selector="donePressed:" destination="ix4-Lb-48J" eventType="touchUpInside" id="AcP-9F-Gqn"/>
-                                </connections>
-                            </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You must give a name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCl-3d-2Dn">
                                 <rect key="frame" x="193" y="117" width="158" height="19"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
@@ -156,12 +147,43 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperture Format" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vt1-zK-fPq">
+                                <rect key="frame" x="16" y="322" width="136.5" height="19"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Celsius" borderStyle="roundedRect" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Nmb-1Y-KrK">
+                                <rect key="frame" x="16" y="349" width="343" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vR3-Tx-p4g">
+                                <rect key="frame" x="94" y="387" width="186" height="35"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Choose Background"/>
+                                <connections>
+                                    <action selector="donePressed:" destination="ix4-Lb-48J" eventType="touchUpInside" id="AcP-9F-Gqn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.32333067705189178" green="0.58589772656676309" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="l1H-Il-fWb" firstAttribute="trailing" secondItem="Ej3-hR-N7u" secondAttribute="trailingMargin" id="00u-xw-Dq5"/>
                             <constraint firstItem="FFR-Nu-njp" firstAttribute="centerY" secondItem="7WI-AX-xcQ" secondAttribute="centerY" id="0NF-vd-cla"/>
                             <constraint firstItem="DLn-9H-DqE" firstAttribute="top" secondItem="SuP-Sq-3RC" secondAttribute="bottom" constant="8" id="1Hk-nb-tXD"/>
+                            <constraint firstItem="Nmb-1Y-KrK" firstAttribute="leading" secondItem="Ej3-hR-N7u" secondAttribute="leadingMargin" id="1p2-Mu-epv"/>
                             <constraint firstItem="wEw-Lu-QVa" firstAttribute="top" secondItem="Q2R-Rg-ac2" secondAttribute="bottom" constant="20" id="4lL-3u-ECc"/>
                             <constraint firstItem="iR4-c9-p1P" firstAttribute="centerY" secondItem="l1H-Il-fWb" secondAttribute="centerY" id="4ts-Qf-w5H"/>
                             <constraint firstItem="7WI-AX-xcQ" firstAttribute="trailing" secondItem="Ej3-hR-N7u" secondAttribute="trailingMargin" id="6no-tY-rjD"/>
@@ -169,6 +191,7 @@
                             <constraint firstItem="Q2R-Rg-ac2" firstAttribute="leading" secondItem="Ej3-hR-N7u" secondAttribute="leading" id="8g7-Td-wPW"/>
                             <constraint firstAttribute="trailing" secondItem="Q2R-Rg-ac2" secondAttribute="trailing" id="EX1-mQ-6TT"/>
                             <constraint firstItem="l1H-Il-fWb" firstAttribute="leading" secondItem="Ej3-hR-N7u" secondAttribute="leadingMargin" id="Gmg-8j-gf3"/>
+                            <constraint firstItem="Nmb-1Y-KrK" firstAttribute="top" secondItem="vt1-zK-fPq" secondAttribute="bottom" constant="8" id="IWK-ew-Xg7"/>
                             <constraint firstItem="rhe-WG-9uS" firstAttribute="trailing" secondItem="Ej3-hR-N7u" secondAttribute="trailingMargin" id="IxB-nS-cxn"/>
                             <constraint firstItem="rhe-WG-9uS" firstAttribute="top" secondItem="DLn-9H-DqE" secondAttribute="bottom" constant="8" id="Khe-TO-ERc"/>
                             <constraint firstItem="iR4-c9-p1P" firstAttribute="trailing" secondItem="iCl-3d-2Dn" secondAttribute="trailing" id="N4k-1J-wDD"/>
@@ -176,18 +199,21 @@
                             <constraint firstItem="vR3-Tx-p4g" firstAttribute="centerX" secondItem="Ej3-hR-N7u" secondAttribute="centerX" id="QiK-Dw-OfC"/>
                             <constraint firstItem="SuP-Sq-3RC" firstAttribute="top" secondItem="wEw-Lu-QVa" secondAttribute="bottom" constant="8" id="Qnb-aX-NyO"/>
                             <constraint firstItem="SuP-Sq-3RC" firstAttribute="trailing" secondItem="Ej3-hR-N7u" secondAttribute="trailingMargin" id="RVv-ch-8rN"/>
+                            <constraint firstItem="vR3-Tx-p4g" firstAttribute="top" secondItem="Nmb-1Y-KrK" secondAttribute="bottom" constant="8" id="VJ7-p0-IRp"/>
                             <constraint firstItem="rhe-WG-9uS" firstAttribute="leading" secondItem="Ej3-hR-N7u" secondAttribute="leadingMargin" id="XvT-BD-Gfb"/>
+                            <constraint firstItem="vt1-zK-fPq" firstAttribute="top" secondItem="7WI-AX-xcQ" secondAttribute="bottom" constant="12" id="awG-ZT-Cyr"/>
                             <constraint firstItem="DLn-9H-DqE" firstAttribute="leading" secondItem="Ej3-hR-N7u" secondAttribute="leadingMargin" id="bkr-QS-MBM"/>
                             <constraint firstItem="wEw-Lu-QVa" firstAttribute="leading" secondItem="Ej3-hR-N7u" secondAttribute="leadingMargin" id="fZI-ir-f0m"/>
                             <constraint firstItem="FFR-Nu-njp" firstAttribute="trailing" secondItem="7WI-AX-xcQ" secondAttribute="trailing" constant="-8" id="g1f-IP-qll"/>
-                            <constraint firstItem="vR3-Tx-p4g" firstAttribute="top" secondItem="7WI-AX-xcQ" secondAttribute="bottom" constant="8" id="jY9-h9-AAT"/>
                             <constraint firstItem="SuP-Sq-3RC" firstAttribute="leading" secondItem="Ej3-hR-N7u" secondAttribute="leadingMargin" id="lG8-st-9Ko"/>
                             <constraint firstItem="iCl-3d-2Dn" firstAttribute="centerY" secondItem="SuP-Sq-3RC" secondAttribute="centerY" id="lne-jI-9Pd"/>
+                            <constraint firstItem="vt1-zK-fPq" firstAttribute="leading" secondItem="VvT-1c-UZp" secondAttribute="leading" id="ls9-oU-f0O"/>
                             <constraint firstItem="VvT-1c-UZp" firstAttribute="top" secondItem="l1H-Il-fWb" secondAttribute="bottom" constant="8" id="mzi-LH-Hl2"/>
                             <constraint firstItem="7WI-AX-xcQ" firstAttribute="leading" secondItem="Ej3-hR-N7u" secondAttribute="leadingMargin" id="oPj-Xi-SH1"/>
                             <constraint firstItem="Q2R-Rg-ac2" firstAttribute="top" secondItem="MMu-5G-6cu" secondAttribute="bottom" id="te7-x8-af8"/>
                             <constraint firstItem="l1H-Il-fWb" firstAttribute="top" secondItem="rhe-WG-9uS" secondAttribute="bottom" constant="8" id="tmy-Z7-Mke"/>
                             <constraint firstItem="7WI-AX-xcQ" firstAttribute="top" secondItem="VvT-1c-UZp" secondAttribute="bottom" constant="8" id="uA0-gb-J7w"/>
+                            <constraint firstItem="Nmb-1Y-KrK" firstAttribute="trailing" secondItem="Ej3-hR-N7u" secondAttribute="trailingMargin" id="wOe-6l-uze"/>
                         </constraints>
                     </view>
                     <connections>
@@ -199,6 +225,7 @@
                         <outlet property="nameErrorLabel" destination="iCl-3d-2Dn" id="MB7-cy-6Sy"/>
                         <outlet property="nameTextField" destination="SuP-Sq-3RC" id="xYI-h0-NHr"/>
                         <outlet property="navBar" destination="Q2R-Rg-ac2" id="2rU-Ar-J7G"/>
+                        <outlet property="tempertureTextField" destination="Nmb-1Y-KrK" id="lHx-S0-2eC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xcg-zG-ohm" userLabel="First Responder" sceneMemberID="firstResponder"/>

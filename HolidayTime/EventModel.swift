@@ -20,6 +20,7 @@ class Event: NSObject, NSCoding {
     var cityTemperture: String?
     var weatherCode: String?
     var lastWeatherUpdate: Date?
+    var tempFormat: String!
     
     override init() {}
     
@@ -31,6 +32,7 @@ class Event: NSObject, NSCoding {
         self.country = data["country"] as! String
         self.backgroundImage = data["bgimage"] as! UIImage
         self.eventID = data["eventID"] as! String
+        self.tempFormat = data["tempFormat"] as? String
         if let tasks = data["tasks"] as? [ChecklistTask]{
             self.tasks = tasks
         }else {
@@ -40,16 +42,17 @@ class Event: NSObject, NSCoding {
     
     required convenience init?(coder aDecoder: NSCoder) {
         self.init()
-        self.name = aDecoder.decodeObject(forKey: "name") as! String
-        self.date = aDecoder.decodeObject(forKey: "date") as! Date
-        self.city = aDecoder.decodeObject(forKey: "city") as! String
-        self.country = aDecoder.decodeObject(forKey: "country") as! String
-        self.backgroundImage = aDecoder.decodeObject(forKey: "bgimage") as! UIImage
-        self.eventID = aDecoder.decodeObject(forKey: "eventID") as!  String
-        self.tasks = aDecoder.decodeObject(forKey: "tasks") as! [ChecklistTask]
+        self.name = aDecoder.decodeObject(forKey: "name") as? String
+        self.date = aDecoder.decodeObject(forKey: "date") as? Date
+        self.city = aDecoder.decodeObject(forKey: "city") as? String
+        self.country = aDecoder.decodeObject(forKey: "country") as? String
+        self.backgroundImage = aDecoder.decodeObject(forKey: "bgimage") as? UIImage
+        self.eventID = aDecoder.decodeObject(forKey: "eventID") as? String
+        self.tasks = aDecoder.decodeObject(forKey: "tasks") as? [ChecklistTask]
         self.cityTemperture = aDecoder.decodeObject(forKey: "cityTemperture") as? String
         self.weatherCode = aDecoder.decodeObject(forKey: "weatherCode") as? String
         self.lastWeatherUpdate = aDecoder.decodeObject(forKey: "lastWeatherUpdate") as? Date
+        self.tempFormat = aDecoder.decodeObject(forKey: "tempFormat") as? String
     }
     
     func encode(with aCoder: NSCoder) {
@@ -63,6 +66,7 @@ class Event: NSObject, NSCoding {
         aCoder.encode(self.cityTemperture, forKey: "cityTemperture")
         aCoder.encode(self.weatherCode, forKey: "weatherCode")
         aCoder.encode(self.lastWeatherUpdate, forKey: "lastWeatherUpdate")
+        aCoder.encode(self.tempFormat, forKey: "tempFormat")
     }
     
     public static func ==(lhs: Event, rhs: Event) -> Bool {

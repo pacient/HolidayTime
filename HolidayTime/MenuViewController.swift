@@ -25,4 +25,10 @@ class MenuViewController: UIViewController {
     func backPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
+    @IBAction func contactUsPressed(_ sender: Any) {
+    }
+    @IBAction func settingsPressed(_ sender: Any) {
+    }
+    
+    
 }

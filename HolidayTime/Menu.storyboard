@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Menu View Controller-->
         <scene sceneID="hv5-nR-HPA">
@@ -36,9 +41,33 @@
                                                 <navigationItem title="Menu" id="VBY-qq-W3x"/>
                                             </items>
                                         </navigationBar>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cn-6y-7B7">
+                                            <rect key="frame" x="149" y="90" width="76" height="36"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                            <state key="normal" title="Settings">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="settingsPressed:" destination="qpJ-kF-rOG" eventType="touchUpInside" id="8S2-K7-rkH"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRL-sm-6ut">
+                                            <rect key="frame" x="135" y="142" width="104" height="36"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                            <state key="normal" title="Contact Us">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="contactUsPressed:" destination="qpJ-kF-rOG" eventType="touchUpInside" id="Jjv-oz-evr"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="n8g-o1-wFd" firstAttribute="leading" secondItem="22P-dK-1le" secondAttribute="leading" id="0Xx-cq-0Qw"/>
+                                        <constraint firstItem="YRL-sm-6ut" firstAttribute="centerX" secondItem="22P-dK-1le" secondAttribute="centerX" id="BXJ-lF-cQs"/>
+                                        <constraint firstItem="0cn-6y-7B7" firstAttribute="centerX" secondItem="22P-dK-1le" secondAttribute="centerX" id="SO9-p2-V1O"/>
+                                        <constraint firstItem="0cn-6y-7B7" firstAttribute="top" secondItem="n8g-o1-wFd" secondAttribute="bottom" constant="26" id="SwN-lh-iHk"/>
+                                        <constraint firstItem="YRL-sm-6ut" firstAttribute="top" secondItem="0cn-6y-7B7" secondAttribute="bottom" constant="16" id="a5a-CZ-jdp"/>
                                         <constraint firstAttribute="trailing" secondItem="n8g-o1-wFd" secondAttribute="trailing" id="tEw-ce-Ll0"/>
                                         <constraint firstItem="n8g-o1-wFd" firstAttribute="top" secondItem="22P-dK-1le" secondAttribute="top" constant="20" id="tsj-Dk-T9Q"/>
                                     </constraints>
@@ -46,7 +75,7 @@
                                 <blurEffect style="light"/>
                             </visualEffectView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.098039215690000001" green="0.48627450979999998" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="a2K-AA-3HA" secondAttribute="trailing" id="5p3-BI-tBY"/>
                             <constraint firstItem="hAg-7n-fyd" firstAttribute="top" secondItem="a2K-AA-3HA" secondAttribute="bottom" id="S75-5o-dwt"/>
@@ -61,6 +90,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PbI-Kn-3mj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="239.19999999999999" y="-306.29685157421289"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="DhH-Oh-981">
+            <objects>
+                <viewController id="aV7-8J-rYy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yEy-Ir-RXg"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bsu-Iq-LbE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HhD-JR-Xgs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WZP-Mv-QMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1206" y="-293"/>
         </scene>
     </scenes>
 </document>
