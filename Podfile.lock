@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (4.4.0)
+  - Crashlytics (3.8.5):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.12)
   - Firebase/AdMob (3.17.0):
     - Firebase/Core
     - Google-Mobile-Ads-SDK (= 7.19.1)
@@ -22,12 +25,16 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
+  - Crashlytics
+  - Fabric
   - Firebase/AdMob
   - Firebase/Core
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
+  Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
   Firebase: 4b66b5b59c43edac745b87f0c87e42cdd0279c13
   FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
   FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
@@ -36,6 +43,6 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 2072c78ec16a5906f23f2797cead83aa107ea982
+PODFILE CHECKSUM: 0fd7803e78d21b71f9c984ebe4b46619010b6e0e
 
 COCOAPODS: 1.2.1.beta.1

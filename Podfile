@@ -9,4 +9,6 @@ target 'HolidayTime' do
 	pod 'Firebase/AdMob'
 	pod 'Alamofire', '~> 4.4'
 	pod 'SwiftyJSON'
+	pod 'Fabric'
+	pod 'Crashlytics'
 end
