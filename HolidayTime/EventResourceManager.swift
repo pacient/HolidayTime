@@ -64,6 +64,7 @@ class EventResourceManager: NSObject {
         var allEvents = self.allEvents()
         allEvents.append(event)
         saveEvents(events: allEvents)
+        NotificationManager.scheduleNotifications(for: event)
     }
     
     func remove(event: Event) {
@@ -71,6 +72,7 @@ class EventResourceManager: NSObject {
         for each in allEvents {
             if each == event {
                 allEvents.removeObject(each)
+                NotificationManager.removeNotifications(for: each.eventID)
             }
         }
         saveEvents(events: allEvents)
@@ -96,6 +98,7 @@ class EventResourceManager: NSObject {
                 ev.lastWeatherUpdate = self.eventLastUpdatedWeather
                 ev.weatherCode = self.eventWeatherCode
                 ev.tempFormat = self.tempFormat!
+                NotificationManager.scheduleNotifications(for: ev)
             }
         }
         let data = NSKeyedArchiver.archivedData(withRootObject: allEvents)

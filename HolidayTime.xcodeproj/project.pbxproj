@@ -45,6 +45,7 @@
 		38DAE6721ED9640200D56225 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAE6711ED9640200D56225 /* EventCell.swift */; };
 		38DAE6751ED9645200D56225 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAE6741ED9645200D56225 /* EventTableViewController.swift */; };
 		38DAE6771ED9698500D56225 /* EventDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DAE6761ED9698500D56225 /* EventDetails.storyboard */; };
+		38ECDAF01F10DA52002A6B27 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECDAEF1F10DA52002A6B27 /* NotificationManager.swift */; };
 		914F9B67997F848909784986 /* Pods_HolidayTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8716BA6A4D7890E661C0E3A1 /* Pods_HolidayTime.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +113,7 @@
 		38DAE6711ED9640200D56225 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		38DAE6741ED9645200D56225 /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 		38DAE6761ED9698500D56225 /* EventDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventDetails.storyboard; sourceTree = "<group>"; };
+		38ECDAEF1F10DA52002A6B27 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		8716BA6A4D7890E661C0E3A1 /* Pods_HolidayTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HolidayTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -168,6 +170,7 @@
 				38CCCCC71ED9CB9D00277BB9 /* PickerDataResources.swift */,
 				3814E2211EE301E800C5FB0D /* Notf.swift */,
 				383DA44E1EF5743C00F24365 /* WeatherManager.swift */,
+				38ECDAEF1F10DA52002A6B27 /* NotificationManager.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				387A91F11EDB245C00CE55BA /* EventDetailViewController.swift in Sources */,
 				3814E2221EE301E800C5FB0D /* Notf.swift in Sources */,
 				38DAE6721ED9640200D56225 /* EventCell.swift in Sources */,
+				38ECDAF01F10DA52002A6B27 /* NotificationManager.swift in Sources */,
 				38DAE6751ED9645200D56225 /* EventTableViewController.swift in Sources */,
 				38942D601EF194510002A2E3 /* EventChecklistViewController.swift in Sources */,
 				38918B601EFD4665005FBA5D /* EventViewModel.swift in Sources */,

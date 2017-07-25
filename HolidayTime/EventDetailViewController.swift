@@ -46,7 +46,7 @@ class EventDetailViewController: UIViewController, UINavigationBarDelegate {
         eventCardView.backgroundColor = cardColour
         eventNameLabel.text = event.name
         eventCityLabel.text = event.city
-        eventDaysLabel.text = event.date.getRemainingDays()
+        eventDaysLabel.text = "\(event.date.getRemainingDays())"
         daysWordLabel.text = eventDaysLabel.text == "1" ? "day" : "days"
         if let temp = event.cityTemperture {
             eventTempertureLabel.isHidden = false

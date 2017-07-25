@@ -21,7 +21,7 @@ class EventViewModel {
         return event.country
     }
     var remainingDaysText: String {
-        return event.date.getRemainingDays()
+        return "\(event.date.getRemainingDays())"
     }
     var degreesText: String? {
         return event.cityTemperture

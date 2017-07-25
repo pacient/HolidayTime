@@ -9,16 +9,16 @@
 import Foundation
 
 extension Date {
-    func getRemainingDays() -> String {
+    func getRemainingDays() -> Int {
         let calendar = Calendar.current
         
         let components = calendar.dateComponents([.day], from: Date(), to: self)
         if let daysRemaining = components.day {
             if calendar.isDateInToday(self) {
-                return "0"
+                return 0
             }
-            return daysRemaining < 0 ? "0" : "\(daysRemaining + 1)"
+            return daysRemaining < 0 ? 0 : daysRemaining + 1
         }
-        return "0"
+        return 0
     }
 }
