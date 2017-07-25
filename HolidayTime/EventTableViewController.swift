@@ -23,13 +23,14 @@ class EventTableViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         navigationController?.delegate = self
         events = EventResourceManager.instance().allEvents()
-        self.loadBannerAd(to: bannerView)
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadEvents), name: Notf.updateEvents, object: nil)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         //First Launch stuff
+        self.loadBannerAd(to: bannerView)
+
         let isFirstLaunch = UserDefaults.standard.bool(forKey: Const.firstLaunch)
         if isFirstLaunch {
             UserDefaults.standard.set(false, forKey: Const.firstLaunch)
