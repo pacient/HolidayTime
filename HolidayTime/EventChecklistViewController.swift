@@ -27,7 +27,7 @@ class EventChecklistViewController: UIViewController, UITableViewDelegate, UITab
         super.viewDidLoad()
         navBar.setBackgroundImage(#imageLiteral(resourceName: "transparent"), for: .default)
         navBar.shadowImage = #imageLiteral(resourceName: "transparent")
-        taskTextField.attributedPlaceholder = NSAttributedString(string: "Enter Text Here", attributes: [NSForegroundColorAttributeName : UIColor(white: 0.9, alpha: 1)])
+        taskTextField.attributedPlaceholder = NSAttributedString(string: "Enter todo item", attributes: [NSForegroundColorAttributeName : UIColor(white: 0.9, alpha: 1)])
         taskTextField.delegate = self
     }
     
@@ -109,6 +109,9 @@ class EventChecklistViewController: UIViewController, UITableViewDelegate, UITab
         return 50
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
     //MARK: Nav Bar Delegate
     func position(for bar: UIBarPositioning) -> UIBarPosition {
         return .topAttached
