@@ -97,6 +97,7 @@
 		38CB0A861EFE7AAA0046A936 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		38CB0A881EFE7B480046A936 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		38CCCCC71ED9CB9D00277BB9 /* PickerDataResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerDataResources.swift; sourceTree = "<group>"; };
+		38D423B11F28DB2700C527A3 /* HolidayTime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HolidayTime.entitlements; sourceTree = "<group>"; };
 		38D47DCA1EF970420020C4F7 /* weatherIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = weatherIcons.xcassets; sourceTree = "<group>"; };
 		38DAE63F1ED95F7D00D56225 /* HolidayTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HolidayTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38DAE6421ED95F7D00D56225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -248,6 +249,7 @@
 		38DAE6411ED95F7D00D56225 /* HolidayTime */ = {
 			isa = PBXGroup;
 			children = (
+				38D423B11F28DB2700C527A3 /* HolidayTime.entitlements */,
 				38918B5E1EFD4644005FBA5D /* ViewModel */,
 				3861E05F1ED97C7E0037F8C8 /* Extenstions */,
 				3861E0581ED973FD0037F8C8 /* Models */,
@@ -390,7 +392,12 @@
 					38DAE63E1ED95F7D00D56225 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = TPWG8G6ELX;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					38DAE6521ED95F7D00D56225 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -703,12 +710,17 @@
 			baseConfigurationReference = 12CECE7D8D758E7FED29A35D /* Pods-HolidayTime.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HolidayTime/HolidayTime.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TPWG8G6ELX;
 				INFOPLIST_FILE = HolidayTime/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nunev.HolidayTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "eada3a51-8824-4817-a61a-b9ffc1958970";
+				PROVISIONING_PROFILE_SPECIFIER = "com.nunev.HolidayTime AppStore";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -719,12 +731,17 @@
 			baseConfigurationReference = 1135C436BF1FB52A311E0A86 /* Pods-HolidayTime.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HolidayTime/HolidayTime.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TPWG8G6ELX;
 				INFOPLIST_FILE = HolidayTime/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nunev.HolidayTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "eada3a51-8824-4817-a61a-b9ffc1958970";
+				PROVISIONING_PROFILE_SPECIFIER = "com.nunev.HolidayTime AppStore";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
