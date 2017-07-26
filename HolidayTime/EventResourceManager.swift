@@ -88,6 +88,7 @@ class EventResourceManager: NSObject {
         let allEvents = self.allEvents()
         allEvents.forEach { (ev) in
             if self.eventID == ev.eventID {
+                let shouldScheduleNotification = self.eventName != ev.name! || self.eventDate! != ev.date
                 ev.name = self.eventName!
                 ev.city = self.eventCity!
                 ev.country = self.eventCountry!
@@ -98,7 +99,9 @@ class EventResourceManager: NSObject {
                 ev.lastWeatherUpdate = self.eventLastUpdatedWeather
                 ev.weatherCode = self.eventWeatherCode
                 ev.tempFormat = self.tempFormat!
-                NotificationManager.scheduleNotifications(for: ev)
+                if shouldScheduleNotification {
+                    NotificationManager.scheduleNotifications(for: ev)
+                }
             }
         }
         let data = NSKeyedArchiver.archivedData(withRootObject: allEvents)

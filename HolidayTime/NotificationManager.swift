@@ -20,7 +20,7 @@ class NotificationManager {
     
     class func scheduleNotifications(for event: Event) {
         //Remove all notifications for that event first
-        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [event.eventID])
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(event.eventID)0","\(event.eventID)1","\(event.eventID)2"])
         
         let calendar = Calendar.current
         let components = calendar.dateComponents([.day], from: Date(), to: event.date)
@@ -63,7 +63,7 @@ class NotificationManager {
         content.body = "\(daysLeft!) till \(title) 🎉"
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
-        let requst = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+        let requst = UNNotificationRequest(identifier: "\(id)\(period.hashValue)", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(requst, withCompletionHandler: nil)
     }
 }
