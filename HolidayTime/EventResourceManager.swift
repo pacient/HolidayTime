@@ -40,7 +40,7 @@ class EventResourceManager: NSObject {
             let now = dateFormatter.date(from: nowStr)!
             var shouldUpdateEvents = false
             events.forEach({ (event) in
-                if now.timeIntervalSince(event.date).hoursPasted() >= 168 {
+                if now.timeIntervalSince(event.date).hoursPasted() >= 960 {
                     shouldUpdateEvents = true
                 }else {
                     if event.date < now {
